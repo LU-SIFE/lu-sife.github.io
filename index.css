@@ -1,7 +1,9 @@
+html {
+	text-align:center;
+}
+
 body {
 	background-color:#1f1f1f;
 	color:orange;
 	font-family: Courier New;
-	text-align: center;
-	
 }
