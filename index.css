@@ -24,13 +24,14 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+	color:white;
 }
 
 a {
-	color:white;
 	background: linear-gradient(0deg, slateblue, slateblue) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
+	color:white;
 }
 a:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
