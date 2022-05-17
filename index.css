@@ -14,8 +14,10 @@ a:where(:hover, :focus-visible) {
 }
 
 body {
+	background-color:#1f1f1f;
   font-size: 2em;
   text-align: center;
+  color:orange;
 }
 
 a {
