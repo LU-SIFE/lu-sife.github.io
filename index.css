@@ -13,8 +13,8 @@ body {
 a {
   background-image: linear-gradient(
     to right,
-    #54b3d6,
-    #54b3d6 50%,
+    #orange,
+    #orange 50%,
     #000 50%
   );
   background-size: 200% 100%;
