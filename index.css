@@ -16,6 +16,8 @@ a:where(:hover, :focus-visible) {
 body {
   font-size: 2em;
   text-align: center;
+  color:orange;
+  background-color:#1f1f1f;
 }
 
 a {
