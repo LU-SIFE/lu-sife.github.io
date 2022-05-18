@@ -1,11 +1,11 @@
 html {
 	text-align:center;
-	color:white;
+	color:orange;
 }
 
 body {
 	background-color:#1f1f1f;
-	color:white;
+	color:orange;
 	font-family: Courier New;
 	font-size: 2em;
 }
@@ -28,7 +28,7 @@ a {
 }
 
 a {
-	background: linear-gradient(0deg, slateblue, slateblue) no-repeat right bottom / 0 var(--bg-h);
+	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
@@ -40,7 +40,7 @@ a:where(:hover, :focus-visible) {
 .underline {
 	padding-bottom: 2px;
 	--bg-h: 2px;
-	color:white;
+	color:orange;
 }
 
 a {
