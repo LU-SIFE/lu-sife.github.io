@@ -6,6 +6,7 @@ body {
 	background-color:#1f1f1f;
 	color:orange;
 	font-family: Courier New;
+	font-size: 2em;
 }
 
 a {
@@ -23,24 +24,29 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+	color:white;
 }
 
-a:before{
-  content: '';
-  background: #54b3d6;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
+a {
+	background: linear-gradient(0deg, slateblue, slateblue) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+	color:white;
+}
+a:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+	color:white;
 }
 
-a:hover {
- background-position: 0;
+.underline {
+	padding-bottom: 2px;
+	--bg-h: 2px;
+	color:white;
 }
 
-a:hover::before{
-  width: 100%;
+a {
+	text-decoration: none;
+	color: white;
+	line-height: 1;
 }
