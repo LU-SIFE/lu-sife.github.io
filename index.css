@@ -23,7 +23,7 @@ a {
   padding: 5px 0;
   position: relative;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: orange;
   transition: all 0.3s ease-in-out;
 	color:white;
 }
