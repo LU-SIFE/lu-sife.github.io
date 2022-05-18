@@ -1,2 +1,53 @@
-<link rel="stylesheet" href="index.css">
+
+<style>html {
+	text-align:center;
+	color:white;
+}
+
+body {
+	background-color:#1f1f1f;
+	color:white;
+	font-family: Courier New;
+	font-size: 2em;
+}
+
+a {
+  background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #54b3d6 50%,
+    #000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: orange;
+  transition: all 0.3s ease-in-out;
+}
+
+a {
+	background: linear-gradient(0deg, slateblue, slateblue) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+}
+a:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+.underline {
+	padding-bottom: 2px;
+	--bg-h: 2px;
+	color:white;
+}
+
+a {
+	text-decoration: none;
+	color: orange;
+	line-height: 1;
+}</style>
+
 <a href="https://lu-sife.github.io/Puzzle-Crawler/" class="underline">Puzzle | Crawler</a>
