@@ -48,3 +48,11 @@ a {
 	color: orange;
 	line-height: 1;
 }
+
+#coffee_box {
+	display:absolute;
+	top: 10%;
+	left: 10%;
+	border-style: solid;
+	color:orange;
+}
