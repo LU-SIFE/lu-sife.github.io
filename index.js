@@ -75,7 +75,7 @@ function animate() {
 }
 
 
-window.addEventListener( 'mousemove', onMouseMove, false );
+window.addEventListener( 'mousemove', onMouseMove, false);
 mouse = new THREE.Vector2();
 raycaster = new THREE.Raycaster();
 mouse.x = -1;
