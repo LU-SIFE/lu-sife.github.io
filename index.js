@@ -56,10 +56,6 @@ var color_cycle = "";
 	document.getElementById("door_open").style.color = color_cycle;
 	},10);
 	
-	
-
-
-
 
 function animate() {
 	requestAnimationFrame( animate );
