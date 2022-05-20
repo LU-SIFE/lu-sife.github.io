@@ -14,7 +14,6 @@ document.getElementById('render_canvas').style.zIndex = '-1';
 const geometry = new THREE.BoxGeometry();
 var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
 const cube = new THREE.Mesh( geometry, material );
-
 scene.background = new THREE.Color( 0x1f1f1f );
 scene.add( cube );
 
@@ -50,10 +49,6 @@ var color_cycle = "";
 	color_cycle = "rgb(" + r + ", " + g + ", " + b + ")";
 	
 	//place rainbow elements here!
-	document.getElementById("rain_bow_1").style.color = color_cycle;
-	document.getElementById("title_big_text").style.color = color_cycle;
-	document.getElementById("s_tier").style.color = color_cycle;
-	document.getElementById("door_open").style.color = color_cycle;
 	},10);
 	
 
