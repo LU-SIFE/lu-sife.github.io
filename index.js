@@ -1,6 +1,6 @@
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
+var mouse, raycaster;
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.domElement.id = 'render_canvas';
@@ -13,8 +13,9 @@ document.getElementById('render_canvas').style.zIndex = '-1';
 
 const geometry = new THREE.BoxGeometry();
 var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
-const cube = new THREE.Mesh( geometry, material );
+var cube = new THREE.Mesh( geometry, material );
 scene.background = new THREE.Color( 0x1f1f1f );
+cube.userData = { URL: "https://lu-sife.github.io/Puzzle-Crawler/"};
 scene.add( cube );
 
 camera.position.z = 5;
@@ -50,13 +51,44 @@ var color_cycle = "";
 	
 	//place rainbow elements here!
 	},10);
+function hoverPieces() {
 	
+	raycaster.setFromCamera(mouse, camera);
+	const intersects = 	raycaster.intersectObjects(scene.children);
+	if (intersects.length > 0) {
+		
+    const newMaterial = intersects[0].object.material.clone();
+    newMaterial.transparent = true;
+    newMaterial.opacity = 0.5;
+    intersects[0].object.material = newMaterial;
+	}
+	
+}
+
 
 function animate() {
-	requestAnimationFrame( animate );
+	window.requestAnimationFrame( animate );
 	cube.rotation.x += 0.01;
 	cube.rotation.y += 0.01;
-	cube.material.color.set(color_cycle);
+	hoverPieces();
 	renderer.render( scene, camera );
 }
+
+
+window.addEventListener( 'mousemove', onMouseMove, false );
+mouse = new THREE.Vector2();
+raycaster = new THREE.Raycaster();
+mouse.x = -1;
+mouse.y = -1;
+function onMouseMove( event ) {
+	
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+}
+function onMouseClick() {
+	window.open(intersects[0].object.userData.URL, '_blank');
+}
+
+
+
 animate();
