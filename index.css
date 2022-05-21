@@ -1,4 +1,5 @@
 html {
+	background-color:#1f1f1f;
 	text-align:center;
 	color:orange;
 }
@@ -87,8 +88,4 @@ a {
 #coffee_box:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
-}
-
-#render_canvas {
-	position:absolute;
 }

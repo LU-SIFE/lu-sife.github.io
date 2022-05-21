@@ -1,6 +1,9 @@
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 var mouse, raycaster;
+var last_intersect;
+var intersection_counter = 0;
+var currently_moving = 0;
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.domElement.id = 'render_canvas';
@@ -10,17 +13,29 @@ document.getElementById('render_canvas').style.top = '0';
 document.getElementById('render_canvas').style.left = '0';
 document.getElementById('render_canvas').style.zIndex = '-1';
 
-
+const quaternion = new THREE.Quaternion(0, 0, 0, 0);
+const quaternion2 = new THREE.Quaternion(0.5, 0.5, 0, 0.5);
+const quaternion3 = new THREE.Quaternion(0.5, 0, 0, -0.5);
 const geometry = new THREE.BoxGeometry();
+geometry.applyQuaternion( quaternion );
 var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
+var material2 = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var cube = new THREE.Mesh( geometry, material );
 scene.background = new THREE.Color( 0x1f1f1f );
-cube.userData = { URL: "https://lu-sife.github.io/Puzzle-Crawler/"};
+cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
+
 scene.add( cube );
+
+
+var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: 0x00ff00, side: THREE.BackSide } );
+	var outlineMesh = new THREE.Mesh( geometry, outlineMaterial2 );
+	outlineMesh.scale.multiplyScalar(1.15);
+	scene.add( outlineMesh );
+
 
 camera.position.z = 5;
 
-
+var bobbing_counter = 0;
 var r = 255;
 var g = 0;
 var b = 255;
@@ -55,12 +70,18 @@ function hoverPieces() {
 	
 	raycaster.setFromCamera(mouse, camera);
 	const intersects = 	raycaster.intersectObjects(scene.children);
-	if (intersects.length > 0) {
+	if (intersects.length > 1) {
 		
+		currently_moving = 1;
     const newMaterial = intersects[0].object.material.clone();
-    newMaterial.transparent = true;
-    newMaterial.opacity = 0.5;
+    newMaterial.color.setHex(0xff8c00);
     intersects[0].object.material = newMaterial;
+	last_intersect = intersects;
+	intersection_counter = 1;
+	} else {
+		currently_moving = 0;
+		cube.material = material2;
+		intersection_counter = 0;
 	}
 	
 }
@@ -68,25 +89,67 @@ function hoverPieces() {
 
 function animate() {
 	window.requestAnimationFrame( animate );
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
+	if (currently_moving != 1) {
+		
+		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+		cube.quaternion.rotateTowards(quaternion2, 0.1);
+	} else {
+		
+		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
+		cube.quaternion.rotateTowards(quaternion3, 0.1);
+		
+	}
+	
+	if (bobbing_counter == 0) {
+		if (cube.position.y < 0.20) {
+			
+			outlineMesh.position.y += 0.005;
+			cube.position.y += 0.005;
+		} else {
+			bobbing_counter = 1;
+		}
+		
+	} else {
+		if (cube.position.y > -0.20) {
+			outlineMesh.position.y -= 0.005;
+			cube.position.y -= 0.005;
+		} else {
+			bobbing_counter = 0;
+		}
+	}
+	
+	
 	hoverPieces();
 	renderer.render( scene, camera );
 }
 
 
+
+window.addEventListener('click', onMouseClick, false);
 window.addEventListener( 'mousemove', onMouseMove, false);
 mouse = new THREE.Vector2();
 raycaster = new THREE.Raycaster();
 mouse.x = -1;
 mouse.y = -1;
 function onMouseMove( event ) {
-	
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
 function onMouseClick() {
-	window.open(intersects[0].object.userData.URL, '_blank');
+	if (intersection_counter == 1) {
+		window.open(cube.userData.URL, '_blank');
+	}
+	
+}
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
 }
 
 
