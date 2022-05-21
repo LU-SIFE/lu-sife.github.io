@@ -86,7 +86,6 @@ function hoverPieces() {
 	
 }
 
-
 function animate() {
 	window.requestAnimationFrame( animate );
 	if (currently_moving != 1) {
@@ -118,12 +117,9 @@ function animate() {
 		}
 	}
 	
-	
 	hoverPieces();
 	renderer.render( scene, camera );
 }
-
-
 
 window.addEventListener('click', onMouseClick, false);
 window.addEventListener( 'mousemove', onMouseMove, false);
@@ -151,7 +147,5 @@ function onWindowResize(){
     renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
-
-
 
 animate();
