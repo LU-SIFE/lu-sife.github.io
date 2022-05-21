@@ -32,6 +32,7 @@ a {
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
+
 a:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
@@ -52,15 +53,16 @@ a {
 #coffee_box {
 	font-size:0.75em;
 	position:absolute;
-	display:block;
 	width:fit-content;
 	padding-left:25px;
 	padding-right:25px;
 	padding-top:15px;
 	padding-bottom:15px;
+	left:1%;
 	top: 2%;
 	border: 1px solid;
 	color:orange;
+	display:inline-block;
 }
 
 #coffee_box {
@@ -88,4 +90,15 @@ a {
 #coffee_box:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
+}
+
+
+#puzzle_crawler {
+	top:65%;
+}
+
+h1 {
+	position:absolute;
+	margin-top:0;
+	display:inline-block;
 }

@@ -4,6 +4,7 @@ var mouse, raycaster;
 var last_intersect;
 var intersection_counter = 0;
 var currently_moving = 0;
+scene.background = new THREE.Color( 0x1f1f1f );
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.domElement.id = 'render_canvas';
@@ -21,7 +22,6 @@ geometry.applyQuaternion( quaternion );
 var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var material2 = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var cube = new THREE.Mesh( geometry, material );
-scene.background = new THREE.Color( 0x1f1f1f );
 cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
 
 scene.add( cube );
