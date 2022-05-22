@@ -10,8 +10,7 @@ scene.background = new THREE.Color( 0x1f1f1f );
 //sets camera perspective depending on viewport
 if (window.innerWidth + 50 >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
-}
-if (!(window.innerWidth + 50 >= window.innerHeight)) {
+} else {
 	var camera = new THREE.PerspectiveCamera( 85, window.innerWidth / window.innerHeight, 0.1, 1000 );
 }
 
@@ -150,11 +149,8 @@ function hoverPieces() {
 	
 //checks if there is an object in the raycaster's path
 	if (intersects.length > 1) {
-		if (intersects[0].object == cube) {
-			currently_moving = 1;
-		} else if (intersects[0].object == cube2) {
-			currently_moving = 2;
-		}
+		
+		
 //clones the objects material to revert it later
 		const newMaterial = intersects[0].object.material.clone();
 //changes the objects material to the new color
@@ -164,6 +160,14 @@ function hoverPieces() {
 		last_intersect = intersects;
 		intersection_counter = 1;
 		intersect_link = intersects[0].object.userData.URL;
+//checks which onject is being hovered
+		if (intersects[0].object == cube) {
+			currently_moving = 1;
+			return;
+		}
+		if (intersects[0].object == cube2) {
+			currently_moving = 2;
+		}
 		return;
 	}
 //reverts rotation amd material
@@ -173,33 +177,31 @@ function hoverPieces() {
 		intersection_counter = 0;
 }
 
-//main animation function
-//DO NOT INCLUDE RETURN;
-function animate() {
-	window.requestAnimationFrame( animate );
-	
+function quaternion_rotate() {
 //cube selection
 	if (currently_moving == 1) {
-		
 		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
 		cube.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-		cube2.quaternion.rotateTowards(quaternion2, 0.1);
+	outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+	cube2.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
 //cube2
 	} else if (currently_moving == 2) {
-		
 		outlineMesh2.quaternion.rotateTowards(quaternion3, 0.1);
 		cube2.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-		cube.quaternion.rotateTowards(quaternion2, 0.1);
-//revert rotation
-	} else {
-		
-		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-		cube2.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-		cube.quaternion.rotateTowards(quaternion2, 0.1);
+	outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+	cube.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
 	}
+//revert rotations
+	outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+	cube2.quaternion.rotateTowards(quaternion2, 0.1);
+	outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+	cube.quaternion.rotateTowards(quaternion2, 0.1);
+}
+
+//cube1 hover effect
+function cube_bob() {
 	
 	if (hover_offscreen == 1) {
 		if (bobbing_counter == 0) {
@@ -207,41 +209,55 @@ function animate() {
 				
 				outlineMesh.position.y += 0.005;
 				cube.position.y += 0.005;
-			} else {
-				bobbing_counter = 1;
+				return;
 			}
-			
-		} else  if (bobbing_counter == 1) {
+			bobbing_counter = 1;
+			return;
+		}
+		if (bobbing_counter == 1) {
 			if (cube.position.y > -0.20) {
 				
 				outlineMesh.position.y -= 0.005;
 				cube.position.y -= 0.005;
-			} else {
-				bobbing_counter = 0;
+				return;
 			}
+		bobbing_counter = 0;
 		}
 	}
+}
+
+//cube2 hover effect
+function cube2_bob() {
 	
 	if (hover_offscreen2 == 1) {
-		if (bobbing_counter2 == 0) {
-			if (cube2.position.y < 0.20) {
+			if (bobbing_counter2 == 0 && cube2.position.y < 0.20) {
 				outlineMesh2.position.y += 0.005;
 				cube2.position.y += 0.005;
-			} else {
-				bobbing_counter2 = 1;
+				return;
 			}
-		} else if (bobbing_counter2 == 1) {
-			if (cube2.position.y > -0.20) {
-				
-				outlineMesh2.position.y -= 0.005;
-				cube2.position.y -= 0.005;
-			} else {
-				bobbing_counter2 = 0;
-			}
+			
+		bobbing_counter2 = 1;
+		
+		if (bobbing_counter2 == 1 && cube2.position.y > -0.20) {
+			
+			outlineMesh2.position.y -= 0.005;
+			cube2.position.y -= 0.005;
+			return;
 		}
+		bobbing_counter2 = 0;
 	}
+}
+
+//main animation function
+//DO NOT INCLUDE RETURN;
+function animate() {
+	window.requestAnimationFrame( animate );
 	
+	quaternion_rotate();
+	cube_bob();
+	cube2_bob();
 	hoverPieces();
+	
 	renderer.render( scene, camera );
 }
 
