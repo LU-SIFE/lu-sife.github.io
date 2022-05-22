@@ -2,46 +2,40 @@ html {
 	background-color:#1f1f1f;
 	text-align:center;
 	color:orange;
-}
-
-body {
-	color:orange;
 	font-family: Courier New;
 	font-size: 2em;
 }
 
 a, button {
 	border-style:none;
-  background-image: linear-gradient(
+	background-image: linear-gradient(
     to right,
     #orange,
     #orange 50%,
     #000 50%
-  );
-  background-size: 200% 100%;
-  background-position: -100%;
-  display: inline-block;
-  padding: 5px 0;
-  position: relative;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: orange;
-  transition: all 0.3s ease-in-out;
-}
-
-a, button {
+	);
+	background-size: 200% 100%;
+	background-position: -100%;
+	display: inline-block;
+	padding: 5px 0;
+	position: relative;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: orange;
+	transition: all 0.3s ease-in-out;
 	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
 
+
 a:where(:hover, :focus-visible) {
-  background-size: 100% var(--bg-h);
-  background-position-x: left;
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
 }
 
 button:where(:hover, :focus-visible) {
-  background-size: 100% var(--bg-h);
-  background-position-x: left;
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
 }
 
 .underline {
@@ -57,6 +51,7 @@ a, button {
 	line-height: 1;
 }
 
+
 #coffee_box {
 	font-size:0.75em;
 	position:absolute;
@@ -70,33 +65,25 @@ a, button {
 	border: 1px solid;
 	color:orange;
 	display:inline-block;
-}
-
-#coffee_box {
 	background-image: linear-gradient(
 		to right,
 		#orange,
 		#orange 50%,
 		#000 50%
 	);
-	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-	--bg-h: 100%;
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: orange;
 	transition: all 0.3s ease-in-out;
-}
-
-#coffee_box {
 	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
+
 #coffee_box:where(:hover, :focus-visible) {
-  background-size: 100% var(--bg-h);
-  background-position-x: left;
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
 }
 
 
@@ -109,21 +96,18 @@ p {
 	font-size:2.4em;
 }
 
-.prev_progress_button {
+.prev_progress_button, .next_progress_button {
 	font-size:2.75em;
 	position:absolute;
 	text-decoration: none;
 	padding: 8px 16px;
-	left:5%;
 	top:45%;
 }
 
+.prev_progress_button {
+	left:5%;
+}
+
 .next_progress_button {
-	
-	font-size:2.75em;
-	position:absolute;
-	text-decoration: none;
-	padding: 8px 16px;
-	top:45%;
 	right:5%;
 }
