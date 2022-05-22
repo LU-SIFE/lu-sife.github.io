@@ -10,7 +10,8 @@ body {
 	font-size: 2em;
 }
 
-a {
+a, button {
+	border-style:none;
   background-image: linear-gradient(
     to right,
     #orange,
@@ -27,13 +28,18 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a {
+a, button {
 	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
 
 a:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+button:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
 }
@@ -45,7 +51,7 @@ a:where(:hover, :focus-visible) {
 	color:orange;
 }
 
-a {
+a, button {
 	text-decoration: none;
 	color: orange;
 	line-height: 1;
@@ -101,4 +107,23 @@ a {
 
 p {
 	font-size:2.4em;
+}
+
+.prev_progress_button {
+	font-size:2.75em;
+	position:absolute;
+	text-decoration: none;
+	padding: 8px 16px;
+	left:5%;
+	top:45%;
+}
+
+.next_progress_button {
+	
+	font-size:2.75em;
+	position:absolute;
+	text-decoration: none;
+	padding: 8px 16px;
+	top:45%;
+	right:5%;
 }
