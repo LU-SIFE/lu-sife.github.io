@@ -1,6 +1,6 @@
 const scene = new THREE.Scene();
 
-if (window.innerWidth >= window.innerHeight) {
+if (window.innerWidth + 50 >= window.innerHeight) {
 	
 	var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
 } else {
@@ -152,7 +152,15 @@ function onWindowResize(){
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
+	
+	if (window.innerWidth + 50 >= window.innerHeight) {
+		camera.fov = 50;
+		camera.updateProjectionMatrix();
 
+	} else {
+		camera.fov = 85;
+		camera.updateProjectionMatrix();
+	}
 }
 
 animate();
