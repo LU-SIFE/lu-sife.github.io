@@ -52,7 +52,7 @@ a {
 }
 
 #coffee_box {
-	font-size:1em;
+	font-size:0.8em;
 	position:absolute;
 	width:fit-content;
 	padding-left:25px;
@@ -60,7 +60,7 @@ a {
 	padding-top:15px;
 	padding-bottom:15px;
 	left:1%;
-	top: 2%;
+	bottom: 2%;
 	border: 1px solid;
 	color:orange;
 	display:inline-block;
