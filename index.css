@@ -52,7 +52,7 @@ a {
 }
 
 #coffee_box {
-	font-size:1.2em;
+	font-size:1em;
 	position:absolute;
 	width:fit-content;
 	padding-left:25px;
@@ -95,6 +95,7 @@ a {
 
 
 #puzzle_crawler {
+	font-size:2.1em;
 	top:50%;
 }
 
