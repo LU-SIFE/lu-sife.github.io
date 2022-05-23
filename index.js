@@ -22,8 +22,10 @@ var intersection_counter = 0;
 var currently_moving = 0;
 var hover_offscreen = 1;
 var hover_offscreen2 = 1;
+var hover_offscreen3 = 1;
 var bobbing_counter = 0;
 var bobbing_counter2 = 0;
+var bobbing_counter3 = 0;
 
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -54,29 +56,37 @@ var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var material2 = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var material4 = new THREE.MeshBasicMaterial( { side: THREE.BackSide } );
 var outlineMaterial3 = new THREE.MeshBasicMaterial( { color: "purple", side: THREE.BackSide } );
+var outlineMaterial4 = new THREE.MeshBasicMaterial( { color: "pink", side: THREE.BackSide } );
 var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: "green", side: THREE.BackSide } );
 
 //objects
 var cube = new THREE.Mesh( geometry, material4 );
 var cube2 = new THREE.Mesh( geometry, material );
+var cube3 = new THREE.Mesh( geometry, material );
 var outlineMesh = new THREE.Mesh( geometry, outlineMaterial3 );
 var outlineMesh2 = new THREE.Mesh( geometry, outlineMaterial2 );
+var outlineMesh3 = new THREE.Mesh( geometry, outlineMaterial4 );
 
 //object attribute creation/alteration
 cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
 cube2.userData.URL = "https://github.com";
 outlineMesh.scale.multiplyScalar(1.15);
 outlineMesh2.scale.multiplyScalar(1.15);
+outlineMesh3.scale.multiplyScalar(1.15);
 
 //adds object to the scene
 scene.add( cube );
 scene.add( cube2 );
+scene.add( cube3 );
 scene.add( outlineMesh );
 scene.add( outlineMesh2 );
+scene.add( outlineMesh3 );
 
 //sets object positions
 outlineMesh2.position.x += 2;
 cube2.position.x += 2;
+outlineMesh3.position.x -= 2;
+cube3.position.x -= 2;
 camera.position.z = 5;
 
 //color variables
@@ -170,12 +180,16 @@ function hoverPieces() {
 		if (intersects[0].object == cube2) {
 			currently_moving = 2;
 		}
+		if (intersects[0].object == cube3) {
+			currently_moving = 3;
+		}
 		return;
 	}
 //reverts rotation amd material
 		currently_moving = 0;
 		cube.material = material2;
 		cube2.material = material2;
+		cube3.material = material2;
 		intersection_counter = 0;
 }
 
@@ -184,15 +198,27 @@ function quaternion_rotate() {
 	if (currently_moving == 1) {
 		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
 		cube.quaternion.rotateTowards(quaternion3, 0.1);
-	outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-	cube2.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+		cube2.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
+		cube3.quaternion.rotateTowards(quaternion2, 0.1);
 		return;
 //cube2
 	} else if (currently_moving == 2) {
 		outlineMesh2.quaternion.rotateTowards(quaternion3, 0.1);
 		cube2.quaternion.rotateTowards(quaternion3, 0.1);
-	outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-	cube.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+		cube.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
+		cube3.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
+	} else if (currently_moving == 3) {
+		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+		cube2.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+		cube.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh3.quaternion.rotateTowards(quaternion3, 0.1);
+		cube3.quaternion.rotateTowards(quaternion3, 0.1);
 		return;
 	}
 //revert rotations
@@ -200,6 +226,8 @@ function quaternion_rotate() {
 	cube2.quaternion.rotateTowards(quaternion2, 0.1);
 	outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
 	cube.quaternion.rotateTowards(quaternion2, 0.1);
+	outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
+	cube3.quaternion.rotateTowards(quaternion2, 0.1);
 }
 
 //cube1 hover effect
@@ -250,6 +278,27 @@ function cube2_bob() {
 	}
 }
 
+function cube3_bob() {
+	
+	if (hover_offscreen3 == 1) {
+			if (bobbing_counter3 == 0 && cube3.position.y < 0.20) {
+				outlineMesh3.position.y += 0.005;
+				cube3.position.y += 0.005;
+				return;
+			}
+			
+		bobbing_counter3 = 1;
+		
+		if (bobbing_counter3 == 1 && cube3.position.y > -0.20) {
+			
+			outlineMesh3.position.y -= 0.005;
+			cube3.position.y -= 0.005;
+			return;
+		}
+		bobbing_counter3 = 0;
+	}
+}
+
 //main animation function
 //DO NOT INCLUDE RETURN;
 function animate() {
@@ -258,6 +307,7 @@ function animate() {
 	quaternion_rotate();
 	cube_bob();
 	cube2_bob();
+	cube3_bob();
 	hoverPieces();
 	link_change();
 	renderer.render( scene, camera );
@@ -266,10 +316,12 @@ function animate() {
 //object position calculation on next button press
 function next_selection() {
 	
-	if (cube.position.x <= -4 || cube2.position.x <= -4) {
+	if (cube.position.x <= -4 || cube2.position.x <= -4 || cube3.position.x <= -4) {
 		return;
 	}
 	
+	outlineMesh3.position.x -= 2;
+	cube3.position.x -= 2;
 	outlineMesh2.position.x -= 2;
 	cube2.position.x -= 2;
 	outlineMesh.position.x -= 2;
@@ -302,6 +354,20 @@ function next_selection() {
 			hover_offscreen2 = 1;
 		}
 	}
+	
+	if (cube3.position.x <= -4) {
+		cube3.position.y -= 100;
+		outlineMesh3.position.y -= 100;
+		bobbing_counter3 = 2;
+		hover_offscreen3 = 0;
+	} else if (bobbing_counter3 == 3) {
+		cube3.position.y += 100;
+		outlineMesh3.position.y += 100;
+		if (cube3.position.x > -3) {
+			bobbing_counter3 = 0;
+			hover_offscreen3 = 1;
+		}
+	}
 }
 
 //object position calculation on previous button press
@@ -315,6 +381,8 @@ function prev_selection() {
 	cube.position.x += 2;
 	outlineMesh2.position.x += 2;
 	cube2.position.x += 2;
+	outlineMesh3.position.x += 2;
+	cube3.position.x += 2;
 	
 	if (cube.position.x >= 4) {
 		cube.position.y -= 100;
@@ -343,6 +411,21 @@ function prev_selection() {
 		if (cube2.position.x < 3) {
 			bobbing_counter2 = 0;
 			hover_offscreen2 = 1;
+		}
+	}
+	
+	if (cube3.position.x >= 4) {
+		cube3.position.y -= 100;
+		outlineMesh3.position.y -= 100;
+		bobbing_counter3 = 3;
+		hover_offscreen3 = 0;
+	} else if (bobbing_counter3 == 2) {
+		
+		cube3.position.y += 100;
+		outlineMesh3.position.y += 100;
+		if (cube3.position.x < 3) {
+			bobbing_counter3 = 0;
+			hover_offscreen3 = 1;
 		}
 	}
 }
