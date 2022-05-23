@@ -264,19 +264,23 @@ function animate() {
 //object position calculation on next button press
 function next_selection() {
 	
+	if (cube.position.x <= -4 || cube2.position.x <= -4) {
+		return;
+	}
+	
 	outlineMesh2.position.x -= 2;
 	cube2.position.x -= 2;
 	outlineMesh.position.x -= 2;
 	cube.position.x -= 2;
 	
 	if (cube.position.x <= -4) {
-		cube.position.y -= 2;
-		outlineMesh.position.y -= 2;
+		cube.position.y -= 100;
+		outlineMesh.position.y -= 100;
 		bobbing_counter = 2;
 		hover_offscreen = 0;
 	} else if (bobbing_counter == 3) {
-		cube.position.y += 2;
-		outlineMesh.position.y += 2;
+		cube.position.y += 100;
+		outlineMesh.position.y += 100;
 		if (cube.position.x > -3) {
 			bobbing_counter = 0;
 			hover_offscreen = 1;
@@ -284,13 +288,13 @@ function next_selection() {
 	}
 	
 	if (cube2.position.x <= -4) {
-		cube2.position.y -= 2;
-		outlineMesh2.position.y -= 2;
+		cube2.position.y -= 100;
+		outlineMesh2.position.y -= 100;
 		bobbing_counter2 = 2;
 		hover_offscreen2 = 0;
 	} else if (bobbing_counter2 == 3) {
-		cube2.position.y += 2;
-		outlineMesh2.position.y += 2;
+		cube2.position.y += 100;
+		outlineMesh2.position.y += 100;
 		if (cube2.position.x > -3) {
 			bobbing_counter2 = 0;
 			hover_offscreen2 = 1;
@@ -301,20 +305,24 @@ function next_selection() {
 //object position calculation on previous button press
 function prev_selection() {
 	
+	if (cube.position.x >= 4 || cube2.position.x >= 4) {
+		return;
+	}
+	
 	outlineMesh.position.x += 2;
 	cube.position.x += 2;
 	outlineMesh2.position.x += 2;
 	cube2.position.x += 2;
 	
 	if (cube.position.x >= 4) {
-		cube.position.y -= 2;
-		outlineMesh.position.y -= 2;
+		cube.position.y -= 100;
+		outlineMesh.position.y -= 100;
 		bobbing_counter = 3;
 		hover_offscreen = 0;
 	} else if (bobbing_counter == 2) {
 		
-		cube.position.y += 2;
-		outlineMesh.position.y += 2;
+		cube.position.y += 100;
+		outlineMesh.position.y += 100;
 		if (cube.position.x < 3) {
 			bobbing_counter = 0;
 			hover_offscreen = 1;
@@ -322,14 +330,14 @@ function prev_selection() {
 	}
 	
 	if (cube2.position.x >= 4) {
-		cube2.position.y -= 2;
-		outlineMesh2.position.y -= 2;
+		cube2.position.y -= 100;
+		outlineMesh2.position.y -= 100;
 		bobbing_counter2 = 3;
 		hover_offscreen2 = 0;
 	} else if (bobbing_counter2 == 2) {
 		
-		cube2.position.y += 2;
-		outlineMesh2.position.y += 2;
+		cube2.position.y += 100;
+		outlineMesh2.position.y += 100;
 		if (cube2.position.x < 3) {
 			bobbing_counter2 = 0;
 			hover_offscreen2 = 1;
