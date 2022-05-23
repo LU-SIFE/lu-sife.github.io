@@ -264,7 +264,7 @@ function animate() {
 }
 
 //object position calculation on next button press
-function prev_selection() {
+function next_selection() {
 	
 	if (cube.position.x <= -4 || cube2.position.x <= -4) {
 		return;
@@ -305,7 +305,7 @@ function prev_selection() {
 }
 
 //object position calculation on previous button press
-function next_selection() {
+function prev_selection() {
 	
 	if (cube.position.x >= 4 || cube2.position.x >= 4) {
 		return;
