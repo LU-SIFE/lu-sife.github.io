@@ -49,13 +49,15 @@ const quaternion3 = new THREE.Quaternion(0.5, 0, 0, -0.5);
 geometry.applyQuaternion( quaternion );
 
 //materials
+//no clue why. but material4 creates 2 colors for outlinematerial2 and 3.
 var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
 var material2 = new THREE.MeshBasicMaterial( { color: 'orange' } );
-var outlineMaterial3 = new THREE.MeshBasicMaterial( { color: "black", side: THREE.BackSide } );
-var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: 0x00ff00, side: THREE.BackSide } );
+var material4 = new THREE.MeshBasicMaterial( { side: THREE.BackSide } );
+var outlineMaterial3 = new THREE.MeshBasicMaterial( { color: "purple", side: THREE.BackSide } );
+var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: "green", side: THREE.BackSide } );
 
 //objects
-var cube = new THREE.Mesh( geometry, material );
+var cube = new THREE.Mesh( geometry, material4 );
 var cube2 = new THREE.Mesh( geometry, material );
 var outlineMesh = new THREE.Mesh( geometry, outlineMaterial3 );
 var outlineMesh2 = new THREE.Mesh( geometry, outlineMaterial2 );
@@ -257,12 +259,12 @@ function animate() {
 	cube_bob();
 	cube2_bob();
 	hoverPieces();
-	
+	link_change();
 	renderer.render( scene, camera );
 }
 
 //object position calculation on next button press
-function next_selection() {
+function prev_selection() {
 	
 	if (cube.position.x <= -4 || cube2.position.x <= -4) {
 		return;
@@ -303,7 +305,7 @@ function next_selection() {
 }
 
 //object position calculation on previous button press
-function prev_selection() {
+function next_selection() {
 	
 	if (cube.position.x >= 4 || cube2.position.x >= 4) {
 		return;
@@ -342,6 +344,19 @@ function prev_selection() {
 			bobbing_counter2 = 0;
 			hover_offscreen2 = 1;
 		}
+	}
+}
+
+function link_change() {
+	if (cube.position.x == 0) {
+		document.getElementById("puzzle_crawler").href="https://lu-sife.github.io/Puzzle-Crawler/";
+		document.getElementById("puzzle_crawler").innerHTML = "Puzzle Crawler";
+		return;
+	}
+	if (cube2.position.x == 0) {
+		document.getElementById("puzzle_crawler").href="https://github.com/LU-SIFE";
+		document.getElementById("puzzle_crawler").innerHTML = "My Github";
+		return;
 	}
 }
 
