@@ -29,6 +29,7 @@ var bobbing_counter3 = 0;
 
 //position selection array
 var position_array = [3, 1, 2];
+var prev_position_array = [3, 1, 2];
 
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -341,12 +342,16 @@ function cube3_bob() {
 
 //object position calculation on next button press
 function next_selection() {
+
+	prev_position_array = position_array;
 	position_array.push(position_array.shift());
 	calc_position();
 }
 
 //object position calculation on previous button press
 function prev_selection() {
+
+	prev_position_array = position_array;
 	position_array.unshift(position_array.pop());
 	calc_position();
 }
