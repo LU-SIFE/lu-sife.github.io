@@ -199,38 +199,68 @@ function hoverPieces() {
 function quaternion_rotate() {
 //cube selection
 	if (currently_moving == 1) {
-		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
-		cube.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-		cube2.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
-		cube3.quaternion.rotateTowards(quaternion2, 0.1);
+		quaternion_rotate_towards(1);
+		quaternion_revert(2);
+		quaternion_revert(3);
 		return;
 //cube2
 	} else if (currently_moving == 2) {
-		outlineMesh2.quaternion.rotateTowards(quaternion3, 0.1);
-		cube2.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-		cube.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
-		cube3.quaternion.rotateTowards(quaternion2, 0.1);
+		quaternion_rotate_towards(2);
+		quaternion_revert(1);
+		quaternion_revert(3);
 		return;
 	} else if (currently_moving == 3) {
-		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-		cube2.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-		cube.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh3.quaternion.rotateTowards(quaternion3, 0.1);
-		cube3.quaternion.rotateTowards(quaternion3, 0.1);
+		quaternion_rotate_towards(3);
+		quaternion_revert(1);
+		quaternion_revert(2);
 		return;
 	}
 //revert rotations
-	outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
-	cube2.quaternion.rotateTowards(quaternion2, 0.1);
-	outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
-	cube.quaternion.rotateTowards(quaternion2, 0.1);
-	outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
-	cube3.quaternion.rotateTowards(quaternion2, 0.1);
+	quaternion_revert(1);
+	quaternion_revert(2);
+	quaternion_revert(3);
+}
+//reverts the quaternions to quat2 if not selected
+function quaternion_revert(quat_select) {
+
+	if (quat_select == 1) {
+		cube.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
+	}
+
+	if (quat_select == 2) {
+		cube2.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
+	}
+
+	if (quat_select == 3) {
+		cube3.quaternion.rotateTowards(quaternion2, 0.1);
+		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
+		return;
+	}
+}
+//rotates the quaternion
+function quaternion_rotate_towards(quat_select) {
+
+	if (quat_select == 1) {
+		cube.quaternion.rotateTowards(quaternion3, 0.1);
+		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
+		return;
+	}
+
+	if (quat_select == 2) {
+		cube2.quaternion.rotateTowards(quaternion3, 0.1);
+		outlineMesh2.quaternion.rotateTowards(quaternion3, 0.1);
+		return;
+	}
+
+	if (quat_select == 3) {
+		cube3.quaternion.rotateTowards(quaternion3, 0.1);
+		outlineMesh3.quaternion.rotateTowards(quaternion3, 0.1);
+		return;
+	}
 }
 
 //cube1 hover effect
@@ -302,20 +332,6 @@ function cube3_bob() {
 	}
 }
 
-//main animation function
-//DO NOT INCLUDE RETURN;
-function animate() {
-	window.requestAnimationFrame( animate );
-	
-	quaternion_rotate();
-	cube_bob();
-	cube2_bob();
-	cube3_bob();
-	hoverPieces();
-	link_change();
-	renderer.render( scene, camera );
-}
-
 //object position calculation on next button press
 function next_selection() {
 	position_array.push(position_array.shift());
@@ -327,7 +343,6 @@ function prev_selection() {
 	position_array.unshift(position_array.pop());
 	calc_position();
 }
-
 
 function calc_position() {
 	//cube3 in first position
@@ -346,7 +361,6 @@ function calc_position() {
 		outlineMesh3.position.x = 2;
 	}
 
-
 	//cube2 in first position
 	if (position_array[0] == 2) {
 		cube2.position.x = -2;
@@ -362,7 +376,6 @@ function calc_position() {
 		cube2.position.x = 2;
 		outlineMesh2.position.x = 2;
 	}
-
 
 	//cube1 in first position
 	if (position_array[0] == 1) {
@@ -380,8 +393,6 @@ function calc_position() {
 		outlineMesh.position.x = 2;
 	}
 }
-
-
 
 function link_change() {
 	if (cube.position.x == 0) {
@@ -401,8 +412,18 @@ function link_change() {
 	}
 }
 
-animate();
-//Instead of using complex y offsets, store the cycling values in an array, and use
-//that to determine the position of quaternions.
+//main animation function
+//DO NOT INCLUDE RETURN;
+function animate() {
+	window.requestAnimationFrame( animate );
+	
+	quaternion_rotate();
+	cube_bob();
+	cube2_bob();
+	cube3_bob();
+	hoverPieces();
+	link_change();
+	renderer.render( scene, camera );
+}
 
-//fix this from lines 318 - 432.
+animate();
