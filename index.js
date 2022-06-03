@@ -27,6 +27,8 @@ var bobbing_counter = 0;
 var bobbing_counter2 = 0;
 var bobbing_counter3 = 0;
 
+//position selection array
+var position_array = [3, 1, 2];
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -316,120 +318,70 @@ function animate() {
 
 //object position calculation on next button press
 function next_selection() {
-	
-	if (cube.position.x <= -4 || cube2.position.x <= -4 || cube3.position.x <= -4) {
-		return;
-	}
-	
-	outlineMesh3.position.x -= 2;
-	cube3.position.x -= 2;
-	outlineMesh2.position.x -= 2;
-	cube2.position.x -= 2;
-	outlineMesh.position.x -= 2;
-	cube.position.x -= 2;
-	
-	if (cube.position.x <= -4) {
-		cube.position.y -= 100;
-		outlineMesh.position.y -= 100;
-		bobbing_counter = 2;
-		hover_offscreen = 0;
-	} else if (bobbing_counter == 3) {
-		cube.position.y += 100;
-		outlineMesh.position.y += 100;
-		if (cube.position.x > -3) {
-			bobbing_counter = 0;
-			hover_offscreen = 1;
-		}
-	}
-	
-	if (cube2.position.x <= -4) {
-		cube2.position.y -= 100;
-		outlineMesh2.position.y -= 100;
-		bobbing_counter2 = 2;
-		hover_offscreen2 = 0;
-	} else if (bobbing_counter2 == 3) {
-		cube2.position.y += 100;
-		outlineMesh2.position.y += 100;
-		if (cube2.position.x > -3) {
-			bobbing_counter2 = 0;
-			hover_offscreen2 = 1;
-		}
-	}
-	
-	if (cube3.position.x <= -4) {
-		cube3.position.y -= 100;
-		outlineMesh3.position.y -= 100;
-		bobbing_counter3 = 2;
-		hover_offscreen3 = 0;
-	} else if (bobbing_counter3 == 3) {
-		cube3.position.y += 100;
-		outlineMesh3.position.y += 100;
-		if (cube3.position.x > -3) {
-			bobbing_counter3 = 0;
-			hover_offscreen3 = 1;
-		}
-	}
+	position_array.push(position_array.shift());
+	calc_position();
 }
 
 //object position calculation on previous button press
 function prev_selection() {
-	
-	if (cube.position.x >= 4 || cube2.position.x >= 4) {
-		return;
+	position_array.unshift(position_array.pop());
+	calc_position();
+}
+
+
+function calc_position() {
+	//cube3 in first position
+	if (position_array[0] == 3) {
+		cube3.position.x = -2;
+		outlineMesh3.position.x = -2;
 	}
-	
-	outlineMesh.position.x += 2;
-	cube.position.x += 2;
-	outlineMesh2.position.x += 2;
-	cube2.position.x += 2;
-	outlineMesh3.position.x += 2;
-	cube3.position.x += 2;
-	
-	if (cube.position.x >= 4) {
-		cube.position.y -= 100;
-		outlineMesh.position.y -= 100;
-		bobbing_counter = 3;
-		hover_offscreen = 0;
-	} else if (bobbing_counter == 2) {
-		
-		cube.position.y += 100;
-		outlineMesh.position.y += 100;
-		if (cube.position.x < 3) {
-			bobbing_counter = 0;
-			hover_offscreen = 1;
-		}
+	//cube3 in second/middle
+	if (position_array[1] == 3) {
+		cube3.position.x = 0;
+		outlineMesh3.position.x = 0;
 	}
-	
-	if (cube2.position.x >= 4) {
-		cube2.position.y -= 100;
-		outlineMesh2.position.y -= 100;
-		bobbing_counter2 = 3;
-		hover_offscreen2 = 0;
-	} else if (bobbing_counter2 == 2) {
-		
-		cube2.position.y += 100;
-		outlineMesh2.position.y += 100;
-		if (cube2.position.x < 3) {
-			bobbing_counter2 = 0;
-			hover_offscreen2 = 1;
-		}
+	//cube3 in last position
+	if (position_array[2] == 3) {
+		cube3.position.x = 2;
+		outlineMesh3.position.x = 2;
 	}
-	
-	if (cube3.position.x >= 4) {
-		cube3.position.y -= 100;
-		outlineMesh3.position.y -= 100;
-		bobbing_counter3 = 3;
-		hover_offscreen3 = 0;
-	} else if (bobbing_counter3 == 2) {
-		
-		cube3.position.y += 100;
-		outlineMesh3.position.y += 100;
-		if (cube3.position.x < 3) {
-			bobbing_counter3 = 0;
-			hover_offscreen3 = 1;
-		}
+
+
+	//cube2 in first position
+	if (position_array[0] == 2) {
+		cube2.position.x = -2;
+		outlineMesh2.position.x = -2;
+	}
+	//cube2 in second/middle
+	if (position_array[1] == 2) {
+		cube2.position.x = 0;
+		outlineMesh2.position.x = 0;
+	}
+	//cube2 in last position
+	if (position_array[2] == 2) {
+		cube2.position.x = 2;
+		outlineMesh2.position.x = 2;
+	}
+
+
+	//cube1 in first position
+	if (position_array[0] == 1) {
+		cube.position.x = -2;
+		outlineMesh.position.x = -2;
+	}
+	//cube1 in second/middle
+	if (position_array[1] == 1) {
+		cube.position.x = 0;
+		outlineMesh.position.x = 0;
+	}
+	//cube1 in last position
+	if (position_array[2] == 1) {
+		cube.position.x = 2;
+		outlineMesh.position.x = 2;
 	}
 }
+
+
 
 function link_change() {
 	if (cube.position.x == 0) {
@@ -450,3 +402,7 @@ function link_change() {
 }
 
 animate();
+//Instead of using complex y offsets, store the cycling values in an array, and use
+//that to determine the position of quaternions.
+
+//fix this from lines 318 - 432.
