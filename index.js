@@ -29,6 +29,7 @@ var bobbing_counter3 = 0;
 
 //position selection array
 var position_array = [3, 1, 2];
+
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -86,10 +87,16 @@ scene.add( outlineMesh2 );
 scene.add( outlineMesh3 );
 
 //sets object positions
-outlineMesh2.position.x += 2;
-cube2.position.x += 2;
-outlineMesh3.position.x -= 2;
-cube3.position.x -= 2;
+outlineMesh2.position.x = 2;
+cube2.position.x = 2;
+outlineMesh3.position.x = -2;
+cube3.position.x = -2;
+
+outlineMesh2.position.z = -1;
+cube2.position.z = -1;
+outlineMesh3.position.z = -1;
+cube3.position.z = -1;
+
 camera.position.z = 5;
 
 //color variables
@@ -349,48 +356,66 @@ function calc_position() {
 	if (position_array[0] == 3) {
 		cube3.position.x = -2;
 		outlineMesh3.position.x = -2;
+		cube3.position.z = -1;
+		outlineMesh3.position.z = -1;
 	}
 	//cube3 in second/middle
 	if (position_array[1] == 3) {
 		cube3.position.x = 0;
 		outlineMesh3.position.x = 0;
+		cube3.position.z = 0;
+		outlineMesh3.position.z = 0;
 	}
 	//cube3 in last position
 	if (position_array[2] == 3) {
 		cube3.position.x = 2;
 		outlineMesh3.position.x = 2;
+		cube3.position.z = -1;
+		outlineMesh3.position.z = -1;
 	}
 
 	//cube2 in first position
 	if (position_array[0] == 2) {
 		cube2.position.x = -2;
 		outlineMesh2.position.x = -2;
+		cube2.position.z = -1;
+		outlineMesh2.position.z = -1;
 	}
 	//cube2 in second/middle
 	if (position_array[1] == 2) {
 		cube2.position.x = 0;
 		outlineMesh2.position.x = 0;
+		cube2.position.z = 0;
+		outlineMesh2.position.z = 0;
 	}
 	//cube2 in last position
 	if (position_array[2] == 2) {
 		cube2.position.x = 2;
 		outlineMesh2.position.x = 2;
+		cube2.position.z = -1;
+		outlineMesh2.position.z = -1;
 	}
 
 	//cube1 in first position
 	if (position_array[0] == 1) {
 		cube.position.x = -2;
 		outlineMesh.position.x = -2;
+		cube.position.z = -1;
+		outlineMesh.position.z = -1;
 	}
 	//cube1 in second/middle
 	if (position_array[1] == 1) {
 		cube.position.x = 0;
 		outlineMesh.position.x = 0;
+		cube.position.z = 0;
+		outlineMesh.position.z = 0;
 	}
 	//cube1 in last position
 	if (position_array[2] == 1) {
 		cube.position.x = 2;
 		outlineMesh.position.x = 2;
+		cube.position.z = -1;
+		outlineMesh.position.z = -1;
 	}
 }
 
@@ -427,3 +452,5 @@ function animate() {
 }
 
 animate();
+
+//smooth transitions when selecting next or prev
