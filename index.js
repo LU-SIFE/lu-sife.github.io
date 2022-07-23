@@ -73,8 +73,8 @@ var outlineMesh3 = new THREE.Mesh( geometry, outlineMaterial4 );
 
 //object attribute creation/alteration
 cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
-cube2.userData.URL = "https://github.com";
-cube3.userData.URL = "https://google.com";
+cube2.userData.URL = "https://github.com/LU-SIFE";
+cube3.userData.URL = "https://lu-sife.github.io/LEVELED/";
 outlineMesh.scale.multiplyScalar(1.15);
 outlineMesh2.scale.multiplyScalar(1.15);
 outlineMesh3.scale.multiplyScalar(1.15);
@@ -437,7 +437,7 @@ function link_change() {
 	}
 	if (cube3.position.x == 0) {
 		document.getElementById("puzzle_crawler").href = cube3.userData.URL;
-		document.getElementById("puzzle_crawler").innerHTML = "Test Page";
+		document.getElementById("puzzle_crawler").innerHTML = "LEVLED";
 		return;
 	}
 }
