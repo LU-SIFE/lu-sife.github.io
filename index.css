@@ -4,6 +4,7 @@ html {
 	color:orange;
 	font-family: Courier New;
 	font-size: 2em;
+	overflow-x: hidden;
 }
 
 a, button {
@@ -61,7 +62,7 @@ a, button {
 	padding-top:15px;
 	padding-bottom:15px;
 	left:1%;
-	bottom: 2%;
+	top: 2%;
 	border: 1px solid;
 	color:orange;
 	display:inline-block;
@@ -110,4 +111,9 @@ p {
 
 .next_progress_button {
 	right:5%;
+}
+
+#body_container {
+	position: relative;
+	top: 65%;
 }

@@ -37,7 +37,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 //sets attributes to renderer
 renderer.domElement.id = 'render_canvas';
-document.body.appendChild( renderer.domElement );
+document.body.appendChild(renderer.domElement);
 document.getElementById('render_canvas').style.position = 'absolute';
 document.getElementById('render_canvas').style.top = '0';
 document.getElementById('render_canvas').style.left = '0';
@@ -134,8 +134,9 @@ mouse.y = -1;
 
 //mouse movement calculation
 function onMouseMove( event ) {
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+	var rect = renderer.domElement.getBoundingClientRect();
+mouse.x = ( ( event.clientX - rect.left ) / ( rect.width - rect.left ) ) * 2 - 1;
+mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
 }
 
 //mouse clicks
@@ -167,6 +168,7 @@ function onWindowResize(){
 function hoverPieces() {
 	
 //initializes raycaster
+
 	raycaster.setFromCamera(mouse, camera);
 	const intersects = 	raycaster.intersectObjects(scene.children);
 	
