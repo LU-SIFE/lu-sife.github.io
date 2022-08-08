@@ -1,17 +1,17 @@
 //event listeners
 window.addEventListener('click', onMouseClick, false);
-window.addEventListener( 'mousemove', onMouseMove, false);
-window.addEventListener( 'resize', onWindowResize, false );
+window.addEventListener('mousemove', onMouseMove, false);
+window.addEventListener('resize', onWindowResize, false);
 
 //scene initialization
 const scene = new THREE.Scene();
-scene.background = new THREE.Color( 0x1f1f1f );
+scene.background = new THREE.Color(0x1f1f1f);
 
 //sets camera perspective depending on viewport
 if (window.innerWidth + 50 >= window.innerHeight) {
-	var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
+	var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 } else {
-	var camera = new THREE.PerspectiveCamera( 85, window.innerWidth / window.innerHeight, 0.1, 1000 );
+	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
 
 //misc. variables
@@ -32,8 +32,8 @@ var position_array = [3, 1, 2];
 var prev_position_array = [3, 1, 2];
 
 //creates WebGL renderer
-const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize( window.innerWidth, window.innerHeight );
+const renderer = new THREE.WebGLRenderer({alpha: true});
+renderer.setSize(window.innerWidth, window.innerHeight);
 
 //sets attributes to renderer
 renderer.domElement.id = 'render_canvas';
@@ -52,24 +52,24 @@ const quaternion2 = new THREE.Quaternion(0.5, 0.5, 0, 0.5);
 const quaternion3 = new THREE.Quaternion(0.5, 0, 0, -0.5);
 
 //applies quaternion to geometry
-geometry.applyQuaternion( quaternion );
+geometry.applyQuaternion(quaternion);
 
 //materials
 //no clue why. but material4 creates 2 colors for outlinematerial2 and 3.
-var material = new THREE.MeshBasicMaterial( { color: 'orange' } );
-var material2 = new THREE.MeshBasicMaterial( { color: 'orange' } );
-var material4 = new THREE.MeshBasicMaterial( { side: THREE.BackSide } );
-var outlineMaterial3 = new THREE.MeshBasicMaterial( { color: "purple", side: THREE.BackSide } );
-var outlineMaterial4 = new THREE.MeshBasicMaterial( { color: "pink", side: THREE.BackSide } );
-var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: "green", side: THREE.BackSide } );
+var material = new THREE.MeshBasicMaterial({color: 'orange'});
+var material2 = new THREE.MeshBasicMaterial({color: 'orange'});
+var material4 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
+var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "purple", side: THREE.BackSide});
+var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "pink", side: THREE.BackSide});
+var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "green", side: THREE.BackSide});
 
 //objects
-var cube = new THREE.Mesh( geometry, material4 );
-var cube2 = new THREE.Mesh( geometry, material );
-var cube3 = new THREE.Mesh( geometry, material );
-var outlineMesh = new THREE.Mesh( geometry, outlineMaterial3 );
-var outlineMesh2 = new THREE.Mesh( geometry, outlineMaterial2 );
-var outlineMesh3 = new THREE.Mesh( geometry, outlineMaterial4 );
+var cube = new THREE.Mesh(geometry, material4);
+var cube2 = new THREE.Mesh(geometry, material);
+var cube3 = new THREE.Mesh(geometry, material);
+var outlineMesh = new THREE.Mesh(geometry, outlineMaterial3);
+var outlineMesh2 = new THREE.Mesh(geometry, outlineMaterial2);
+var outlineMesh3 = new THREE.Mesh(geometry, outlineMaterial4);
 
 //object attribute creation/alteration
 cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
@@ -80,12 +80,12 @@ outlineMesh2.scale.multiplyScalar(1.15);
 outlineMesh3.scale.multiplyScalar(1.15);
 
 //adds object to the scene
-scene.add( cube );
-scene.add( cube2 );
-scene.add( cube3 );
-scene.add( outlineMesh );
-scene.add( outlineMesh2 );
-scene.add( outlineMesh3 );
+scene.add(cube);
+scene.add(cube2);
+scene.add(cube3);
+scene.add(outlineMesh);
+scene.add(outlineMesh2);
+scene.add(outlineMesh3);
 
 //sets object positions
 outlineMesh2.position.x = 2;
@@ -133,10 +133,10 @@ mouse.x = -1;
 mouse.y = -1;
 
 //mouse movement calculation
-function onMouseMove( event ) {
+function onMouseMove(event) {
 	var rect = renderer.domElement.getBoundingClientRect();
-mouse.x = ( ( event.clientX - rect.left ) / ( rect.width - rect.left ) ) * 2 - 1;
-mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
+mouse.x = ((event.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
+mouse.y = - ((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
 }
 
 //mouse clicks
@@ -152,7 +152,7 @@ function onWindowResize(){
 	//gets camera aspect ratio and updates projection matrix to appropriate size
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize(window.innerWidth, window.innerHeight);
 	
 //changes camera fov if the aspect ratio is portrait
 	if (window.innerWidth + 50 >= window.innerHeight) {
