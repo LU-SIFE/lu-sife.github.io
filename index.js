@@ -439,7 +439,7 @@ function link_change() {
 	}
 	if (cube3.position.x == 0) {
 		document.getElementById("puzzle_crawler").href = cube3.userData.URL;
-		document.getElementById("puzzle_crawler").innerHTML = "LEVLED";
+		document.getElementById("puzzle_crawler").innerHTML = "LEVELED";
 		return;
 	}
 }
