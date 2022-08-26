@@ -61,8 +61,8 @@ a, button {
 	padding-right:25px;
 	padding-top:15px;
 	padding-bottom:15px;
-	left:1%;
-	top: 2%;
+	left: 1%;
+	bottom: 3%;
 	border: 1px solid;
 	color:orange;
 	display:inline-block;
@@ -90,7 +90,7 @@ a, button {
 
 #puzzle_crawler {
 	font-size:1.75em;
-	top:55%;
+	top: 50%;
 }
 
 p {
@@ -116,4 +116,12 @@ p {
 #body_container {
 	position: relative;
 	top: 65%;
+}
+
+#page_break {
+	border-style: solid;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
