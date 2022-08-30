@@ -5,6 +5,7 @@ html {
 	font-family: Courier New;
 	font-size: 2em;
 	overflow-x: hidden;
+	word-spacing: -2px;
 }
 
 a, button {
@@ -62,7 +63,7 @@ a, button {
 	padding-top:15px;
 	padding-bottom:15px;
 	left: 1%;
-	bottom: 3%;
+	top: 3%;
 	border: 1px solid;
 	color:orange;
 	display:inline-block;
@@ -102,15 +103,15 @@ p {
 	position:absolute;
 	text-decoration: none;
 	padding: 8px 16px;
-	top:45%;
+	top:72%;
 }
 
 .prev_progress_button {
-	left:5%;
+	left:25%;
 }
 
 .next_progress_button {
-	right:5%;
+	right:25%;
 }
 
 #body_container {
@@ -124,4 +125,20 @@ p {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+}
+
+.profile_pic {
+	max-width: 35%;
+	margin: 5%;
+}
+
+.about_container {
+	margin: 3%;
+	text-align: left;
+}
+
+.link_body {
+	display: inline;
+	padding-bottom: 0px;
+	border-bottom-style: solid;
 }
