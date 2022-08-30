@@ -4,6 +4,8 @@ html {
 	color:orange;
 	font-family: Courier New;
 	font-size: 2em;
+	font-weight: bold;
+	line-height: 1.1em;
 	overflow-x: hidden;
 	word-spacing: -2px;
 }
@@ -100,18 +102,8 @@ p {
 
 .prev_progress_button, .next_progress_button {
 	font-size:2.75em;
-	position:absolute;
 	text-decoration: none;
 	padding: 8px 16px;
-	top:72%;
-}
-
-.prev_progress_button {
-	left:25%;
-}
-
-.next_progress_button {
-	right:25%;
 }
 
 #body_container {
@@ -144,4 +136,11 @@ p {
 	display: inline;
 	padding-bottom: 0px;
 	border-bottom-style: solid;
+}
+
+.box_indicator {
+	position: absolute;
+	left: 1;
+	right: 1;
+	top: 72%;
 }
