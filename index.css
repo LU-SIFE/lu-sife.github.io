@@ -128,8 +128,11 @@ p {
 }
 
 .profile_pic {
+	background-color: #0f0f0f;
 	max-width: 35%;
-	margin: 5%;
+	margin: 3%;
+	padding: 2%;
+	border-style: solid;
 }
 
 .about_container {
