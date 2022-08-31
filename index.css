@@ -92,9 +92,8 @@ a, button {
 
 
 #puzzle_crawler {
+	margin: auto;
 	font-size:1.75em;
-	top: 50%;
-	width: 45%;
 }
 
 p {
@@ -105,6 +104,8 @@ p {
 	font-size:2.75em;
 	text-decoration: none;
 	padding: 8px 16px;
+	border-radius: 20px;
+	line-height: 0.7em;
 }
 
 #body_container {
@@ -154,5 +155,10 @@ p {
 	position: absolute;
 	left: 1;
 	right: 1;
-	top: 72%;
-	}
+	top: 75%;
+}
+
+.box_spacer {
+	display: inline-flex;
+	width: 40%;
+}
