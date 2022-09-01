@@ -59,9 +59,9 @@ geometry.applyQuaternion(quaternion);
 var material = new THREE.MeshBasicMaterial({color: 'orange'});
 var material2 = new THREE.MeshBasicMaterial({color: 'orange'});
 var material4 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
-var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "purple", side: THREE.BackSide});
-var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "pink", side: THREE.BackSide});
-var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "green", side: THREE.BackSide});
+var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#9D00FF", side: THREE.BackSide});
+var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "#018c96", side: THREE.BackSide});
+var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#00CA00", side: THREE.BackSide});
 
 //objects
 var cube = new THREE.Mesh(geometry, material4);
@@ -443,6 +443,15 @@ function link_change() {
 		return;
 	}
 }
+
+//color changing on the site
+//items which need to be changed:
+//html {color:} a {webkit back:} button {webkit back:} a {color:} button {color:}
+function change_colors() {
+	alert("Under construction! thanks for understanding~");
+}
+
+
 
 //main animation function
 //DO NOT INCLUDE RETURN;

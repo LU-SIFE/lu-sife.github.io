@@ -12,19 +12,12 @@ html {
 
 a, button {
 	border-style:none;
-	background-image: linear-gradient(
-    to right,
-    #orange,
-    #orange 50%,
-    #000 50%
-	);
 	background-size: 200% 100%;
 	background-position: -100%;
 	display: inline-block;
 	padding: 5px 0;
 	position: relative;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: orange;
 	transition: all 0.3s ease-in-out;
 	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
@@ -46,7 +39,6 @@ button:where(:hover, :focus-visible) {
 	font-size:2.5em;
 	padding-bottom: 2px;
 	--bg-h: 2px;
-	color:orange;
 }
 
 a, button {
@@ -67,18 +59,10 @@ a, button {
 	left: 1%;
 	top: 3%;
 	border: 2px solid;
-	color:orange;
 	display:inline-block;
-	background-image: linear-gradient(
-		to right,
-		#orange,
-		#orange 50%,
-		#000 50%
-	);
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: orange;
 	transition: all 0.3s ease-in-out;
 	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
@@ -139,7 +123,6 @@ p {
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: orange;
 	transition: all 0.3s ease-in-out;
 	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
@@ -161,4 +144,30 @@ p {
 .box_spacer {
 	display: inline-flex;
 	width: 40%;
+}
+
+#color_button {
+	font-size:0.75em;
+	position:absolute;
+	width:fit-content;
+	padding-left:25px;
+	padding-right:25px;
+	padding-top:15px;
+	padding-bottom:15px;
+	right: 1%;
+	top: 3%;
+	border: 2px solid;
+	display:inline-block;
+	background-size: 200% 100%;
+	background-position: -100%;
+	-webkit-background-clip: text;
+	transition: all 0.3s ease-in-out;
+	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+}
+
+#color_button:where(:hover, :focus-visible) {
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
 }
