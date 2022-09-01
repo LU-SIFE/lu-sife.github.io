@@ -64,7 +64,6 @@ var material4 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
 var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#9D00FF", side: THREE.BackSide});
 var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "#018c96", side: THREE.BackSide});
 var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#00CA00", side: THREE.BackSide});
-
 //objects
 var cube = new THREE.Mesh(geometry, material4);
 var cube2 = new THREE.Mesh(geometry, material);
