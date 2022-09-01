@@ -1,3 +1,45 @@
+/*
+	This top section is for link/button hover animations. BE CAREFUL!
+*/
+a, button {
+	border-style:none;
+	text-decoration: none;
+	line-height: 1;
+	background-size: 200% 100%;
+	background-position: -100%;
+	display: inline-block;
+	padding: 5px 0;
+	-webkit-background-clip: text;
+	transition: all 0.3s ease-in-out;
+	background: linear-gradient(orange, orange) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+}
+
+.underline {
+	font-size:2.5em;
+	padding-bottom: 2px;
+	--bg-h: 2px;
+}
+
+.link_body, #color_button, #coffee_box {
+	background-size: 200% 100%;
+	background-position: -100%;
+	-webkit-background-clip: text;
+	transition: all 0.3s ease-in-out;
+	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+}
+
+
+a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #color_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible) {
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
+}
+/*
+	This is general styling, be less careful I guess.
+*/
 html {
 	background-color:#1f1f1f;
 	text-align:center;
@@ -10,43 +52,7 @@ html {
 	word-spacing: -2px;
 }
 
-a, button {
-	border-style:none;
-	background-size: 200% 100%;
-	background-position: -100%;
-	display: inline-block;
-	padding: 5px 0;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-	--bg-h: 100%;
-}
-
-
-a:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
-}
-
-button:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
-}
-
-.underline {
-	font-size:2.5em;
-	padding-bottom: 2px;
-	--bg-h: 2px;
-}
-
-a, button {
-	text-decoration: none;
-	line-height: 1;
-}
-
-
-#coffee_box {
+#coffee_box, #color_button {
 	color: orange;
 	font-size:0.75em;
 	position:absolute;
@@ -55,24 +61,18 @@ a, button {
 	padding-right:25px;
 	padding-top:15px;
 	padding-bottom:15px;
-	left: 1%;
 	top: 3%;
 	border: 2px solid;
 	display:inline-block;
-	background-size: 200% 100%;
-	background-position: -100%;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-	--bg-h: 100%;
 }
 
-#coffee_box:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
+#coffee_box {
+	left: 1%;
 }
 
+#color_button {
+	right: 1%;
+}
 
 #puzzle_crawler {
 	color: orange;
@@ -122,18 +122,6 @@ p {
 	padding-bottom: 0px;
 	padding-top: 0px;
 	border-bottom-style: solid;
-	background-size: 200% 100%;
-	background-position: -100%;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-	--bg-h: 100%;
-}
-
-.link_body:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
 }
 
 .box_indicator {
@@ -146,31 +134,4 @@ p {
 .box_spacer {
 	display: inline-flex;
 	width: 40%;
-}
-
-#color_button {
-	color: orange;
-	font-size:0.75em;
-	position:absolute;
-	width:fit-content;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:15px;
-	padding-bottom:15px;
-	right: 1%;
-	top: 3%;
-	border: 2px solid;
-	display:inline-block;
-	background-size: 200% 100%;
-	background-position: -100%;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-	--bg-h: 100%;
-}
-
-#color_button:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
 }
