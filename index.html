@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="index.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
+<html id="main_page">
 	<title>LU-SIFE</title>
 	<section id="introduction">
 		<p><strong><br>LU-SIFE</strong></p>
@@ -11,12 +11,12 @@
 		<button id="color_button" onclick="change_colors()">Change Colors!</button>
 
 		<div class='box_indicator'>
-			<button class="prev_progress_button" onclick="next_selection()">&#8249;</button>
+			<button id="prev_button" class="prev_progress_button" onclick="next_selection()">&#8249;</button>
 
 			<div class="box_spacer">
 				<a href="https://lu-sife.github.io/Puzzle-Crawler/" target="_blank" rel="noopener noreferrer" class="underline" id="puzzle_crawler">Puzzle Crawler</a>
 			</div>
-			<button class="next_progress_button " onclick="prev_selection()">&#8250;</button>
+			<button id="next_button" class="next_progress_button " onclick="prev_selection()">&#8250;</button>
 		</div>
 	</section>
 	<section id="body_container">

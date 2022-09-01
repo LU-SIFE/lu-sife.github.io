@@ -16,7 +16,6 @@ a, button {
 	background-position: -100%;
 	display: inline-block;
 	padding: 5px 0;
-	position: relative;
 	-webkit-background-clip: text;
 	transition: all 0.3s ease-in-out;
 	background: linear-gradient(0deg, orange, orange) no-repeat right bottom / 0 var(--bg-h);
@@ -43,12 +42,12 @@ button:where(:hover, :focus-visible) {
 
 a, button {
 	text-decoration: none;
-	color: orange;
 	line-height: 1;
 }
 
 
 #coffee_box {
+	color: orange;
 	font-size:0.75em;
 	position:absolute;
 	width:fit-content;
@@ -76,6 +75,7 @@ a, button {
 
 
 #puzzle_crawler {
+	color: orange;
 	margin: auto;
 	font-size:1.75em;
 }
@@ -85,6 +85,7 @@ p {
 }
 
 .prev_progress_button, .next_progress_button {
+	color: orange;
 	font-size:2.75em;
 	text-decoration: none;
 	padding: 8px 16px;
@@ -116,6 +117,7 @@ p {
 }
 
 .link_body {
+	color: orange;
 	display: inline;
 	padding-bottom: 0px;
 	padding-top: 0px;
@@ -147,6 +149,7 @@ p {
 }
 
 #color_button {
+	color: orange;
 	font-size:0.75em;
 	position:absolute;
 	width:fit-content;

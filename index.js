@@ -15,6 +15,7 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 }
 
 //misc. variables
+var current_page_color = "orange";
 var intersect_link;
 var current_selection = 0;
 var last_intersect;
@@ -26,6 +27,7 @@ var hover_offscreen3 = 1;
 var bobbing_counter = 0;
 var bobbing_counter2 = 0;
 var bobbing_counter3 = 0;
+var link_class = document.getElementsByClassName("link_body");
 
 //position selection array
 var position_array = [3, 1, 2];
@@ -449,6 +451,36 @@ function link_change() {
 //html {color:} a {webkit back:} button {webkit back:} a {color:} button {color:}
 function change_colors() {
 	alert("Under construction! thanks for understanding~");
+
+	switch (current_page_color) {
+		case "orange":
+			current_page_color = "white";
+			document.getElementById("main_page").style.color = "white";
+			document.getElementById("coffee_box").style.color = "white";
+			document.getElementById("color_button").style.color = "white";
+			document.getElementById("prev_button").style.color = "white";
+			document.getElementById("next_button").style.color = "white";
+			document.getElementById("puzzle_crawler").style.color = "white";
+			for (var i = 0; i < link_class.length; i++) {
+    			link_class[i].style.color = "white";
+    		}
+		break;
+
+		case "white":
+
+			current_page_color = "orange";
+			document.getElementById("main_page").style.color = "orange";
+			document.getElementById("coffee_box").style.color = "orange";
+			document.getElementById("color_button").style.color = "orange";
+			document.getElementById("prev_button").style.color = "orange";
+			document.getElementById("next_button").style.color = "orange";
+			document.getElementById("puzzle_crawler").style.color = "orange";
+			for (var i = 0; i < link_class.length; i++) {
+    			link_class[i].style.color = "orange";
+    		}
+		break;
+	}
+
 }
 
 
