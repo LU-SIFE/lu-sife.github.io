@@ -15,6 +15,7 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 }
 
 //misc. variables
+var hover_color = "0xff8c00";
 var current_page_color = "orange";
 var intersect_link;
 var current_selection = 0;
@@ -180,7 +181,7 @@ function hoverPieces() {
 //clones the objects material to revert it later
 		const newMaterial = intersects[0].object.material.clone();
 //changes the objects material to the new color
-		newMaterial.color.setHex(0xff8c00);
+		newMaterial.color.setHex(hover_color);
 		intersects[0].object.material = newMaterial;
 //extra needed variables
 		last_intersect = intersects;
@@ -460,6 +461,8 @@ function change_colors() {
 			document.getElementById("prev_button").style.color = "white";
 			document.getElementById("next_button").style.color = "white";
 			document.getElementById("puzzle_crawler").style.color = "white";
+			material2 = new THREE.MeshBasicMaterial({color: '#c8c8c8'});
+			hover_color = "0x9F9F9F";
 			for (var i = 0; i < link_class.length; i++) {
     			link_class[i].style.color = "white";
     		}
@@ -474,6 +477,8 @@ function change_colors() {
 			document.getElementById("prev_button").style.color = "orange";
 			document.getElementById("next_button").style.color = "orange";
 			document.getElementById("puzzle_crawler").style.color = "orange";
+			material2 = new THREE.MeshBasicMaterial({color: 'orange'});
+			hover_color = "0xff8c00";
 			for (var i = 0; i < link_class.length; i++) {
     			link_class[i].style.color = "orange";
     		}
