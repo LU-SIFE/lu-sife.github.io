@@ -90,13 +90,12 @@
 
 		<h1 style="margin-bottom: 0;">The Playlist:</h1>
 		<p style="font-size: 0.6em; margin-top: 0.5%;">(I meant it when I said I take music seriously)</p>
-
+		<button onclick="randomize_songs()" class="refresh_button">Refresh List!</button>
 
 <!-- Might change this to be handled by JS so it is easy to add songs.-->
-		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap;">
-
+		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap; margin-top: 0;">
 			<div style="display: inline-block;" id="artist_container">
-<!-- Artists -->
+<!-- Artist placeholder-->
 				<h1>Artist:</h1>
 				Inabakumori<br>
 				NAOKI<br>
@@ -107,17 +106,17 @@
 				Mother Mother<br>
 				Mother Mother<br>
 				Keygen Church<br>
-				Gorillaz
+				Gorillaz<br>
 			</div>
 
 			<div style="display: inline-block;">
-<!-- Spacing -->
+<!-- Spacing  -->
 				<h1>&nbsp;</h1>
 				&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;
 			</div>
 
 			<div style="display: inline-block;" id="song_container">
-<!-- Songs -->
+<!-- Song placeholders -->
 				<h1>Song:</h1>
 				Sinktank<br>
 				Trigger<br>
@@ -128,7 +127,7 @@
 				Oh Ana<br>
 				Polynesia<br>
 				Gebuerjeit<br>
-				Empire Ants
+				Empire Ants<br>
 			</div>
 		</div>
 	</section>
@@ -144,5 +143,6 @@
 </footer>
 </html>
 <script src="js/three.js"></script>
+<script src="song_array.js"></script>
 <script src="index.js"></script>
 <!-- Praise the Code() -->

@@ -14,26 +14,6 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
 
-//Music array
-var music_array = [
-
-// ["Artist", "Song"]
-	["Inabakumori", "Sinktank"],
-	["Arc System Works", "Trigger"],
-	["Hollywood Burns", "Girls with Guns"],
-	["Jeff Williams", "Ignite"],
-	["Arctic Monkeys", "There'd Better Be A Mirroball"],
-	["Justice", "Europa"],
-	["Mother Mother", "Oh Ana"],
-	["Mother Mother", "Polynesia"],
-	["Keygen Church", "gebuerjeit"],
-	["Gorillaz", "Empire Ants"],
-	["Arc System Works", "Disaster of Passion"],
-	["The Megas", "GeminEye"]
-];
-var artist_text = "";
-var music_text = "";
-
 //misc. variables
 var hover_color = "0xff8c00";
 var current_page_color = "orange";
@@ -49,6 +29,8 @@ var bobbing_counter = 0;
 var bobbing_counter2 = 0;
 var bobbing_counter3 = 0;
 var link_class = document.getElementsByClassName("link_body");
+var artist_text = "";
+var music_text = "";
 
 //position selection array
 var position_array = [3, 1, 2];
@@ -512,6 +494,10 @@ function change_scroll() {
 }
 
 function randomize_songs() {
+
+	artist_text = "";
+	music_text = "";
+
 	shuffle(music_array);
 	artist_text += "<h1>Artist:</h1>";
 	for (let i = 0; i < 10; i++) {
@@ -560,7 +546,49 @@ function animate() {
 	link_change();
 	renderer.render( scene, camera );
 }
-randomize_songs();
+
 animate();
 
-//smooth transitions when selecting next or prev
+//Music array
+var music_array = [
+// ["Artist", "Song"]
+	["Inabakumori", "Sinktank"],
+	["Arc System Works", "Trigger"],
+	["Hollywood Burns", "Girls with Guns"],
+	["Jeff Williams", "Ignite"],
+	["Arctic Monkeys", "There'd Better Be A Mirroball"],
+	["Justice", "Europa"],
+	["Mother Mother", "Oh Ana"],
+	["Mother Mother", "Polynesia"],
+	["Keygen Church", "gebuerjeit"],
+	["Gorillaz", "Empire Ants"],
+	["Arc System Works", "Disaster of Passion"],
+	["The Megas", "GeminEye"],
+	["Thank You Scientist", "Mr. Invisible"],
+	["Fox Capture Plan", "Overdrive"],
+	["Fox Capture Plan", "Greatest Blue"],
+	["Lord Phobos", "Galactic Chase"],
+	["Everything Everything", "Blast Doors"],
+	["An Endless Sporadic", "Impulse II"],
+	["Challenger Deep", "Immersive"],
+	["Strawberry Girls", "First Kiss"],
+	["Strawberry Girls", "Spanish Bay"],
+	["Bohemianvoodoo", "Golden Forest"],
+	["Fox Capture Plan", "Acceleration"],
+	["Pheeno", "Rest"],
+	["SixteenInMono", "Time Divergence"],
+	["KANA-BOON", "Torch of Liberty"],
+	["Hyleo", "Galaxy Cutter"],
+	["Hyleo", "Smash"],
+	["Hyleo", "Illumination"],
+	["ASIAN KUNG-FU GENERATION", "Re:Re:"],
+	["The Megas", "The Message From Dr. Light"],
+	["The Megas", "History Repeating Pt. 2"],
+	["The Megas", "I Want to Be the One"],
+	["The Megas", "Programmed to Fight"],
+	["Victory Kid", "Clownin'"],
+	["Blink-182", "Heaven"],
+	["Tally Hall", "Ruler of Everything"]
+];
+
+randomize_songs();
