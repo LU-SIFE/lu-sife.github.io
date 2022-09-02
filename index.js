@@ -19,7 +19,7 @@ var music_array = [
 
 // ["Artist", "Song"]
 	["Inabakumori", "Sinktank"],
-	["NAOKI", "Trigger"],
+	["Arc System Works", "Trigger"],
 	["Hollywood Burns", "Girls with Guns"],
 	["Jeff Williams", "Ignite"],
 	["Arctic Monkeys", "There'd Better Be A Mirroball"],
@@ -27,8 +27,12 @@ var music_array = [
 	["Mother Mother", "Oh Ana"],
 	["Mother Mother", "Polynesia"],
 	["Keygen Church", "gebuerjeit"],
-	["Gorillaz", "Empire Ants"]
+	["Gorillaz", "Empire Ants"],
+	["Arc System Works", "Disaster of Passion"],
+	["The Megas", "GeminEye"]
 ];
+var artist_text = "";
+var music_text = "";
 
 //misc. variables
 var hover_color = "0xff8c00";
@@ -507,6 +511,42 @@ function change_scroll() {
 	alert("Hey, this is still being worked on, thanks for waiting~");
 }
 
+function randomize_songs() {
+	shuffle(music_array);
+	artist_text += "<h1>Artist:</h1>";
+	for (let i = 0; i < 10; i++) {
+		artist_text += music_array[i][0] + "<br>";
+	}
+
+	music_text += "<h1>Song:</h1>"
+	for (let i = 0; i < 10; i++) {
+		music_text += music_array[i][1] + "<br>";
+	}
+
+	document.getElementById("artist_container").innerHTML = artist_text;
+	document.getElementById("song_container").innerHTML = music_text;
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
+
 //main animation function
 //DO NOT INCLUDE RETURN;
 function animate() {
@@ -520,7 +560,7 @@ function animate() {
 	link_change();
 	renderer.render( scene, camera );
 }
-
+randomize_songs();
 animate();
 
 //smooth transitions when selecting next or prev
