@@ -14,6 +14,22 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
 
+//Music array
+var music_array = [
+
+// ["Artist", "Song"]
+	["Inabakumori", "Sinktank"],
+	["NAOKI", "Trigger"],
+	["Hollywood Burns", "Girls with Guns"],
+	["Jeff Williams", "Ignite"],
+	["Arctic Monkeys", "There'd Better Be A Mirroball"],
+	["Justice", "Europa"],
+	["Mother Mother", "Oh Ana"],
+	["Mother Mother", "Polynesia"],
+	["Keygen Church", "gebuerjeit"],
+	["Gorillaz", "Empire Ants"]
+];
+
 //misc. variables
 var hover_color = "0xff8c00";
 var current_page_color = "orange";
