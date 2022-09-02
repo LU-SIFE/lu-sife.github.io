@@ -487,7 +487,9 @@ function change_colors() {
 
 }
 
-
+function change_scroll() {
+	alert("Hey, this is still being worked on, thanks for waiting~");
+}
 
 //main animation function
 //DO NOT INCLUDE RETURN;

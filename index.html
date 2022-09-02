@@ -4,11 +4,19 @@
 <html id="main_page">
 	<title>LU-SIFE</title>
 	<body>
-		<p><strong><br>LU-SIFE</strong></p>
 
-		<a id="coffee_box" href="https://www.buymeacoffee.com/lusife" target="_blank" rel="noopener noreferrer">Buy me a coffee! ☕</a><br><br>
+		<div class="nav_bar">
+			<a id="coffee_box" href="https://www.buymeacoffee.com/lusife" target="_blank" rel="noopener noreferrer">Buy me a coffee! ☕</a><br><br>
 
-		<button id="color_button" onclick="change_colors()">Change Colors!</button>
+			<div>
+				<button id="scroll_button" onclick="change_scroll()">Want the scrollbar back?</button>
+
+				<button id="color_button" onclick="change_colors()">Change Colors!</button>
+			</div>
+
+		</div>
+		
+		<h1>LU-SIFE</h1>
 
 		<div class='box_indicator'>
 			<button id="prev_button" class="prev_progress_button" onclick="next_selection()">&#8249;</button>
@@ -18,7 +26,10 @@
 			</div>
 			<button id="next_button" class="next_progress_button " onclick="prev_selection()">&#8250;</button>
 		</div>
+
+
 	<section class="about_container">
+
 		<div class="page_break"></div>
 		
 		<img src="images/ina2_round.png" alt="Lu_Sife pfp" class='profile_pic' align='left'>
@@ -66,19 +77,70 @@
 			<img src="images/ina3_round.png" alt="Lu_Sife pfp" class='profile_pic2' align='right'>
 
 			<div class="text_container">
+				<br>
 				Alright then, on to business~<br><br>
 				<li>I primarily use HTML, CSS, and Javascript for my projects</li><br>
 				<li>Currently learning Flexbox, Three.js, React, and other libraries</li><br>
 				<li>I also use C, C++, Python, and Bash for small side projects, so I can be pretty flexible in languages.</li>
 			</div>
 	</section>
+
+	<section class="song_container">
+		<div class="page_break"></div>
+
+		<h1 style="margin-bottom: 0;">The Playlist:</h1>
+		<p style="font-size: 0.6em; margin-top: 0.5%;">(I meant it when I said I take music seriously)</p>
+
+
+<!-- Might change this to be handled by JS so it is easy to add songs.-->
+		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap;">
+
+			<div style="display: inline-block;">
+<!-- Artists -->
+				<h1>Artist:</h1>
+				Inabakumori<br>
+				NAOKI<br>
+				Hollywood Burns<br>
+				Jeff Williams<br>
+				Arctic Monkeys<br>
+				Justice<br>
+				Mother Mother<br>
+				Mother Mother<br>
+				Keygen Church
+			</div>
+
+			<div style="display: inline-block;">
+<!-- Spacing -->
+				<h1>&nbsp;</h1>
+				&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;<br>&nbsp;=>&nbsp;
+			</div>
+
+			<div style="display: inline-block;">
+<!-- Songs -->
+				<h1>Song:</h1>
+				Sinktank<br>
+				Trigger<br>
+				Girls with Guns<br>
+				Ignite<br>
+				There'd Better Be A Mirrorball<br>
+				Europa<br>
+				Oh Ana<br>
+				Polynesia<br>
+				Gebuerjeit
+			</div>
+		</div>
+	</section>
+
 </body>
-	<footer>
-		<a href="https://github.com/LU-SIFE" class="link_body">Github</a>&nbsp;|
-		<a href="https://twitter.com/Lu_Sife_" class="link_body">Twitter</a>
-		<div class='praise'>praise_the_code()</div>
-		<div class="ina_credit">Thanks Inabakumori for the pfp :)</div>
-	</footer>
+
+<footer>
+	<a href="https://github.com/LU-SIFE" class="link_body">Github</a>&nbsp;|
+	<a href="https://twitter.com/Lu_Sife_" class="link_body">Twitter</a>
+	<div class='praise'>praise_the_code()</div>
+	<div class="ina_credit">Thanks Inabakumori for the pfp :)</div>
+<!-- Seriously, I love it omg -->
+</footer>
 </html>
 <script src="js/three.js"></script>
 <script src="index.js"></script>
+<!-- Praise the Code() -->
