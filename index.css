@@ -60,7 +60,7 @@ body {
 	white-space: nowrap;
 }
 
-#coffee_box, #color_button, #scroll_button, .refresh_button {
+#coffee_box, #color_button, .refresh_button {
 	color: orange;
 	font-size:0.75em;
 	width:fit-content;
@@ -163,8 +163,4 @@ footer {
 
 .ina_credit {
 	right: 1%;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }

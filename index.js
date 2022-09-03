@@ -13,7 +13,6 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 } else {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
-
 //misc. variables
 var hover_color = "0xff8c00";
 var current_page_color = "orange";
@@ -487,10 +486,6 @@ function change_colors() {
 		break;
 	}
 
-}
-
-function change_scroll() {
-	alert("Hey, this is still being worked on, thanks for waiting~");
 }
 
 function randomize_songs() {
