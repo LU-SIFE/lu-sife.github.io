@@ -56,11 +56,13 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin: 0.5%;
+	top: 1.5%;
+	margin-left: 1%;
+	margin-right: 1%;
 	white-space: nowrap;
 }
 
-#coffee_box, #color_button, .refresh_button {
+#coffee_box, #color_button, #menu_button, .refresh_button {
 	color: orange;
 	font-size:0.75em;
 	width:fit-content;
@@ -69,9 +71,12 @@ body {
 	padding-top:15px;
 	padding-bottom:15px;
 	height: fit-content;
-	top: 2%;
 	border: 2px solid;
 	display:inline-block;
+}
+
+#menu_button {
+	padding: 15px;
 }
 
 #puzzle_crawler {
