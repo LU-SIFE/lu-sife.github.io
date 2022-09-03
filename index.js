@@ -551,7 +551,7 @@ var music_array = [
 	["Arc System Works", "Trigger"],
 	["Hollywood Burns", "Girls with Guns"],
 	["Jeff Williams", "Ignite"],
-	["Arctic Monkeys", "There'd Better Be A Mirroball"],
+	["Arctic Monkeys", "There'd Better Be A Mirrorball"],
 	["Justice", "Europa"],
 	["Mother Mother", "Oh Ana"],
 	["Mother Mother", "Polynesia"],
