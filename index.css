@@ -62,7 +62,7 @@ body {
 	white-space: nowrap;
 }
 
-#coffee_box, #color_button, #menu_button, .refresh_button {
+#coffee_box, #color_button, #menu_button, #refresh_button {
 	color: orange;
 	font-size:0.75em;
 	width:fit-content;
@@ -88,7 +88,7 @@ body {
 	font-size:1.75em;
 }
 
-.refresh_button {
+#refresh_button {
 	padding-bottom: 10px;
 	padding-top: 10px;
 }
@@ -168,8 +168,4 @@ footer {
 
 .ina_credit {
 	right: 1%;
-}
-
-.email {
-	font-size: 0.75em;
 }

@@ -461,6 +461,7 @@ function change_colors() {
 			document.getElementById("color_button").style.color = "white";
 			document.getElementById("prev_button").style.color = "white";
 			document.getElementById("next_button").style.color = "white";
+			document.getElementById("refresh_button").style.color = "white";
 			document.getElementById("puzzle_crawler").style.color = "white";
 			material2 = new THREE.MeshBasicMaterial({color: '#c8c8c8'});
 			hover_color = "0x9F9F9F";
