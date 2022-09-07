@@ -127,7 +127,7 @@ section {
 	text-align: left;
 }
 
-.link_body {
+.link_body, .email {
 	color: orange;
 	display: inline;
 	padding-bottom: 0px;
@@ -168,4 +168,8 @@ footer {
 
 .ina_credit {
 	right: 1%;
+}
+
+.email {
+	font-size: 0.75em;
 }
