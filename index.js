@@ -478,6 +478,7 @@ function change_colors() {
 			document.getElementById("color_button").style.color = "orange";
 			document.getElementById("prev_button").style.color = "orange";
 			document.getElementById("next_button").style.color = "orange";
+			document.getElementById("refresh_button").style.color = "orange";
 			document.getElementById("puzzle_crawler").style.color = "orange";
 			material2 = new THREE.MeshBasicMaterial({color: 'orange'});
 			hover_color = "0xff8c00";
