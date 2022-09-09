@@ -585,7 +585,11 @@ var music_array = [
 	["The Megas", "Programmed to Fight"],
 	["Victory Kid", "Clownin'"],
 	["Blink-182", "Heaven"],
-	["Tally Hall", "Ruler of Everything"]
+	["Tally Hall", "Ruler of Everything"],
+	["Ken Ashcorp", "Absolute Territory"],
+	["Ken Ashcorp", "Touch Fluffy Tail"],
+	["Ken Ashcorp", "On The Rocks"],
+	["Keygen Church", "Hareklavit"]
 ];
 
 randomize_songs();
