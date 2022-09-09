@@ -528,8 +528,6 @@ function shuffle(array) {
   return array;
 }
 
-
-
 //main animation function
 //DO NOT INCLUDE RETURN;
 function animate() {
@@ -549,47 +547,50 @@ animate();
 //Music array
 var music_array = [
 // ["Artist", "Song"]
-	["Inabakumori", "Sinktank"],
 	["Arc System Works", "Trigger"],
-	["Hollywood Burns", "Girls with Guns"],
-	["Jeff Williams", "Ignite"],
-	["Arctic Monkeys", "There'd Better Be A Mirrorball"],
-	["Justice", "Europa"],
-	["Mother Mother", "Oh Ana"],
-	["Mother Mother", "Polynesia"],
-	["Keygen Church", "gebuerjeit"],
-	["Gorillaz", "Empire Ants"],
 	["Arc System Works", "Disaster of Passion"],
-	["The Megas", "GeminEye"],
-	["Thank You Scientist", "Mr. Invisible"],
 	["Fox Capture Plan", "Overdrive"],
 	["Fox Capture Plan", "Greatest Blue"],
-	["Lord Phobos", "Galactic Chase"],
-	["Everything Everything", "Blast Doors"],
-	["An Endless Sporadic", "Impulse II"],
-	["Challenger Deep", "Immersive"],
+	["Fox Capture Plan", "Acceleration"],
 	["Strawberry Girls", "First Kiss"],
 	["Strawberry Girls", "Spanish Bay"],
-	["Bohemianvoodoo", "Golden Forest"],
-	["Fox Capture Plan", "Acceleration"],
-	["Pheeno", "Rest"],
-	["SixteenInMono", "Time Divergence"],
-	["KANA-BOON", "Torch of Liberty"],
-	["Hyleo", "Galaxy Cutter"],
-	["Hyleo", "Smash"],
-	["Hyleo", "Illumination"],
-	["ASIAN KUNG-FU GENERATION", "Re:Re:"],
+	["Keygen Church", "gebuerjeit"],
+	["Keygen Church", "Hareklavit"],
+	["Mother Mother", "Oh Ana"],
+	["Mother Mother", "Polynesia"],
+	["Ken Ashcorp", "Absolute Territory"],
+	["Ken Ashcorp", "Touch Fluffy Tail"],
+	["Ken Ashcorp", "On The Rocks"],
 	["The Megas", "The Message From Dr. Light"],
 	["The Megas", "History Repeating Pt. 2"],
 	["The Megas", "I Want to Be the One"],
 	["The Megas", "Programmed to Fight"],
+	["The Megas", "GeminEye"],
+	["Hyleo", "Galaxy Cutter"],
+	["Hyleo", "Smash"],
+	["Hyleo", "Illumination"],
+
+	["ASIAN KUNG-FU GENERATION", "Re:Re:"],
+	["Everything Everything", "Blast Doors"],
+	["Thank You Scientist", "Mr. Invisible"],
+	["An Endless Sporadic", "Impulse II"],
+	["Challenger Deep", "Immersive"],
+	["Hollywood Burns", "Girls with Guns"],
+	["Arctic Monkeys", "There'd Better Be A Mirrorball"],
+	["Bohemianvoodoo", "Golden Forest"],
+	["SixteenInMono", "Time Divergence"],
+	["Jeff Williams", "Ignite"],
+	["Lord Phobos", "Galactic Chase"],
 	["Victory Kid", "Clownin'"],
-	["Blink-182", "Heaven"],
+	["Inabakumori", "Sinktank"],
 	["Tally Hall", "Ruler of Everything"],
-	["Ken Ashcorp", "Absolute Territory"],
-	["Ken Ashcorp", "Touch Fluffy Tail"],
-	["Ken Ashcorp", "On The Rocks"],
-	["Keygen Church", "Hareklavit"]
+	["KANA-BOON", "Torch of Liberty"],
+	["Blink-182", "Heaven"],
+	["Gorillaz", "Empire Ants"],
+	["Justice", "Europa"],
+	["Pheeno", "Rest"],
+
+	["Polyphia", "G.O.A.T."]
 ];
 
 randomize_songs();
