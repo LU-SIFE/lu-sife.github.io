@@ -605,7 +605,8 @@ var music_array = [
 	["Justice", "Europa"],
 	["Pheeno", "Rest"],
 
-	["Polyphia", "G.O.A.T."]
+	["Polyphia", "G.O.A.T."],
+	["Polyphia", "Nasty"]
 ];
 
 randomize_songs();
