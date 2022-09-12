@@ -35,13 +35,28 @@ var music_text = "";
 var position_array = [3, 1, 2];
 var prev_position_array = [3, 1, 2];
 
+
+function getInnerHeight( elm ){
+  var computed = getComputedStyle(elm),
+      padding = parseInt(computed.paddingTop) + parseInt(computed.paddingBottom);
+
+  return elm.clientHeight - padding
+}
+
+function getInnerWidth( elm ){
+  var computed = getComputedStyle(elm),
+      padding = parseInt(computed.paddingLeft) + parseInt(computed.paddingRight);
+
+  return elm.clientWidth - padding
+}
+
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({alpha: true});
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(getInnerWidth(testing_div), getInnerHeight(testing_div));
 
 //sets attributes to renderer
 renderer.domElement.id = 'render_canvas';
-document.body.appendChild(renderer.domElement);
+document.getElementById("testing_div").appendChild(renderer.domElement);
 document.getElementById('render_canvas').style.position = 'absolute';
 document.getElementById('render_canvas').style.top = '0';
 document.getElementById('render_canvas').style.left = '0';
