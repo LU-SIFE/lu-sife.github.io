@@ -7,12 +7,9 @@ window.addEventListener('resize', onWindowResize, false);
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x1f1f1f);
 
-//sets camera perspective depending on viewport
-if (window.innerWidth + 50 >= window.innerHeight) {
-	var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-} else {
-	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
-}
+//sets camera perspective
+var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+
 //misc. variables
 var hover_color = "0xff8c00";
 var current_page_color = "orange";
