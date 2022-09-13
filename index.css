@@ -91,9 +91,9 @@ p {
 
 .box_indicator {
 	position: absolute;
-	top: 80%;
-	left: 0;
-	right: 0;
+	top: 75%;
+	left: 1;
+	right: 1;
 }
 
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
@@ -103,6 +103,12 @@ p {
 	padding: 8px 16px;
 	border-radius: 20px;
 	font-size: 175%;
+}
+
+#puzzle_crawler {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: auto;
 }
 
 section {
