@@ -94,7 +94,6 @@ p {
 	left: 1;
 	right: 1;
 	top: 75%;
-	white-space: nowrap;
 }
 
 .prev_progress_button, .next_progress_button {
@@ -109,8 +108,11 @@ p {
 #puzzle_crawler {
 	display: inline-block;
 	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: orange;
-	font-size:5vw;
+	margin: auto;
+	font-size:4.5vw;
 }
 
 section {
@@ -140,6 +142,11 @@ section {
 	padding-bottom: 0px;
 	padding-top: 0px;
 	border-bottom-style: solid;
+}
+
+.box_spacer {
+	display: inline-flex;
+	width: 40%;
 }
 
 footer {
