@@ -100,7 +100,7 @@ p {
 .prev_progress_button, .next_progress_button {
 	display: inline-block;
 	color: orange;
-	font-size:275%;
+	font-size:7vw;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
@@ -110,7 +110,7 @@ p {
 	display: inline-block;
 	border-radius: 20px;
 	color: orange;
-	font-size:175%;
+	font-size:5vw;
 }
 
 section {
