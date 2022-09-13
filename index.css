@@ -91,28 +91,18 @@ p {
 
 .box_indicator {
 	position: absolute;
-	left: 1;
-	right: 1;
-	top: 75%;
+	top: 80%;
+	left: 0;
+	right: 0;
 }
 
-.prev_progress_button, .next_progress_button {
+.prev_progress_button, .next_progress_button, #puzzle_crawler {
 	display: inline-block;
 	color: orange;
-	font-size:3em;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
-}
-
-#puzzle_crawler {
-	display: inline-block;
-	border-radius: 20px;
-	padding-left: 10px;
-	padding-right: 10px;
-	color: orange;
-	margin: auto;
-	font-size:1.5em;
+	font-size: 175%;
 }
 
 section {
