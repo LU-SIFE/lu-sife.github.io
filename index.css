@@ -79,14 +79,6 @@ body {
 	padding: 15px;
 }
 
-#puzzle_crawler {
-	border-radius: 20px;
-	padding-left: 10px;
-	padding-right: 10px;
-	color: orange;
-	margin: auto;
-	font-size:175%;
-}
 
 #refresh_button {
 	padding-bottom: 10px;
@@ -97,13 +89,28 @@ p {
 	font-size:2.4em;
 }
 
+.box_indicator {
+	position: absolute;
+	left: 1;
+	right: 1;
+	top: 75%;
+	white-space: nowrap;
+}
+
 .prev_progress_button, .next_progress_button {
+	display: inline-block;
 	color: orange;
-	font-size:2.75em;
+	font-size:275%;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
-	line-height: 0.7em;
+}
+
+#puzzle_crawler {
+	display: inline-block;
+	border-radius: 20px;
+	color: orange;
+	font-size:175%;
 }
 
 section {
@@ -133,18 +140,6 @@ section {
 	padding-bottom: 0px;
 	padding-top: 0px;
 	border-bottom-style: solid;
-}
-
-.box_indicator {
-	position: absolute;
-	left: 1;
-	right: 1;
-	top: 75%;
-}
-
-.box_spacer {
-	display: inline-flex;
-	width: 40%;
 }
 
 footer {
