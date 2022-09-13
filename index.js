@@ -171,7 +171,7 @@ function onWindowResize(){
 	//gets camera aspect ratio and updates projection matrix to appropriate size
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setSize(getInnerWidth(testing_div), getInnerHeight(testing_div));
 	
 //changes camera fov if the aspect ratio is portrait
 	if (window.innerWidth + 50 >= window.innerHeight) {
