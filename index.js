@@ -58,9 +58,6 @@ renderer.setSize(getInnerWidth(testing_div), getInnerHeight(testing_div));
 //sets attributes to renderer
 renderer.domElement.id = 'render_canvas';
 document.getElementById("testing_div").appendChild(renderer.domElement);
-document.getElementById('render_canvas').style.position = 'absolute';
-document.getElementById('render_canvas').style.top = '0';
-document.getElementById('render_canvas').style.left = '0';
 document.getElementById('render_canvas').style.zIndex = '-1';
 
 //Box geometry
