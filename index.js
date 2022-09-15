@@ -94,9 +94,12 @@ var outlineMesh3 = new THREE.Mesh(geometry, outlineMaterial4);
 cube.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
 cube2.userData.URL = "https://github.com/LU-SIFE";
 cube3.userData.URL = "https://lu-sife.github.io/LEVELED/";
-outlineMesh.scale.multiplyScalar(1.15);
-outlineMesh2.scale.multiplyScalar(1.15);
-outlineMesh3.scale.multiplyScalar(1.15);
+cube.scale.multiplyScalar(0.90);
+cube2.scale.multiplyScalar(0.90);
+cube3.scale.multiplyScalar(0.90);
+outlineMesh.scale.multiplyScalar(1.05);
+outlineMesh2.scale.multiplyScalar(1.05);
+outlineMesh3.scale.multiplyScalar(1.05);
 
 //adds object to the scene
 scene.add(cube);
@@ -118,6 +121,12 @@ outlineMesh3.position.z = -1;
 cube3.position.z = -1;
 
 camera.position.z = 5;
+
+cube3.position.y = -0.4;
+outlineMesh3.position.y = -0.4;
+
+cube2.position.y = -0.5;
+outlineMesh2.position.y = -0.5;
 
 //color variables
 var r = 255;
