@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 //event listeners
 window.addEventListener('click', onMouseClick, false);
 window.addEventListener('mousemove', onMouseMove, false);
@@ -61,7 +62,7 @@ document.getElementById("testing_div").appendChild(renderer.domElement);
 document.getElementById('render_canvas').style.zIndex = '-1';
 
 //Box geometry
-const geometry = new THREE.BoxGeometry();
+var geometry = new THREE.BoxGeometry();
 
 //creates quaternions for cube rotations
 const quaternion = new THREE.Quaternion(0, 0, 0, 0);
@@ -79,6 +80,7 @@ var material4 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
 var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#9D00FF", side: THREE.BackSide});
 var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "#018c96", side: THREE.BackSide});
 var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#00CA00", side: THREE.BackSide});
+
 //objects
 var cube = new THREE.Mesh(geometry, material4);
 var cube2 = new THREE.Mesh(geometry, material);
