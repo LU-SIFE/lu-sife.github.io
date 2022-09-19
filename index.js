@@ -550,6 +550,10 @@ function shuffle(array) {
   return array;
 }
 
+function praise_the_code() {
+	alert("Woohoo! secret lol");
+}
+
 //main animation function
 //DO NOT INCLUDE RETURN;
 function animate() {
