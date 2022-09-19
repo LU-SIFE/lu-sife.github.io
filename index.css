@@ -64,6 +64,9 @@ body {
 }
 
 #coffee_box, #color_button, #refresh_button {
+	font-family: Courier New;
+	
+	font-weight: bold;
 	color: orange;
 	font-size:0.75em;
 	width:fit-content;
