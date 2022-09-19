@@ -2,6 +2,8 @@
 
 ---
 
+![Alt](https://repobeats.axiom.co/api/embed/f8cfcfcd21e12c1af3fe2bbed478d8c62d253e06.svg "Repobeats analytics image")
+
 I have this site not only as a portfolio, but as a sort of public/private journal.
 
 I have written down my life's story somewhere hidden here, It's just up to you to find it.
