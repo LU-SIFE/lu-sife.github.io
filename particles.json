@@ -1,10 +1,10 @@
 {
   "particles": {
     "number": {
-      "value": 227,
+      "value": 152,
       "density": {
         "enable": true,
-        "value_area": 1262.6362266116362
+        "value_area": 800
       }
     },
     "color": {
@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 6.413648243462092,
+      "speed": 9.620472365193136,
       "direction": "top-right",
       "random": true,
       "straight": false,
@@ -95,7 +95,7 @@
         "speed": 3
       },
       "repulse": {
-        "distance": 200,
+        "distance": 95.90409590409591,
         "duration": 0.4
       },
       "push": {
