@@ -5,6 +5,7 @@ window.addEventListener('resize', onWindowResize, false);
 
 //scene initialization
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1f1f1f);
 
 //sets camera perspective depending on viewport
 if (window.innerWidth + 50 >= window.innerHeight) {
