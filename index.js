@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 //event listeners
 window.addEventListener('click', onMouseClick, false);
 window.addEventListener('mousemove', onMouseMove, false);
