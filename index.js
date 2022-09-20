@@ -51,11 +51,11 @@ function getInnerWidth( elm ){
 
 //creates WebGL renderer
 const renderer = new THREE.WebGLRenderer({alpha: true});
-renderer.setSize(getInnerWidth(testing_div), getInnerHeight(testing_div));
+renderer.setSize(getInnerWidth(three_div), getInnerHeight(three_div));
 
 //sets attributes to renderer
 renderer.domElement.id = 'render_canvas';
-document.getElementById("testing_div").appendChild(renderer.domElement);
+document.getElementById("three_div").appendChild(renderer.domElement);
 document.getElementById('render_canvas').style.zIndex = '-1';
 
 //Box geometry
@@ -176,7 +176,7 @@ function onWindowResize(){
 	//gets camera aspect ratio and updates projection matrix to appropriate size
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-		renderer.setSize(getInnerWidth(testing_div), getInnerHeight(testing_div));
+		renderer.setSize(getInnerWidth(three_div), getInnerHeight(three_div));
 	
 //changes camera fov if the aspect ratio is portrait
 	if (window.innerWidth + 50 >= window.innerHeight) {

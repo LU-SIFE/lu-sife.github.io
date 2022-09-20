@@ -109,11 +109,15 @@ body {
 }
 
 #head_image_container {
-	margin-top: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
 
 #head_image {
-	max-width: 25%;
+	height: 6em;
+	
 }
 
 p {
@@ -121,19 +125,19 @@ p {
 }
 
 .box_indicator {
-	position: absolute;
-	top: 75%;
-	left: 1;
-	right: 1;
+	position: relative;
+	top: 67%;
+	white-space: nowrap;
 }
 
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
 	display: inline-block;
+	margin-top: 3%;
 	color: #ffb347;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
-	font-size: 175%;
+	font-size: 165%;
 	pointer-events: all;
 }
 
@@ -149,6 +153,8 @@ section {
 }
 
 #top_section {
+	display: flex;
+	flex-direction: column;
 	background-color: transparent;
 	width: 100vw;
 	height: 95vh;
@@ -226,12 +232,12 @@ footer {
   -webkit-text-fill-color: transparent;
 }
 
-#testing_div {
+#three_div {
 	height: 100%;
 	width: 100%;
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 8%;
 }
 
 #particles-js {
