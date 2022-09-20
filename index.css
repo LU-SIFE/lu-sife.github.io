@@ -6,14 +6,16 @@ a, button {
 	text-decoration: none;
 	line-height: 1;
 	display: inline-block;
-	padding: 5px 0;}
+	padding: 5px 0;
+	pointer-events: all;
+}
 
 .underline {
 	font-size:2.5em;
 	padding-bottom: 2px;
 }
 
-a, button, .link_body, #color_button, #coffee_box {
+a, button, .link_body, #color_button, #coffee_box, #return_button {
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
@@ -23,7 +25,7 @@ a, button, .link_body, #color_button, #coffee_box {
 	--bg-h: 100%;
 }
 
-a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #color_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible) {
+a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #color_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), #return_button:where(:hover, :focus-visible) {
 	background-size: 100% var(--bg-h);
 	background-position-x: left;
 }
@@ -78,6 +80,22 @@ body {
 	border: 2px solid;
 	display:inline-block;
 }
+
+#return_button {
+	opacity: 0;
+	color: orange;
+	border-color: orange;
+	position: fixed;
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0.2em;
+	top: 0.75em;
+	right: 0.75em;
+	font-size: 1.25em;
+	border-style: solid;
+	border-radius: 100%;
+}
+
 
 #refresh_button {
 	padding-bottom: 10px;
