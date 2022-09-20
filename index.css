@@ -36,7 +36,7 @@ a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_b
 html {
 	background-color:#1f1f1f;
 	text-align:center;
-	color:orange;
+	color:#ffb347;
 	font-family: Courier New;
 	font-size: 2em;
 	font-weight: bold;
@@ -59,17 +59,17 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	top: 1.5%;
-	margin-left: 1%;
-	margin-right: 1%;
 	white-space: nowrap;
 	pointer-events: all;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 }
 
 #coffee_box, #color_button, #refresh_button {
 	font-family: Courier New;
 	
 	font-weight: bold;
-	color: orange;
+	color: #ffb347;
 	font-size:0.75em;
 	width:fit-content;
 	padding-left:15px;
@@ -83,8 +83,8 @@ body {
 
 #return_button {
 	opacity: 0;
-	color: orange;
-	border-color: orange;
+	color: #ffb347;
+	border-color: #ffb347;
 	position: fixed;
 	width: 1.5em;
 	height: 1.5em;
@@ -103,6 +103,14 @@ body {
 	pointer-events: all;
 }
 
+#head_image_container {
+	margin-top: 0;
+}
+
+#head_image {
+	max-width: 25%;
+}
+
 p {
 	font-size:2.4em;
 }
@@ -116,7 +124,7 @@ p {
 
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
 	display: inline-block;
-	color: orange;
+	color: #ffb347;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
@@ -132,8 +140,13 @@ p {
 
 section {
 	position: relative;
-	top: 65vh;
 	background-color: rgba(23,23,23,0.85);
+}
+
+#top_section {
+	background-color: transparent;
+	width: 100vw;
+	height: 95vh;
 }
 
 .page_break {
@@ -153,7 +166,7 @@ section {
 }
 
 .link_body, .link_body_foot {
-	color: orange;
+	color: #ffb347;
 	display: inline;
 	padding-bottom: 0px;
 	padding-top: 0px;
@@ -167,7 +180,6 @@ section {
 
 footer {
 	position: relative;
-	top:  65vh;
 	padding-top: 1%;
 	min-height: 4.5em;
 	height: fit-content;
