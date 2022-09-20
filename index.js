@@ -518,12 +518,10 @@ function randomize_songs() {
 	music_text = "";
 
 	shuffle(music_array);
-	artist_text += "<h1>Artist:</h1>";
 	for (let i = 0; i < 10; i++) {
 		artist_text += music_array[i][0] + "<br>";
 	}
 
-	music_text += "<h1>Song:</h1>"
 	for (let i = 0; i < 10; i++) {
 		music_text += music_array[i][1] + "<br>";
 	}

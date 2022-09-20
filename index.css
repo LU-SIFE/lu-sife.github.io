@@ -18,7 +18,7 @@ a, button, .link_body, #color_button, #coffee_box {
 	background-position: -100%;
 	-webkit-background-clip: text;
 	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #0e0e0e, #0e0e0e) no-repeat right bottom / 0 var(--bg-h);
+	background: linear-gradient(0deg, #0b0b0b, #0b0b0b) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
 	--bg-h: 100%;
 }
@@ -115,10 +115,11 @@ p {
 section {
 	position: relative;
 	top: 65vh;
+	background-color: rgba(23,23,23,0.85);
 }
 
 .page_break {
-	border-bottom-style: solid;
+	border-top-style: solid;
 }
 
 .profile_pic, .profile_pic2 {
@@ -133,7 +134,7 @@ section {
 	text-align: left;
 }
 
-.link_body, .email {
+.link_body, .link_body_foot {
 	color: orange;
 	display: inline;
 	padding-bottom: 0px;
@@ -141,7 +142,6 @@ section {
 	border-bottom-style: solid;
 	pointer-events: all;
 }
-
 .box_spacer {
 	display: inline-flex;
 	width: 40%;
@@ -149,26 +149,27 @@ section {
 
 footer {
 	position: relative;
-	top:  67%;
-	padding: 1%;
-	height: 4.5em;
-	background-color: #161616;
+	top:  65vh;
+	padding-top: 1%;
+	min-height: 4.5em;
+	height: fit-content;
+	background-color: #101010;
 	pointer-events: all;
 }
 
-.praise, .ina_credit {
-	font-size: 0.6em;
+#small_text {
 	position: absolute;
-	bottom: 1%;
-
+	bottom: 0;
+	height: fit-content;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	white-space: nowrap;
 }
 
-.praise {
-	left: 1%;
-}
-
-.ina_credit {
-	right: 1%;
+.praise, .ina_credit {
+	display: inline-block;
+	font-size: 0.6em;
 }
 
 .work_text {

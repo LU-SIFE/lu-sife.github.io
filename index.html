@@ -48,7 +48,7 @@
 			<button id="next_button" class="next_progress_button " onclick="prev_selection()">⇒</button>
 		</div>
 
-	<section class="about_container"><br>
+	<section class="about_container">
 		<div class="page_break"></div>
 		
 		<img src="images/ina2_round.png" alt="Lu_Sife pfp" class='profile_pic' align='left'>
@@ -110,11 +110,12 @@
 		<h1 style="margin-bottom: 0;">The Playlist:</h1>
 		<p style="font-size: 0.6em; margin-top: 0.5%;">(I meant it when I said I take music seriously)</p>
 		<button onclick="randomize_songs()" id="refresh_button">Refresh List ↺</button>
-
+		<div style="width:100%; display:flex; justify-content: space-around;">
+			<h1 style="display:inline-block;">Artist:</h1><h1 style="display:inline-block;">Song:</h1>
+		</div>
 		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap; margin-top: 0;">
-			<div style="display: inline-block;" id="artist_container">
+			<div style="display: inline-block; width: 40%;" id="artist_container">
 <!-- Artist placeholder-->
-				<h1>Artist:</h1>
 				Inabakumori<br>
 				NAOKI<br>
 				Hollywood Burns<br>
@@ -127,15 +128,13 @@
 				Gorillaz<br>
 			</div>
 
-			<div style="display: inline-block;">
+			<div style="display: inline-block; width: fit-content;">
 <!-- Spacing  -->
-				<h1>&nbsp;</h1>
 				&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;<br>&nbsp;⇒&nbsp;
 			</div>
 
-			<div style="display: inline-block;" id="song_container">
+			<div style="display: inline-block; width: 50%; text-align: right;" id="song_container">
 <!-- Song placeholders -->
-				<h1>Song:</h1>
 				Sinktank<br>
 				Trigger<br>
 				Girls with Guns<br>
@@ -153,12 +152,14 @@
 </body>
 
 <footer>
-	| <a href="https://github.com/LU-SIFE" class="link_body" target="_blank" rel="noopener noreferrer">Github</a>&nbsp;|
-	<a href="https://www.linkedin.com/in/michael-leix/" class="link_body" target="_blank" rel="noopener noreferrer">LinkedIn</a>&nbsp;|
-	<a href="https://twitter.com/Lu_Sife_" class="link_body" target="_blank" rel="noopener noreferrer">Twitter</a>&nbsp;|
-	<a href="mailto:itslusife@gmail.com" class="link_body">itslusife@gmail.com</a>&nbsp;|
-	<div class='praise'>praise_the_code()</div>
-	<div class="ina_credit">Thanks Inabakumori for the pfp :)</div>
+	| <a href="https://github.com/LU-SIFE" class="link_body_foot" target="_blank" rel="noopener noreferrer">Github</a>&nbsp;|
+	<a href="https://www.linkedin.com/in/michael-leix/" class="link_body_foot" target="_blank" rel="noopener noreferrer">LinkedIn</a>&nbsp;|
+	<a href="https://twitter.com/Lu_Sife_" class="link_body_foot" target="_blank" rel="noopener noreferrer">Twitter</a>&nbsp;|
+	<a href="mailto:itslusife@gmail.com" class="link_body_foot">itslusife@gmail.com</a>&nbsp;|
+	<div id="small_text">
+		<div class='praise'>praise_the_code()</div>
+		<div class="ina_credit">Thanks Inabakumori for the pfp :)</div>
+	</div>
 <!-- Seriously, I love it omg -->
 </footer>
 </html>
