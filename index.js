@@ -469,49 +469,6 @@ function link_change() {
 	}
 }
 
-//color changing on the site
-//items which need to be changed:
-//html {color:} a {webkit back:} button {webkit back:} a {color:} button {color:}
-function change_colors() {
-	alert("Under construction! thanks for understanding~");
-
-	switch (current_page_color) {
-		case "orange":
-			current_page_color = "white";
-			document.getElementById("main_page").style.color = "white";
-			document.getElementById("coffee_box").style.color = "white";
-			document.getElementById("color_button").style.color = "white";
-			document.getElementById("prev_button").style.color = "white";
-			document.getElementById("next_button").style.color = "white";
-			document.getElementById("refresh_button").style.color = "white";
-			document.getElementById("puzzle_crawler").style.color = "white";
-			material2 = new THREE.MeshBasicMaterial({color: '#c8c8c8'});
-			hover_color = "0x9F9F9F";
-			for (var i = 0; i < link_class.length; i++) {
-    			link_class[i].style.color = "white";
-    		}
-		break;
-
-		case "white":
-
-			current_page_color = "orange";
-			document.getElementById("main_page").style.color = "orange";
-			document.getElementById("coffee_box").style.color = "orange";
-			document.getElementById("color_button").style.color = "orange";
-			document.getElementById("prev_button").style.color = "orange";
-			document.getElementById("next_button").style.color = "orange";
-			document.getElementById("refresh_button").style.color = "orange";
-			document.getElementById("puzzle_crawler").style.color = "orange";
-			material2 = new THREE.MeshBasicMaterial({color: 'orange'});
-			hover_color = "0xff8c00";
-			for (var i = 0; i < link_class.length; i++) {
-    			link_class[i].style.color = "orange";
-    		}
-		break;
-	}
-
-}
-
 function randomize_songs() {
 
 	artist_text = "";

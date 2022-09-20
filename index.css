@@ -15,7 +15,7 @@ a, button {
 	padding-bottom: 2px;
 }
 
-a, button, .link_body, #color_button, #coffee_box, #return_button {
+a, button, .link_body, #git_button, #coffee_box, #return_button {
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
@@ -25,7 +25,7 @@ a, button, .link_body, #color_button, #coffee_box, #return_button {
 	--bg-h: 100%;
 }
 
-a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #color_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), #return_button:where(:hover, :focus-visible) {
+a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #git_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), #return_button:where(:hover, :focus-visible) {
 	background-size: 100% var(--bg-h);
 	background-position-x: left;
 }
@@ -65,7 +65,7 @@ body {
 	padding-right: 2.5%;
 }
 
-#coffee_box, #color_button, #refresh_button {
+#coffee_box, #git_button, #refresh_button {
 	font-family: Courier New;
 	
 	font-weight: bold;
