@@ -14,8 +14,7 @@ if (window.innerWidth + 50 >= window.innerHeight) {
 }
 
 //misc. variables
-var hover_color = "0xff8c00";
-var current_page_color = "orange";
+var hover_color = "0xd19847";
 var intersect_link;
 var current_selection = 0;
 var last_intersect;
@@ -72,12 +71,12 @@ geometry.applyQuaternion(quaternion);
 
 //materials
 //no clue why. but material4 creates 2 colors for outlinematerial2 and 3.
-var material = new THREE.MeshBasicMaterial({color: 'orange'});
-var material2 = new THREE.MeshBasicMaterial({color: 'orange'});
+var material = new THREE.MeshBasicMaterial({color: '#ffb347'});
+var material2 = new THREE.MeshBasicMaterial({color: '#ffb347'});
 var material4 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
-var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#9D00FF", side: THREE.BackSide});
-var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "#018c96", side: THREE.BackSide});
-var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#00CA00", side: THREE.BackSide});
+var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#C71266", side: THREE.BackSide});
+var outlineMaterial4 = new THREE.MeshBasicMaterial({color: "#6D00CF", side: THREE.BackSide});
+var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#F25050", side: THREE.BackSide});
 
 //objects
 var cube = new THREE.Mesh(geometry, material4);
@@ -516,7 +515,6 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
-    
     mybutton.style.opacity = 1;
   } else {
     mybutton.style.opacity = 0;
