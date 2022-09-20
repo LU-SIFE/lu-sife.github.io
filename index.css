@@ -79,6 +79,8 @@ body {
 	height: fit-content;
 	border: 2px solid;
 	display:inline-block;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 }
 
 #return_button {
@@ -93,7 +95,8 @@ body {
 	right: 0.75em;
 	font-size: 1.25em;
 	border-style: solid;
-	border-radius: 100%;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 }
 
 
@@ -101,6 +104,8 @@ body {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	pointer-events: all;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 }
 
 #head_image_container {
@@ -150,11 +155,15 @@ section {
 }
 
 .page_break {
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 	border-top-style: solid;
 }
 
 .profile_pic, .profile_pic2 {
 	background-color: #0f0f0f;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 	max-width: 33%;
 	margin: 3%;
 	padding: 2%;
@@ -172,6 +181,8 @@ section {
 	padding-top: 0px;
 	border-bottom-style: solid;
 	pointer-events: all;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 }
 .box_spacer {
 	display: inline-flex;
@@ -203,8 +214,16 @@ footer {
 }
 
 .work_text {
-	margin-left: 1%;
+	position: relative;
+	left: 2%;
+	bottom: 10%;
 	text-align: left;
+}
+
+#special {
+  background: -webkit-linear-gradient(left, #6D00CF, #F25050);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #testing_div {
