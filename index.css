@@ -41,37 +41,34 @@ html {
 	font-size: 2em;
 	font-weight: bold;
 	line-height: 1.2em;
-	overflow-x: hidden;
 	word-spacing: -2px;
 	pointer-events: none;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	overflow-x: hidden;
 	padding: 0;
 }
 
 .nav_bar {
+	align-self: center;
 	z-index: 99;
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	top: 1.5%;
+	padding: 0;
 	white-space: nowrap;
 	pointer-events: all;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
 }
 
-#coffee_box {
-	margin-left: 2.5%;
-}
-
-#git_button {
-	margin-right: 5%;
-}
 #coffee_box, #git_button, #refresh_button {
 	font-family: Courier New;
 	
@@ -88,6 +85,14 @@ body {
 	display:inline-block;
 	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
 	border-image-slice: 1;
+}
+
+#coffee_box {
+	margin-left: 0.25em;
+}
+
+#git_button {
+	margin-right: 0.25em;
 }
 
 #return_button {
@@ -117,10 +122,9 @@ body {
 }
 
 #head_image_container {
-	margin: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
+	position: relative;
+	top: -2.25em;
+	z-index: -1;
 }
 
 #head_image {
@@ -134,7 +138,6 @@ p {
 
 .box_indicator {
 	position: relative;
-	top: 67%;
 }
 
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
@@ -164,7 +167,7 @@ section {
 	display: flex;
 	flex-direction: column;
 	background-color: transparent;
-	width: 100vw;
+	width: 100%;
 	height: 95vh;
 }
 
@@ -254,7 +257,6 @@ footer {
 	width: 100vw;
 	pointer-events: all;
 }
-
 
 /* :0 What?! Omg mobile responsiveness?!?!?! */
 
