@@ -228,6 +228,8 @@ footer {
 .praise, .ina_credit {
 	display: inline-block;
 	font-size: 0.6em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 
 .work_text {
@@ -261,17 +263,17 @@ footer {
 /* :0 What?! Omg mobile responsiveness?!?!?! */
 
 @media (orientation:  portrait) {
-	.the_playlist, footer {
+	.the_playlist {
 		display: none;
 	}
 
 	.box_indicator {
-		font-size: 1.5em;
-		top: 60%;
+		font-size: 1em;
+		top:  35%;
 	}
 
 	.prev_progress_button, .next_progress_button {
-		font-size: 2.5em;
+		font-size: 3em;
 	}
 
 	html {
