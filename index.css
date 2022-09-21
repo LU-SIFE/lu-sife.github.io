@@ -250,7 +250,7 @@ footer {
 }
 
 
-// :0 What?! Omg mobile responsiveness?!?!?!
+/* :0 What?! Omg mobile responsiveness?!?!?! */
 
 @media (orientation:  portrait) {
 	.the_playlist, footer, .box_indicator {
