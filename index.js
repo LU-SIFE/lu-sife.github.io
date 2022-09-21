@@ -76,9 +76,6 @@ geometry.applyQuaternion(quaternion);
 //no clue why. but material1 creates 2 colors for outlineMaterial0 and 3.
 var material0 = new THREE.MeshBasicMaterial({color: '#ffb347'});
 var material1 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
-var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#C71266", side: THREE.BackSide});
-var outlineMaterial1 = new THREE.MeshBasicMaterial({color: "#6D00CF", side: THREE.BackSide});
-var outlineMaterial0 = new THREE.MeshBasicMaterial({color: "#F25050", side: THREE.BackSide});
 
 //objects
 const cube_insts = new Object;
