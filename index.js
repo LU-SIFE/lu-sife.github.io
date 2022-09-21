@@ -13,7 +13,7 @@ var data_array = [
 const scene = new THREE.Scene();
 
 //sets camera perspective depending on viewport
-if (window.innerWidth + 50 >= window.innerHeight) {
+if (window.innerWidth >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 } else {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -88,7 +88,7 @@ for (let i = 0; i < data_array.length; i++) {
 	cube_insts["cube" + i] = new THREE.Mesh(geometry, material1);
 	cube_insts["cube" + i].scale.multiplyScalar(0.90);
 	cube_insts["cube" + i].userData.URL = data_array[i][1];
-	cube_insts["cube" + i].title = data_array[i][0];
+	cube_insts["cube" + i].title = "<span id='special' class='link_body'>" + data_array[i][0] + "</span>";
 	outline_insts["cube" + i] = new THREE.MeshBasicMaterial({color: data_array[i][2], side: THREE.BackSide});
 	outline_insts["cube" + i].mesh =new THREE.Mesh(geometry, outline_insts["cube" + i]);
 	outline_insts["cube" + i].mesh.scale.multiplyScalar(1.05);
