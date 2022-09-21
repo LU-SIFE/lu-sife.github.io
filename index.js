@@ -5,7 +5,7 @@ window.addEventListener('resize', onWindowResize, false);
 
 var data_array = [
 	["Puzzle Crawler", "https://lu-sife.github.io/Puzzle-Crawler/", "#6D00CF"],
-	["LEVELED", "https://lu-sife.github.io/LEVELED/", "#C71266"],
+	["LEVELED (WIP)", "https://lu-sife.github.io/LEVELED/", "#C71266"],
 	["Web Dev Ticketing", "https://github.com/LU-SIFE/Web-Dev-Ticketing", "#F25050"]
 ];
 
@@ -29,9 +29,6 @@ var currently_moving = 0;
 var hover_offscreen = 1;
 var hover_offscreen2 = 1;
 var hover_offscreen3 = 1;
-var bobbing_counter = 0;
-var bobbing_counter2 = 0;
-var bobbing_counter3 = 0;
 var link_class = document.getElementsByClassName("link_body");
 var artist_text = "";
 var music_text = "";
@@ -79,59 +76,47 @@ geometry.applyQuaternion(quaternion);
 //no clue why. but material1 creates 2 colors for outlineMaterial0 and 3.
 var material0 = new THREE.MeshBasicMaterial({color: '#ffb347'});
 var material1 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
-var outlineMaterial3 = new THREE.MeshBasicMaterial({color: "#C71266", side: THREE.BackSide});
+var outlineMaterial2 = new THREE.MeshBasicMaterial({color: "#C71266", side: THREE.BackSide});
 var outlineMaterial1 = new THREE.MeshBasicMaterial({color: "#6D00CF", side: THREE.BackSide});
 var outlineMaterial0 = new THREE.MeshBasicMaterial({color: "#F25050", side: THREE.BackSide});
 
 //objects
 const cube_insts = new Object;
-
-var new_instance = "";
+var bobbing_counter = new Object;
+var outline_insts = new Object;
+var cube_count = 0;
 for (let i = 0; i < data_array.length; i++) {
-	new_instance = "cube";
-	new_instance += i;
-	cube_insts[new_instance] = new THREE.Mesh(geometry, material1);
-	cube_insts[new_instance].scale.multiplyScalar(0.90);
-	scene.add(cube_insts[new_instance]);
+	cube_count++;
+	bobbing_counter["cube" + i] = 0;
+	cube_insts["cube" + i] = new THREE.Mesh(geometry, material1);
+	cube_insts["cube" + i].scale.multiplyScalar(0.90);
+	cube_insts["cube" + i].userData.URL = data_array[i][1];
+	cube_insts["cube" + i].title = data_array[i][0];
+	outline_insts["cube" + i] = new THREE.MeshBasicMaterial({color: data_array[i][2], side: THREE.BackSide});
+	outline_insts["cube" + i].mesh =new THREE.Mesh(geometry, outline_insts["cube" + i]);
+	outline_insts["cube" + i].mesh.scale.multiplyScalar(1.05);
+	scene.add(cube_insts["cube" + i]);
+	scene.add(outline_insts["cube" + i].mesh);
 }
 
-var outlineMesh = new THREE.Mesh(geometry, outlineMaterial3);
-var outlineMesh2 = new THREE.Mesh(geometry, outlineMaterial0);
-var outlineMesh3 = new THREE.Mesh(geometry, outlineMaterial1);
-
-
-
-//object attribute creation/alteration
-cube_insts.cube0.userData.URL = "https://lu-sife.github.io/Puzzle-Crawler/";
-cube_insts.cube1.userData.URL = "https://github.com/LU-SIFE";
-cube_insts.cube2.userData.URL = "https://lu-sife.github.io/LEVELED/";
-outlineMesh.scale.multiplyScalar(1.05);
-outlineMesh2.scale.multiplyScalar(1.05);
-outlineMesh3.scale.multiplyScalar(1.05);
-
-//adds object to the scene
-scene.add(outlineMesh);
-scene.add(outlineMesh2);
-scene.add(outlineMesh3);
-
 //sets object positions
-outlineMesh2.position.x = 2;
+outline_insts.cube1.mesh.position.x = 2;
 cube_insts.cube1.position.x = 2;
-outlineMesh3.position.x = -2;
+outline_insts.cube2.mesh.position.x = -2;
 cube_insts.cube2.position.x = -2;
 
-outlineMesh2.position.z = -1;
+outline_insts.cube1.mesh.position.z = -1;
 cube_insts.cube1.position.z = -1;
-outlineMesh3.position.z = -1;
+outline_insts.cube2.mesh.position.z = -1;
 cube_insts.cube2.position.z = -1;
 
 camera.position.z = 5;
 
 cube_insts.cube2.position.y = -0.4;
-outlineMesh3.position.y = -0.4;
+outline_insts.cube2.mesh.position.y = -0.4;
 
 cube_insts.cube1.position.y = -0.5;
-outlineMesh2.position.y = -0.5;
+outline_insts.cube1.mesh.position.y = -0.5;
 
 //color variables
 var r = 255;
@@ -268,19 +253,19 @@ function quaternion_revert(quat_select) {
 
 	if (quat_select == 1) {
 		cube_insts.cube0.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion2, 0.1);
+		outline_insts.cube0.mesh.quaternion.rotateTowards(quaternion2, 0.1);
 		return;
 	}
 
 	if (quat_select == 2) {
 		cube_insts.cube1.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh2.quaternion.rotateTowards(quaternion2, 0.1);
+		outline_insts.cube1.mesh.quaternion.rotateTowards(quaternion2, 0.1);
 		return;
 	}
 
 	if (quat_select == 3) {
 		cube_insts.cube2.quaternion.rotateTowards(quaternion2, 0.1);
-		outlineMesh3.quaternion.rotateTowards(quaternion2, 0.1);
+		outline_insts.cube2.mesh.quaternion.rotateTowards(quaternion2, 0.1);
 		return;
 	}
 }
@@ -289,91 +274,47 @@ function quaternion_rotate_towards(quat_select) {
 
 	if (quat_select == 1) {
 		cube_insts.cube0.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh.quaternion.rotateTowards(quaternion3, 0.1);
+		outline_insts.cube0.mesh.quaternion.rotateTowards(quaternion3, 0.1);
 		return;
 	}
 
 	if (quat_select == 2) {
 		cube_insts.cube1.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh2.quaternion.rotateTowards(quaternion3, 0.1);
+		outline_insts.cube1.mesh.quaternion.rotateTowards(quaternion3, 0.1);
 		return;
 	}
 
 	if (quat_select == 3) {
 		cube_insts.cube2.quaternion.rotateTowards(quaternion3, 0.1);
-		outlineMesh3.quaternion.rotateTowards(quaternion3, 0.1);
+		outline_insts.cube2.mesh.quaternion.rotateTowards(quaternion3, 0.1);
 		return;
 	}
 }
 
-//cube1 hover effect
-function cube_bob() {
-	
-	if (hover_offscreen == 1) {
-		if (bobbing_counter == 0) {
-			if (cube_insts.cube0.position.y < 0.20) {
-				
-				outlineMesh.position.y += 0.005;
-				cube_insts.cube0.position.y += 0.005;
-				return;
-			}
-			bobbing_counter = 1;
-			return;
-		}
-		if (bobbing_counter == 1) {
-			if (cube_insts.cube0.position.y > -0.20) {
-				
-				outlineMesh.position.y -= 0.005;
-				cube_insts.cube0.position.y -= 0.005;
-				return;
-			}
-		bobbing_counter = 0;
-		}
+function bob_master() {
+	for (let i = 0; i < cube_count; i++) {
+		bob_main("cube" + i);
 	}
 }
 
-//cube2 hover effect
-function cube2_bob() {
-	
-	if (hover_offscreen2 == 1) {
-			if (bobbing_counter2 == 0 && cube_insts.cube1.position.y < 0.20) {
-				outlineMesh2.position.y += 0.005;
-				cube_insts.cube1.position.y += 0.005;
-				return;
-			}
-			
-		bobbing_counter2 = 1;
-		
-		if (bobbing_counter2 == 1 && cube_insts.cube1.position.y > -0.20) {
-			
-			outlineMesh2.position.y -= 0.005;
-			cube_insts.cube1.position.y -= 0.005;
+function bob_main(cube_number) {
+
+
+		if (bobbing_counter[cube_number] == 0 && cube_insts[cube_number].position.y < 0.20) {
+			outline_insts[cube_number].mesh.position.y += 0.005;
+			cube_insts[cube_number].position.y += 0.005;
 			return;
 		}
-		bobbing_counter2 = 0;
-	}
+		bobbing_counter[cube_number] = 1;
+
+		if (bobbing_counter[cube_number] == 1 && cube_insts[cube_number].position.y > -0.20) {
+			outline_insts[cube_number].mesh.position.y -= 0.005;
+			cube_insts[cube_number].position.y -= 0.005;
+			return;
+		}
+		bobbing_counter[cube_number] = 0;
 }
 
-function cube3_bob() {
-	
-	if (hover_offscreen3 == 1) {
-			if (bobbing_counter3 == 0 && cube_insts.cube2.position.y < 0.20) {
-				outlineMesh3.position.y += 0.005;
-				cube_insts.cube2.position.y += 0.005;
-				return;
-			}
-			
-		bobbing_counter3 = 1;
-		
-		if (bobbing_counter3 == 1 && cube_insts.cube2.position.y > -0.20) {
-			
-			outlineMesh3.position.y -= 0.005;
-			cube_insts.cube2.position.y -= 0.005;
-			return;
-		}
-		bobbing_counter3 = 0;
-	}
-}
 
 //object position calculation on next button press
 function next_selection() {
@@ -395,85 +336,80 @@ function calc_position() {
 	//cube3 in first position
 	if (position_array[0] == 3) {
 		cube_insts.cube2.position.x = -2;
-		outlineMesh3.position.x = -2;
+		outline_insts.cube2.mesh.position.x = -2;
 		cube_insts.cube2.position.z = -1;
-		outlineMesh3.position.z = -1;
+		outline_insts.cube2.mesh.position.z = -1;
 	}
 	//cube3 in second/middle
 	if (position_array[1] == 3) {
 		cube_insts.cube2.position.x = 0;
-		outlineMesh3.position.x = 0;
+		outline_insts.cube2.mesh.position.x = 0;
 		cube_insts.cube2.position.z = 0;
-		outlineMesh3.position.z = 0;
+		outline_insts.cube2.mesh.position.z = 0;
 	}
 	//cube3 in last position
 	if (position_array[2] == 3) {
 		cube_insts.cube2.position.x = 2;
-		outlineMesh3.position.x = 2;
+		outline_insts.cube2.mesh.position.x = 2;
 		cube_insts.cube2.position.z = -1;
-		outlineMesh3.position.z = -1;
+		outline_insts.cube2.mesh.position.z = -1;
 	}
 
 	//cube2 in first position
 	if (position_array[0] == 2) {
 		cube_insts.cube1.position.x = -2;
-		outlineMesh2.position.x = -2;
+		outline_insts.cube1.mesh.position.x = -2;
 		cube_insts.cube1.position.z = -1;
-		outlineMesh2.position.z = -1;
+		outline_insts.cube1.mesh.position.z = -1;
 	}
 	//cube2 in second/middle
 	if (position_array[1] == 2) {
 		cube_insts.cube1.position.x = 0;
-		outlineMesh2.position.x = 0;
+		outline_insts.cube1.mesh.position.x = 0;
 		cube_insts.cube1.position.z = 0;
-		outlineMesh2.position.z = 0;
+		outline_insts.cube1.mesh.position.z = 0;
 	}
 	//cube2 in last position
 	if (position_array[2] == 2) {
 		cube_insts.cube1.position.x = 2;
-		outlineMesh2.position.x = 2;
+		outline_insts.cube1.mesh.position.x = 2;
 		cube_insts.cube1.position.z = -1;
-		outlineMesh2.position.z = -1;
+		outline_insts.cube1.mesh.position.z = -1;
 	}
 
 	//cube1 in first position
 	if (position_array[0] == 1) {
 		cube_insts.cube0.position.x = -2;
-		outlineMesh.position.x = -2;
+		outline_insts.cube0.mesh.position.x = -2;
 		cube_insts.cube0.position.z = -1;
-		outlineMesh.position.z = -1;
+		outline_insts.cube0.mesh.position.z = -1;
 	}
 	//cube1 in second/middle
 	if (position_array[1] == 1) {
 		cube_insts.cube0.position.x = 0;
-		outlineMesh.position.x = 0;
+		outline_insts.cube0.mesh.position.x = 0;
 		cube_insts.cube0.position.z = 0;
-		outlineMesh.position.z = 0;
+		outline_insts.cube0.mesh.position.z = 0;
 	}
 	//cube1 in last position
 	if (position_array[2] == 1) {
 		cube_insts.cube0.position.x = 2;
-		outlineMesh.position.x = 2;
+		outline_insts.cube0.mesh.position.x = 2;
 		cube_insts.cube0.position.z = -1;
-		outlineMesh.position.z = -1;
+		outline_insts.cube0.mesh.position.z = -1;
 	}
+
+	link_change();
 }
 
 function link_change() {
-	if (cube_insts.cube0.position.x == 0) {
-		document.getElementById("puzzle_crawler").href = cube_insts.cube0.userData.URL;
-		document.getElementById("puzzle_crawler").innerHTML = "Puzzle Crawler";
-		return;
-	}
-	if (cube_insts.cube1.position.x == 0) {
-		document.getElementById("puzzle_crawler").href = cube_insts.cube1.userData.URL;
-		document.getElementById("puzzle_crawler").innerHTML = "My Github";
-		return;
-	}
-	if (cube_insts.cube2.position.x == 0) {
-		document.getElementById("puzzle_crawler").href = cube_insts.cube2.userData.URL;
-		document.getElementById("puzzle_crawler").innerHTML = "LEVELED (WIP)";
-		return;
+
+	for (let i = 0; i < cube_count; i++) {
+		if (cube_insts["cube" + i].position.x == 0) {
+			document.getElementById("puzzle_crawler").href = cube_insts["cube" + i].userData.URL;
+			document.getElementById("puzzle_crawler").innerHTML = cube_insts["cube" + i].title;
+			return;
+		}
 	}
 }
 
@@ -545,11 +481,8 @@ function animate() {
 	window.requestAnimationFrame( animate );
 	
 	quaternion_rotate();
-	cube_bob();
-	cube2_bob();
-	cube3_bob();
+	bob_master();
 	hoverPieces();
-	link_change();
 	renderer.render( scene, camera );
 }
 
