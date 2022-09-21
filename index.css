@@ -248,3 +248,20 @@ footer {
 	width: 100vw;
 	pointer-events: all;
 }
+
+
+// :0 What?! Omg mobile responsiveness?!?!?!
+
+@media (orientation:  portrait) {
+	.the_playlist, footer, .box_indicator {
+		display: none;
+	}
+
+	html {
+		font-size: 1em;
+	}
+
+	#head_image_container {
+		top: 10%;
+	}
+}
