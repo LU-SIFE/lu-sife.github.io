@@ -173,6 +173,7 @@ section {
 
 #artist_container, #song_container {
 	font-size: 2.75vw;
+	overflow: hidden;
 }
 
 #top_section {
