@@ -15,7 +15,7 @@ a, button {
 	padding-bottom: 2px;
 }
 
-a, button, .link_body, #git_button, #coffee_box, #return_button {
+a, button, .link_body, #git_button, #coffee_box, #return_button, #fs_button {
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
@@ -25,7 +25,7 @@ a, button, .link_body, #git_button, #coffee_box, #return_button {
 	--bg-h: 100%;
 }
 
-a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #git_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), #return_button:where(:hover, :focus-visible) {
+a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #fs_button:where(:hover, :focus-visible), #coffee_box:where(:hover, :focus-visible), #git_button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), #return_button:where(:hover, :focus-visible) {
 	background-size: 100% var(--bg-h);
 	background-position-x: left;
 }
@@ -85,9 +85,9 @@ body {
 	margin-bottom: 0.25em;
 }
 
-#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button {
+#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button {
+
 	font-family: Courier New;
-	
 	font-weight: bold;
 	color: #ffb347;
 	font-size:1.75vw;
@@ -103,7 +103,7 @@ body {
 	border-image-slice: 1;
 }
 
-nav a {
+nav a, nav button {
 	margin-right: 0.25em;
 	margin-left: 0.25em;
 }
@@ -323,5 +323,9 @@ footer {
 
 	#loader {
 		width: 100vw;
+	}
+
+	#fs_button {
+		display: none;
 	}
 }
