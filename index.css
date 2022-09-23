@@ -294,7 +294,6 @@ footer {
 }
 
 #loader {
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -302,6 +301,10 @@ footer {
   background: -webkit-linear-gradient(left, #6D00CF, #F25050);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#load_image {
+	width: 70%;
 }
 
 /* :0 What?! Omg mobile responsiveness?!?!?! */
