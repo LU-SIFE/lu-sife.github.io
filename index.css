@@ -193,11 +193,15 @@ section {
 }
 
 #top_section {
-	display: flex;
 	flex-direction: column;
 	background-color: transparent;
 	width: 100%;
 	height: 95vh;
+}
+
+#top_section, #about_container, #business_container, #the_playlist, #footer {
+	display: none;
+
 }
 
 .page_break {
@@ -289,20 +293,25 @@ footer {
 	pointer-events: all;
 }
 
+#loader {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  background: -webkit-linear-gradient(left, #6D00CF, #F25050);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* :0 What?! Omg mobile responsiveness?!?!?! */
-
 @media (orientation:  portrait) {
-	.box_indicator {
+	html, .box_indicator {
 		font-size: 1em;
 	}
 
 	.prev_progress_button, .next_progress_button {
 		font-size: 3em;
-	}
-
-	html {
-		font-size: 1em;
 	}
 
 	#head_image_container {

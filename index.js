@@ -514,3 +514,34 @@ var music_array = [
 ];
 
 randomize_songs();
+
+
+var page_load;
+
+myFunction();
+
+function myFunction() {
+  page_load = setTimeout(showPage, 1500);
+}
+
+function showPage() {
+	document.getElementById("loader").style.display = "none";
+	document.getElementById("top_section").style.display = "flex";
+	document.getElementById("about_container").style.display = "inline-block";
+	document.getElementById("business_container").style.display = "inline-block";
+	document.getElementById("the_playlist").style.display = "inline-block";
+	document.getElementById("footer").style.display = "inline-block";
+	onWindowResize();
+}
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+    
+    document.getElementById("return_button").style.opacity = 1;
+  } else {
+    document.getElementById("return_button").style.opacity = 0;
+  }
+}
