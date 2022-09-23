@@ -30,6 +30,21 @@ a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), #coffee_b
 	background-position-x: left;
 }
 
+.link_body_foot {
+	background-size: 200% 100%;
+	background-position: -100%;
+	-webkit-background-clip: text;
+	transition: all 0.3s ease-in-out;
+	background: linear-gradient(0deg, #1f1f1f, #1f1f1f) no-repeat right bottom / 0 var(--bg-h);
+	transition: background-size 350ms;
+	--bg-h: 100%;
+}
+
+.link_body_foot:where(:hover, :focus-visible) {
+	background-size: 100% var(--bg-h);
+	background-position-x: left;
+}
+
 /*
 	This is general styling, be less careful I guess.
 */
@@ -172,6 +187,7 @@ section {
 }
 
 #artist_container, #song_container {
+	line-height: 1.2em;
 	font-size: 2.75vw;
 	overflow: hidden;
 }
