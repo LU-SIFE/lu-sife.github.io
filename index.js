@@ -545,3 +545,52 @@ function scrollFunction() {
     document.getElementById("return_button").style.opacity = 0;
   }
 }
+var saver_state = 0;
+
+function openFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+    screen_save();
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+    document.documentElement.webkitRequestFullscreen();
+    screen_save();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+    document.documentElement.msRequestFullscreen();
+    screen_save();
+  }
+}
+
+
+function screen_save() {
+	document.getElementById("loader").style.display = "flex";
+	document.getElementById("load_text").style.display = "none";
+	document.getElementById("top_section").style.display = "none";
+	document.getElementById("about_container").style.display = "none";
+	document.getElementById("business_container").style.display = "none";
+	document.getElementById("the_playlist").style.display = "none";
+	document.getElementById("footer").style.display = "none";
+
+}
+
+
+if (document.addEventListener)
+{
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+
+function exitHandler()
+{
+ if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
+ {
+	document.getElementById("loader").style.display = "none";
+	document.getElementById("top_section").style.display = "flex";
+	document.getElementById("about_container").style.display = "inline-block";
+	document.getElementById("business_container").style.display = "inline-block";
+	document.getElementById("the_playlist").style.display = "inline-block";
+	document.getElementById("footer").style.display = "inline-block";
+	onWindowResize();
+ }
+}

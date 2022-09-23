@@ -317,4 +317,8 @@ footer {
 	#head_image_container {
 		top: 10%;
 	}
+
+	#loader {
+		width: 100vw;
+	}
 }
