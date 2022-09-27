@@ -99,6 +99,9 @@ body {
 	height: fit-content;
 	border: 2px solid;
 	display:inline-block;
+}
+
+#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button, #return_button, .page_break, .profile_pic, .profile_pic2, .link_body, .link_body_foot {
 	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
 	border-image-slice: 1;
 }
@@ -125,8 +128,6 @@ nav a, nav button {
 	right: 0.75em;
 	font-size: 1.25em;
 	border-style: solid;
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
 }
 
 
@@ -134,8 +135,6 @@ nav a, nav button {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	pointer-events: all;
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
 }
 
 #head_image_container {
@@ -204,16 +203,16 @@ section {
 
 }
 
+#business_container {
+	flex-direction: column;
+}
+
 .page_break {
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
 	border-top-style: solid;
 }
 
 .profile_pic, .profile_pic2 {
 	background-color: #0f0f0f;
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
 	max-width: 33%;
 	margin: 3%;
 	padding: 2%;
@@ -225,6 +224,10 @@ section {
 	text-align: left;
 }
 
+.text_container li {
+	list-style: none;
+}
+
 .link_body, .link_body_foot {
 	color: #ffb347;
 	display: inline;
@@ -232,8 +235,6 @@ section {
 	padding-top: 0px;
 	border-bottom-style: solid;
 	pointer-events: all;
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
 }
 .box_spacer {
 	display: inline-flex;
@@ -308,13 +309,13 @@ footer {
 	width: 70%;
 }
 
-#skill_bar {
-	border-bottom-style: solid;
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
-	border-image-slice: 1;
+.skill_bar {
+	background: linear-gradient(to right, #6D00CF, #F25050);
+	height: 0.5em;
+	border-radius: 20em;
 }
 
-/* :0 What?! Omg mobile responsiveness?!?!?! */
+/* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
 @media (orientation:  portrait) {
 	html, .box_indicator {
 		font-size: 1em;
