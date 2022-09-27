@@ -313,6 +313,7 @@ footer {
 	background: linear-gradient(to right, #6D00CF, #F25050);
 	height: 0.5em;
 	border-radius: 20em;
+	float: left;
 }
 
 /* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
