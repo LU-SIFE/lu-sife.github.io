@@ -12,12 +12,15 @@ var data_array = [
 //scene initialization
 const scene = new THREE.Scene();
 
+
 //sets camera perspective depending on viewport
 if (window.innerWidth >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 } else {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
+
+camera.position.z = 5;
 
 //misc. variables
 var hover_color = "0xd19847";
@@ -97,6 +100,7 @@ for (let i = 0; i < data_array.length; i++) {
 }
 
 //sets object positions
+//NEEDS MAJOR REVAMP!! FIX OTHER FUNCTIONS AT THE SAME TIME!!
 outline_insts.cube1.mesh.position.x = 2;
 cube_insts.cube1.position.x = 2;
 outline_insts.cube2.mesh.position.x = -2;
@@ -106,8 +110,6 @@ outline_insts.cube1.mesh.position.z = -1;
 cube_insts.cube1.position.z = -1;
 outline_insts.cube2.mesh.position.z = -1;
 cube_insts.cube2.position.z = -1;
-
-camera.position.z = 5;
 
 cube_insts.cube2.position.y = -0.4;
 outline_insts.cube2.mesh.position.y = -0.4;
@@ -201,23 +203,24 @@ function hoverPieces() {
 		intersection_counter = 1;
 		intersect_link = intersects[0].object.userData.URL;
 //checks which onject is being hovered
-		if (intersects[0].object == cube_insts.cube0) {
-			currently_moving = 1;
-			return;
+
+		for (i = 0; i < data_array.length; i++) {
+			if (intersects[0].object == cube_insts["cube" + i]) {
+				currently_moving = i + 1;
+			}
 		}
-		if (intersects[0].object == cube_insts.cube1) {
-			currently_moving = 2;
-		}
-		if (intersects[0].object == cube_insts.cube2) {
-			currently_moving = 3;
-		}
+
+
+
+
 		return;
 	}
 //reverts rotation amd material
 		currently_moving = 0;
-		cube_insts.cube0.material = material0;
-		cube_insts.cube1.material = material0;
-		cube_insts.cube2.material = material0;
+
+		for (i = 0; i < data_array.length; i++) {
+			cube_insts["cube" + i].material = material0;
+		}
 		intersection_counter = 0;
 }
 
@@ -248,43 +251,23 @@ function quaternion_rotate() {
 //reverts the quaternions to quat2 if not selected
 function quaternion_revert(quat_select) {
 
-	if (quat_select == 1) {
-		cube_insts.cube0.quaternion.rotateTowards(quaternion2, 0.1);
-		outline_insts.cube0.mesh.quaternion.rotateTowards(quaternion2, 0.1);
-		return;
-	}
-
-	if (quat_select == 2) {
-		cube_insts.cube1.quaternion.rotateTowards(quaternion2, 0.1);
-		outline_insts.cube1.mesh.quaternion.rotateTowards(quaternion2, 0.1);
-		return;
-	}
-
-	if (quat_select == 3) {
-		cube_insts.cube2.quaternion.rotateTowards(quaternion2, 0.1);
-		outline_insts.cube2.mesh.quaternion.rotateTowards(quaternion2, 0.1);
-		return;
+	for (i = 0; i < data_array.length; i++) {
+		if (quat_select == i + 1) {
+			cube_insts["cube" + i].quaternion.rotateTowards(quaternion2, 0.1);
+			outline_insts["cube" + i].mesh.quaternion.rotateTowards(quaternion2, 0.1);
+			return;
+		}
 	}
 }
 //rotates the quaternion
 function quaternion_rotate_towards(quat_select) {
 
-	if (quat_select == 1) {
-		cube_insts.cube0.quaternion.rotateTowards(quaternion3, 0.1);
-		outline_insts.cube0.mesh.quaternion.rotateTowards(quaternion3, 0.1);
-		return;
-	}
-
-	if (quat_select == 2) {
-		cube_insts.cube1.quaternion.rotateTowards(quaternion3, 0.1);
-		outline_insts.cube1.mesh.quaternion.rotateTowards(quaternion3, 0.1);
-		return;
-	}
-
-	if (quat_select == 3) {
-		cube_insts.cube2.quaternion.rotateTowards(quaternion3, 0.1);
-		outline_insts.cube2.mesh.quaternion.rotateTowards(quaternion3, 0.1);
-		return;
+	for (i = 0; i < data_array.length; i++) {
+		if (quat_select == i + 1) {
+			cube_insts["cube" + i].quaternion.rotateTowards(quaternion3, 0.1);
+			outline_insts["cube" + i].mesh.quaternion.rotateTowards(quaternion3, 0.1);
+			return;
+		}
 	}
 }
 
@@ -329,78 +312,32 @@ function prev_selection() {
 	calc_position();
 }
 
+//NEEDS MAJOR REVAMP!!
 function calc_position() {
-	//cube3 in first position
-	if (position_array[0] == 3) {
-		cube_insts.cube2.position.x = -2;
-		outline_insts.cube2.mesh.position.x = -2;
-		cube_insts.cube2.position.z = -1;
-		outline_insts.cube2.mesh.position.z = -1;
-	}
-	//cube3 in second/middle
-	if (position_array[1] == 3) {
-		cube_insts.cube2.position.x = 0;
-		outline_insts.cube2.mesh.position.x = 0;
-		cube_insts.cube2.position.z = 0;
-		outline_insts.cube2.mesh.position.z = 0;
-	}
-	//cube3 in last position
-	if (position_array[2] == 3) {
-		cube_insts.cube2.position.x = 2;
-		outline_insts.cube2.mesh.position.x = 2;
-		cube_insts.cube2.position.z = -1;
-		outline_insts.cube2.mesh.position.z = -1;
+	for (i = 0; i < 3; i++) {
+		if (position_array[0] == i + 1) {
+			cube_insts["cube" + i].position.x = -2;
+			outline_insts["cube" + i].mesh.position.x = -2;
+			cube_insts["cube" + i].position.z = -1;
+			outline_insts["cube" + i].mesh.position.z = -1;
+		}
+
+		if (position_array[1] == i + 1) {
+			cube_insts["cube" + i].position.x = 0;
+			outline_insts["cube" + i].mesh.position.x = 0;
+			cube_insts["cube" + i].position.z = 0;
+			outline_insts["cube" + i].mesh.position.z = 0;
+		}
+
+		if (position_array[2] == i + 1) {
+			cube_insts["cube" + i].position.x = 2;
+			outline_insts["cube" + i].mesh.position.x = 2;
+			cube_insts["cube" + i].position.z = -1;
+			outline_insts["cube" + i].mesh.position.z = -1;
+		}
 	}
 
-	//cube2 in first position
-	if (position_array[0] == 2) {
-		cube_insts.cube1.position.x = -2;
-		outline_insts.cube1.mesh.position.x = -2;
-		cube_insts.cube1.position.z = -1;
-		outline_insts.cube1.mesh.position.z = -1;
-	}
-	//cube2 in second/middle
-	if (position_array[1] == 2) {
-		cube_insts.cube1.position.x = 0;
-		outline_insts.cube1.mesh.position.x = 0;
-		cube_insts.cube1.position.z = 0;
-		outline_insts.cube1.mesh.position.z = 0;
-	}
-	//cube2 in last position
-	if (position_array[2] == 2) {
-		cube_insts.cube1.position.x = 2;
-		outline_insts.cube1.mesh.position.x = 2;
-		cube_insts.cube1.position.z = -1;
-		outline_insts.cube1.mesh.position.z = -1;
-	}
-
-	//cube1 in first position
-	if (position_array[0] == 1) {
-		cube_insts.cube0.position.x = -2;
-		outline_insts.cube0.mesh.position.x = -2;
-		cube_insts.cube0.position.z = -1;
-		outline_insts.cube0.mesh.position.z = -1;
-	}
-	//cube1 in second/middle
-	if (position_array[1] == 1) {
-		cube_insts.cube0.position.x = 0;
-		outline_insts.cube0.mesh.position.x = 0;
-		cube_insts.cube0.position.z = 0;
-		outline_insts.cube0.mesh.position.z = 0;
-	}
-	//cube1 in last position
-	if (position_array[2] == 1) {
-		cube_insts.cube0.position.x = 2;
-		outline_insts.cube0.mesh.position.x = 2;
-		cube_insts.cube0.position.z = -1;
-		outline_insts.cube0.mesh.position.z = -1;
-	}
-
-	link_change();
-}
-
-function link_change() {
-
+	//changes the active link
 	for (let i = 0; i < cube_count; i++) {
 		if (cube_insts["cube" + i].position.x == 0) {
 			document.getElementById("puzzle_crawler").href = cube_insts["cube" + i].userData.URL;
@@ -449,19 +386,6 @@ function shuffle(array) {
 function praise_the_code() {
 	alert("Woohoo! secret lol");
 }
-
-//main animation function
-//DO NOT INCLUDE RETURN;
-function animate() {
-	window.requestAnimationFrame( animate );
-	
-	quaternion_rotate();
-	bob_master();
-	hoverPieces();
-	renderer.render( scene, camera );
-}
-
-animate();
 
 //Music array
 var music_array = [
@@ -560,7 +484,6 @@ function openFullscreen() {
   }
 }
 
-
 function screen_save() {
 	document.getElementById("loader").style.display = "flex";
 	document.getElementById("load_text").style.display = "none";
@@ -573,25 +496,27 @@ function screen_save() {
 
 }
 
-
-if (document.addEventListener)
-{
- document.addEventListener('fullscreenchange', exitHandler, false);
- document.addEventListener('mozfullscreenchange', exitHandler, false);
- document.addEventListener('MSFullscreenChange', exitHandler, false);
- document.addEventListener('webkitfullscreenchange', exitHandler, false);
+if (document.addEventListener) {
+	document.addEventListener('fullscreenchange', exitHandler, false);
+	document.addEventListener('mozfullscreenchange', exitHandler, false);
+	document.addEventListener('MSFullscreenChange', exitHandler, false);
+	document.addEventListener('webkitfullscreenchange', exitHandler, false);
 }
 
-function exitHandler()
-{
- if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
- {
-	document.getElementById("loader").style.display = "none";
-	document.getElementById("top_section").style.display = "flex";
-	document.getElementById("about_container").style.display = "inline-block";
-	document.getElementById("business_container").style.display = "flex";
-	document.getElementById("the_playlist").style.display = "inline-block";
-	document.getElementById("footer").style.display = "inline-block";
-	onWindowResize();
- }
+function exitHandler() {
+	if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+		showPage();
+	}
 }
+
+//main animation function
+function animate() {
+	window.requestAnimationFrame( animate );
+	
+	quaternion_rotate();
+	bob_master();
+	hoverPieces();
+	renderer.render( scene, camera );
+}
+
+animate();
