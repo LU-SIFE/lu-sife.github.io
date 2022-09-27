@@ -218,6 +218,7 @@ section {
 	margin: 3%;
 	padding: 2%;
 	border-style: solid;
+	align-self: flex-start;
 }
 .text_container {
 	margin: 3%;
@@ -305,6 +306,12 @@ footer {
 
 #load_image {
 	width: 70%;
+}
+
+#skill_bar {
+	border-bottom-style: solid;
+	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-slice: 1;
 }
 
 /* :0 What?! Omg mobile responsiveness?!?!?! */
