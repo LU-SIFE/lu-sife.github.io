@@ -162,7 +162,7 @@ function onMouseClick() {
 }
 
 //window resizing
-function onWindowResize(){
+function onWindowResize() {
 
 	//gets camera aspect ratio and updates projection matrix to appropriate size
     camera.aspect = window.innerWidth / window.innerHeight;
