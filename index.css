@@ -101,7 +101,7 @@ body {
 	display:inline-block;
 }
 
-#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button, #return_button, .page_break, .profile_pic, .profile_pic2, .link_body, .link_body_foot {
+#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button, #return_button, .page_break, .profile_pic, .profile_pic2, .link_body, .link_body_foot, .skill_container {
 	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
 	border-image-slice: 1;
 }
@@ -313,8 +313,24 @@ footer {
 	background: linear-gradient(to right, #6D00CF, #F25050);
 	height: 0.5em;
 	border-radius: 20em;
-	float: left;
+	display: inline-block;
 }
+
+.skill_container li {
+	text-align: center;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+
+.skill_container {
+	padding: 1%;
+	border-style: solid;
+	width: 45%;
+} 
+
 
 /* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
 @media (orientation:  portrait) {
