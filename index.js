@@ -20,7 +20,7 @@ if (window.innerWidth >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
 }
 
-camera.position.z = 5;
+camera.position.z = 8.5;
 
 //misc. variables
 var hover_color = "0xd19847";
@@ -35,11 +35,6 @@ var hover_offscreen3 = 1;
 var link_class = document.getElementsByClassName("link_body");
 var artist_text = "";
 var music_text = "";
-
-//position selection array
-var position_array = [3, 1, 2];
-var prev_position_array = [3, 1, 2];
-
 
 function getInnerHeight( elm ){
   var computed = getComputedStyle(elm),
@@ -80,6 +75,34 @@ geometry.applyQuaternion(quaternion);
 var material0 = new THREE.MeshBasicMaterial({color: '#ffb347'});
 var material1 = new THREE.MeshBasicMaterial({side: THREE.BackSide});
 
+
+let amount = data_array.length;
+var position_array = new Array(amount);
+
+//converts radians to degrees when needed.
+function toRads (angle) {
+  return angle * (Math.PI / 180);
+}
+
+function main_func() {
+
+	//theta is the degrees between each element.
+	let theta = 360/amount;
+
+	for (let i = 0; i < amount; i++) {
+		position_array[i] = new Array();
+		position_array[i][0] = (Math.cos(toRads((theta * i + 270)))) * 2;
+		position_array[i][1] = -(((Math.sin(toRads((theta * i + 270)))) - 1) * 2);
+	}
+}
+
+main_func();
+
+var count_array = new Array(amount);
+for (i = 0; i < position_array.length; i++) {
+	count_array[i] = data_array[i];
+}
+
 //objects
 const cube_insts = new Object;
 var bobbing_counter = new Object;
@@ -101,15 +124,13 @@ for (let i = 0; i < data_array.length; i++) {
 
 //sets object positions
 //NEEDS MAJOR REVAMP!! FIX OTHER FUNCTIONS AT THE SAME TIME!!
-outline_insts.cube1.mesh.position.x = 2;
-cube_insts.cube1.position.x = 2;
-outline_insts.cube2.mesh.position.x = -2;
-cube_insts.cube2.position.x = -2;
+for (i = 0; i < data_array.length; i++) {
 
-outline_insts.cube1.mesh.position.z = -1;
-cube_insts.cube1.position.z = -1;
-outline_insts.cube2.mesh.position.z = -1;
-cube_insts.cube2.position.z = -1;
+	outline_insts["cube" + i].mesh.position.x = position_array[i][0];
+	cube_insts["cube" + i].position.x = position_array[i][0];
+	outline_insts["cube" + i].mesh.position.z = position_array[i][1];
+	cube_insts["cube" + i].position.z = position_array[i][1];
+}
 
 cube_insts.cube2.position.y = -0.4;
 outline_insts.cube2.mesh.position.y = -0.4;
@@ -180,48 +201,48 @@ function onWindowResize() {
 		camera.fov = 85;
 		camera.updateProjectionMatrix();
 }
-
 //mouse hover over objects
 function hoverPieces() {
 	
-//initializes raycaster
-
+	//initializes raycaster
 	raycaster.setFromCamera(mouse, camera);
 	const intersects = 	raycaster.intersectObjects(scene.children);
-	
-//checks if there is an object in the raycaster's path
-	if (intersects.length > 1) {
-		
-		
-//clones the objects material to revert it later
-		const newMaterial = intersects[0].object.material.clone();
-//changes the objects material to the new color
-		newMaterial.color.setHex(hover_color);
-		intersects[0].object.material = newMaterial;
-//extra needed variables
-		last_intersect = intersects;
-		intersection_counter = 1;
-		intersect_link = intersects[0].object.userData.URL;
-//checks which onject is being hovered
 
+	//checks if there is an object in the raycaster's path, only executes if its a cube and not an outline.
+	if (intersects.length == 2) {
 		for (i = 0; i < data_array.length; i++) {
 			if (intersects[0].object == cube_insts["cube" + i]) {
-				currently_moving = i + 1;
+
+				//clones the objects material to revert it later
+				const newMaterial = intersects[0].object.material.clone();
+
+				//changes the objects material to the new color
+				newMaterial.color.setHex(hover_color);
+				intersects[0].object.material = newMaterial;
+
+				//extra needed variables
+				last_intersect = intersects;
+				intersection_counter = 1;
+				intersect_link = intersects[0].object.userData.URL;
+
+				//checks which object is being hovered
+				for (i = 0; i < data_array.length; i++) {
+					if (intersects[0].object == cube_insts["cube" + i]) {
+						currently_moving = i + 1;
+					}
+				}
+				return;
 			}
 		}
-
-
-
-
-		return;
 	}
-//reverts rotation amd material
-		currently_moving = 0;
+	
+	//reverts rotation amd material
+	currently_moving = 0;
 
-		for (i = 0; i < data_array.length; i++) {
-			cube_insts["cube" + i].material = material0;
-		}
-		intersection_counter = 0;
+	for (i = 0; i < data_array.length; i++) {
+		cube_insts["cube" + i].material = material0;
+	}
+	intersection_counter = 0;
 }
 
 function quaternion_rotate() {
@@ -299,52 +320,33 @@ function bob_main(cube_number) {
 //object position calculation on next button press
 function next_selection() {
 
-	prev_position_array = position_array;
 	position_array.push(position_array.shift());
+	count_array.push(count_array.shift());
 	calc_position();
 }
 
 //object position calculation on previous button press
 function prev_selection() {
 
-	prev_position_array = position_array;
 	position_array.unshift(position_array.pop());
+	count_array.unshift(count_array.pop());
 	calc_position();
 }
 
 //NEEDS MAJOR REVAMP!!
 function calc_position() {
 	for (i = 0; i < 3; i++) {
-		if (position_array[0] == i + 1) {
-			cube_insts["cube" + i].position.x = -2;
-			outline_insts["cube" + i].mesh.position.x = -2;
-			cube_insts["cube" + i].position.z = -1;
-			outline_insts["cube" + i].mesh.position.z = -1;
-		}
+		for (i = 0; i < data_array.length; i++) {
 
-		if (position_array[1] == i + 1) {
-			cube_insts["cube" + i].position.x = 0;
-			outline_insts["cube" + i].mesh.position.x = 0;
-			cube_insts["cube" + i].position.z = 0;
-			outline_insts["cube" + i].mesh.position.z = 0;
-		}
-
-		if (position_array[2] == i + 1) {
-			cube_insts["cube" + i].position.x = 2;
-			outline_insts["cube" + i].mesh.position.x = 2;
-			cube_insts["cube" + i].position.z = -1;
-			outline_insts["cube" + i].mesh.position.z = -1;
-		}
+	outline_insts["cube" + i].mesh.position.x = position_array[i][0];
+	cube_insts["cube" + i].position.x = position_array[i][0];
+	outline_insts["cube" + i].mesh.position.z = position_array[i][1];
+	cube_insts["cube" + i].position.z = position_array[i][1];
+}
 	}
-
-	//changes the active link
-	for (let i = 0; i < cube_count; i++) {
-		if (cube_insts["cube" + i].position.x == 0) {
-			document.getElementById("puzzle_crawler").href = cube_insts["cube" + i].userData.URL;
-			document.getElementById("puzzle_crawler").innerHTML = cube_insts["cube" + i].title;
-			return;
-		}
-	}
+			document.getElementById("very_special").href = count_array[0][1];
+			document.getElementById("very_special").innerHTML = count_array[0][0];
+			
 }
 
 function randomize_songs() {

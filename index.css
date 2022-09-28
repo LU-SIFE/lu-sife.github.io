@@ -274,7 +274,7 @@ footer {
 	text-align: left;
 }
 
-#special {
+#special, #very_special {
   background: -webkit-linear-gradient(left, #6D00CF, #F25050);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
