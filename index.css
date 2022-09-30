@@ -334,8 +334,13 @@ footer {
 
 /* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
 @media (orientation:  portrait) {
-	html, .box_indicator {
-		font-size: 1em;
+
+	html {
+		font-size: 1.5em;
+	}
+
+	.box_indicator {
+		font-size: 0.75em;
 	}
 
 	.prev_progress_button, .next_progress_button {
@@ -343,14 +348,18 @@ footer {
 	}
 
 	#head_image_container {
-		top: 10%;
+		top: 0;
 	}
 
 	#loader {
 		width: 100vw;
 	}
 
-	#fs_button {
+	#fs_button, #git_button {
 		display: none;
+	}
+
+	#refresh_button {
+		font-size: 0.75em;
 	}
 }
