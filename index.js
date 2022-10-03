@@ -6,7 +6,7 @@ window.addEventListener('resize', onWindowResize, false);
 var data_array = [
 	["Puzzle Crawler", "https://lu-sife.github.io/Puzzle-Crawler/", "#6D00CF"],
 	["LEVELED (WIP)", "https://lu-sife.github.io/LEVELED/", "#C71266"],
-	["Web Dev Ticketing", "https://github.com/LU-SIFE/Web-Dev-Ticketing", "#F25050"]
+	["Web Dev Ticketing", "https://lu-sife.github.io/ticketing", "#F25050"]
 ];
 
 //scene initialization
@@ -321,7 +321,7 @@ function bob_main(cube_number) {
 function next_selection() {
 
 	position_array.push(position_array.shift());
-	count_array.push(count_array.shift());
+	count_array.unshift(count_array.pop());
 	calc_position();
 }
 
@@ -329,7 +329,7 @@ function next_selection() {
 function prev_selection() {
 
 	position_array.unshift(position_array.pop());
-	count_array.unshift(count_array.pop());
+	count_array.push(count_array.shift());
 	calc_position();
 }
 
