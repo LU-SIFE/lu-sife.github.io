@@ -114,7 +114,7 @@ body {
   border: 4px solid transparent;
 }
 
-.profile_pic, .profile_pic2 {
+.profile_pic, .profile_pic2, .skill_container {
   border: 4px solid transparent;
   border-radius: 1em;
 }
