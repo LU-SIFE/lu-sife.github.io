@@ -392,6 +392,7 @@ function praise_the_code() {
 //Music array
 var music_array = [
 // ["Artist", "Song"]
+//24 char limit
 	["Arc System Works", "Trigger"],
 	["Arc System Works", "Disaster of Passion"],
 	["Fox Capture Plan", "Overdrive"],

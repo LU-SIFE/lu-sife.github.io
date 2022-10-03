@@ -105,7 +105,6 @@ body {
 	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
 	border-image-slice: 1;
 }
-
 nav a, nav button {
 	margin-right: 0.25em;
 	margin-left: 0.25em;
