@@ -61,6 +61,7 @@ html {
 	pointer-events: none;
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 body {
@@ -83,6 +84,8 @@ body {
 	width: 100%;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
+	animation-name: nav_fly;
+	animation-duration: 2s;
 }
 
 #coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button {
@@ -165,6 +168,9 @@ nav a, nav button {
 	position: relative;
 	top: -2.25em;
 	z-index: -1;
+
+	animation-name: image_fly;
+	animation-duration: 2s;
 }
 
 #head_image {
@@ -180,6 +186,8 @@ p {
 	position: relative;
 	margin-top: auto;
 	margin-bottom: 1em;
+	animation-name: box_fly;
+	animation-duration: 2s;
 }
 
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
@@ -402,6 +410,21 @@ footer {
 @keyframes return {
 	from {top: -2em;}
 	to {top: 0.75em;}
+}
+
+@keyframes box_fly {
+	from {left: -100%}
+	to {left: 0;}
+}
+
+@keyframes nav_fly {
+	from {top: -100%}
+	to {top: 0;}
+}
+
+@keyframes image_fly {
+	from {right: -100%}
+	to {right: 0%;}
 }
 
 @keyframes fly_back {
