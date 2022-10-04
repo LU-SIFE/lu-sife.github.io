@@ -508,3 +508,7 @@ animate();
 function praise_the_code() {
 	alert("Woohoo! secret lol");
 }
+
+// triggering animations
+// document.getElementByID('sk' + i).style.animation="sk" + i + " 4s ease-out forward"; or something lol
+//where i is skill_bar number + 1

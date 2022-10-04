@@ -388,3 +388,100 @@ footer {
 		font-size: 0.75em;
 	}
 }
+
+/* Omg she is going to do CSS animation too? Lucy would never :O */
+@keyframes ske1 {
+	from {width: 0%;}
+	to {width: 75%;}
+}
+
+@keyframes ske2 {
+	from {width: 0%;}
+	to {width: 55%;}
+}
+
+@keyframes ske3 {
+	from {width: 0%;}
+	to {width: 90%;}
+}
+
+@keyframes ske4 {
+	from {width: 0%;}
+	to {width: 40%;}
+}
+
+@keyframes ske5 {
+	from {width: 0%;}
+	to {width: 50%;}
+}
+
+@keyframes ske6 {
+	from {width: 0%;}
+	to {width: 40%;}
+}
+
+@keyframes ske7 {
+	from {width: 0%;}
+	to {width: 50%;}
+}
+
+@keyframes ske8 {
+	from {width: 0%;}
+	to {width: 65%;}
+}
+
+@keyframes ske9 {
+	from {width: 0%;}
+	to {width: 35%;}
+}
+
+@keyframes ske10 {
+	from {width: 0%;}
+	to {width: 15%;}
+}
+
+#sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+} 
+
+#sk1 {
+	animation-name: ske1;
+}
+
+#sk2 {
+	animation-name: ske2;
+}
+
+#sk3 {
+	animation-name: ske3;
+}
+
+#sk4 {
+	animation-name: ske4;
+}
+
+#sk5 {
+	animation-name: ske5;
+}
+
+#sk6 {
+	animation-name: ske6;
+}
+
+#sk7 {
+	animation-name: ske7;
+}
+
+#sk8 {
+	animation-name: ske8;
+}
+
+#sk9 {
+	animation-name: ske9;
+}
+
+#sk10 {
+	animation-name: ske10;
+}
