@@ -12,7 +12,6 @@ var data_array = [
 //scene initialization
 const scene = new THREE.Scene();
 
-
 //sets camera perspective depending on viewport
 if (window.innerWidth >= window.innerHeight) {
 	var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -108,6 +107,7 @@ const cube_insts = new Object;
 var bobbing_counter = new Object;
 var outline_insts = new Object;
 var cube_count = 0;
+//creates cubes for every entry in data_array
 for (let i = 0; i < data_array.length; i++) {
 	cube_count++;
 	bobbing_counter["cube" + i] = 0;
@@ -137,32 +137,6 @@ outline_insts.cube2.mesh.position.y = -0.4;
 
 cube_insts.cube1.position.y = -0.5;
 outline_insts.cube1.mesh.position.y = -0.5;
-
-//color variables
-var r = 255;
-var g = 0;
-var b = 255;
-var color_cycle = "";
-	
-//Rainbow Cycling text
-color_interval = setInterval(function() {
-//color calculations
-	if (r == 255) {
-		if (b != 0) {b--;}
-		else if (g != 255) { g++; }
-	} if (g == 255) {
-		if (r != 0) {r--;}
-		 else if (b != 255) { b++; }
-	} if (b == 255) {
-		if (g != 0) {g--;}
-		 else if (r != 255) { r++; }
-	}
-	
-	color_cycle = "rgb(" + r + ", " + g + ", " + b + ")";
-	
-//place rainbow elements here!
-//
-},10);
 	
 //mouse and raycaster variables
 var mouse = new THREE.Vector2();
@@ -269,7 +243,8 @@ function quaternion_rotate() {
 	quaternion_revert(2);
 	quaternion_revert(3);
 }
-//reverts the quaternions to quat2 if not selected
+
+//OK! (reverts the rotation back to normal)
 function quaternion_revert(quat_select) {
 
 	for (i = 0; i < data_array.length; i++) {
@@ -280,7 +255,8 @@ function quaternion_revert(quat_select) {
 		}
 	}
 }
-//rotates the quaternion
+
+//OK! (rotates cube to quaternion when hovered)
 function quaternion_rotate_towards(quat_select) {
 
 	for (i = 0; i < data_array.length; i++) {
@@ -292,14 +268,15 @@ function quaternion_rotate_towards(quat_select) {
 	}
 }
 
+//OK! cannot be deprecated due to return;
 function bob_master() {
 	for (let i = 0; i < cube_count; i++) {
 		bob_main("cube" + i);
 	}
 }
 
+//OK! cannot be deprecated due to return;
 function bob_main(cube_number) {
-
 
 		if (bobbing_counter[cube_number] == 0 && cube_insts[cube_number].position.y < 0.20) {
 			outline_insts[cube_number].mesh.position.y += 0.005;
@@ -337,16 +314,15 @@ function prev_selection() {
 function calc_position() {
 	for (i = 0; i < 3; i++) {
 		for (i = 0; i < data_array.length; i++) {
-
-	outline_insts["cube" + i].mesh.position.x = position_array[i][0];
-	cube_insts["cube" + i].position.x = position_array[i][0];
-	outline_insts["cube" + i].mesh.position.z = position_array[i][1];
-	cube_insts["cube" + i].position.z = position_array[i][1];
-}
+			outline_insts["cube" + i].mesh.position.x = position_array[i][0];
+			cube_insts["cube" + i].position.x = position_array[i][0];
+			outline_insts["cube" + i].mesh.position.z = position_array[i][1];
+			cube_insts["cube" + i].position.z = position_array[i][1];
+		}
 	}
-			document.getElementById("very_special").href = count_array[0][1];
-			document.getElementById("very_special").innerHTML = count_array[0][0];
-			
+
+	document.getElementById("very_special").href = count_array[0][1];
+	document.getElementById("very_special").innerHTML = count_array[0][0];
 }
 
 function randomize_songs() {
@@ -383,10 +359,6 @@ function shuffle(array) {
   }
 
   return array;
-}
-
-function praise_the_code() {
-	alert("Woohoo! secret lol");
 }
 
 //Music array
@@ -483,7 +455,6 @@ function scrollFunction() {
     document.getElementById("return_button").style.opacity = 0;
   }
 }
-var saver_state = 0;
 
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
@@ -507,7 +478,6 @@ function screen_save() {
 	document.getElementById("business_container").style.display = "none";
 	document.getElementById("the_playlist").style.display = "none";
 	document.getElementById("footer").style.display = "none";
-
 }
 
 if (document.addEventListener) {
@@ -523,10 +493,10 @@ function exitHandler() {
 	}
 }
 
-//main animation function
+//Main animation function
+//Is called every frame, please don't mess with unless adding or removing functions
 function animate() {
 	window.requestAnimationFrame( animate );
-	
 	quaternion_rotate();
 	bob_master();
 	hoverPieces();
@@ -534,3 +504,7 @@ function animate() {
 }
 
 animate();
+
+function praise_the_code() {
+	alert("Woohoo! secret lol");
+}
