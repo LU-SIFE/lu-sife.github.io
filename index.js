@@ -451,8 +451,9 @@ function scrollFunction() {
   if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
     
     document.getElementById("return_button").style.opacity = 1;
+    document.getElementById("return_button").style.animation="return 0.5s";
   } else {
-    document.getElementById("return_button").style.opacity = 0;
+    document.getElementById("return_button").style.animation="fly_back 0.5s forwards";
   }
 }
 
@@ -510,5 +511,4 @@ function praise_the_code() {
 }
 
 // triggering animations
-// document.getElementByID('sk' + i).style.animation="sk" + i + " 4s ease-out forward"; or something lol
-//where i is skill_bar number + 1
+// document.getElementByID("return_button").style.animation="return 0.5s ease-out forward";

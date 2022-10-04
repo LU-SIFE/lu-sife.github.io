@@ -328,10 +328,19 @@ footer {
   background: -webkit-linear-gradient(left, #6D00CF, #F25050);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  overflow: hidden;
 }
 
 #load_image {
 	width: 70%;
+	animation-name: load;
+	animation-duration: 1s;
+}
+
+#load_text, #load_text_2 {
+	animation-name: load_text;
+	animation-duration: 1s;
+
 }
 
 .skill_bar {
@@ -390,6 +399,26 @@ footer {
 }
 
 /* Omg she is going to do CSS animation too? Lucy would never :O */
+@keyframes return {
+	from {top: -2em;}
+	to {top: 0.75em;}
+}
+
+@keyframes fly_back {
+	from {top: 0.75em;}
+	to {top: -2em;}
+}
+
+@keyframes load {
+	from {margin-left: -200%;}
+	to {margin-left: 0;}
+}
+
+@keyframes load_text {
+	from {margin-right: -200%;}
+	to {margin-right: 0;}
+}
+
 @keyframes ske1 {
 	from {width: 0%;}
 	to {width: 75%;}
@@ -441,7 +470,7 @@ footer {
 }
 
 #sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 } 
