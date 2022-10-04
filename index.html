@@ -23,21 +23,19 @@
 
 	<body>
 
-<a id="return_button" href="#top_section"><span id="special">⇑</span></a>
+		<a id="return_button" href="#top_section"><span id="special">⇑</span></a>
+		
 		<div id="particles-js"></div>
 
 		<div id="loader">
-
 			<img id="load_image" src="images/small.png">
 			<span id="load_text">Loading...</span><br>
 			<span id="load_text_2">Site isn't very mobile friendly yet! thanks for understanding!</span>
-
 		</div>
+
 		<section id="top_section">
 
-
 			<nav class="nav_bar">
-
 				
 				<a id="coffee_box" href="https://www.buymeacoffee.com/lusife" target="_blank" rel=noopener noreferrer">Buy me a coffee! ☕</a>
 
@@ -167,11 +165,11 @@
 					</li>
 
 					<li>
-						PHP <div class="skill_bar" style="width: 50%;"></div>
+						PHP&nbsp;<div class="skill_bar" style="width: 50%;"></div>
 					</li>
 
 					<li>
-						Bash <div class="skill_bar" style="width: 65%"></div>
+						Bash&nbsp;<div class="skill_bar" style="width: 65%"></div>
 					</li>
 
 					<li>
@@ -193,43 +191,26 @@
 
 		<h1 style="margin-bottom: 0;"><span id="special">The Playlist:</span></h1>
 		<p style="font-size: 0.6em; margin-top: 0.5%;">(I meant it when I said I take music seriously)</p>
+
 		<button onclick="randomize_songs()" id="refresh_button"><span id="special">Refresh List ↺</span></button>
+
 		<div style="width:100%; display:flex; justify-content: space-around;">
 			<h1 style="display:inline-block;">Artist:</h1><h1 style="display:inline-block;">Song:</h1>
 		</div>
+
 		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap; margin-top: 0;">
-			<div style="display: inline-block; width: 45%;" id="artist_container">
-<!-- Artist placeholder-->
-				Inabakumori<br>
-				NAOKI<br>
-				Hollywood Burns<br>
-				Jeff Williams<br>
-				Arctic Monkeys<br>
-				Justice<br>
-				Mother Mother<br>
-				Mother Mother<br>
-				Keygen Church<br>
-				Gorillaz<br>
+			<div style="width: 45%;" id="artist_container">
+<!-- Artist container-->
 			</div>
 
 			<div style="display: inline-block; width: fit-content; font-size: 2.75vw; line-height: 1.2em;" id="special">
-<!-- Spacing  -->
-				⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>
+<!-- Spacing  --> ⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>
 			</div>
 
-			<div style="display: inline-block; width: 55%; text-align: right;" id="song_container">
-<!-- Song placeholders -->
-				Sinktank<br>
-				Trigger<br>
-				Girls with Guns<br>
-				Ignite<br>
-				There'd Better Be A Mirrorball<br>
-				Europa<br>
-				Oh Ana<br>
-				Polynesia<br>
-				Gebuerjeit<br>
-				Empire Ants<br>
+			<div style="width: 55%; text-align: right;" id="song_container">
+<!-- Song container -->
 			</div>
+
 		</div><br>
 		<div class="page_break"></div>
 
@@ -249,8 +230,9 @@
 	<div id="small_text">
 		<div class='praise'>praise_the_code()</div>
 		<div class="ina_credit">Thanks Inabakumori for the pfp :)</div>
+		<!-- Seriously, I love it omg -->
 	</div>
-<!-- Seriously, I love it omg -->
+
 </footer>
 </html>
 <script src="particles.js"></script>
@@ -266,5 +248,5 @@
 	Fix THREE.JS camera FOV for mobile devices, it should be around 85 FOV.
 	God figure out wtf THREE.JS is doing with window resizes.
 	Fix font size of Box_Indicator, unsure how to achieve this.
-	Fix footer text spacing on mobile, make email smaller, o copy it to clipboard.
+	Fix footer text spacing on mobile, make email smaller, or copy it to clipboard.
 -->
