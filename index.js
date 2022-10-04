@@ -509,6 +509,3 @@ animate();
 function praise_the_code() {
 	alert("Woohoo! secret lol");
 }
-
-// triggering animations
-// document.getElementByID("return_button").style.animation="return 0.5s ease-out forward";
