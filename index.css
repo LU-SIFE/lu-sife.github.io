@@ -1,6 +1,4 @@
-/*
-	This top section is for link/button hover animations. BE CAREFUL!
-*/
+/* This top section is for link/button hover animations. BE CAREFUL! */
 a, button {
 	border-style:none;
 	text-decoration: none;
@@ -25,11 +23,6 @@ a, button, .link_body, #git_button, #coffee_box, #return_button, #fs_button {
 	--bg-h: 100%;
 }
 
-a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
-}
-
 .link_body_foot {
 	background-size: 200% 100%;
 	background-position: -100%;
@@ -40,14 +33,12 @@ a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_bod
 	--bg-h: 100%;
 }
 
-.link_body_foot:where(:hover, :focus-visible) {
+a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), .link_body_foot:where(:hover, :focus-visible) {
 	background-size: 100% var(--bg-h);
 	background-position-x: left;
 }
 
-/*
-	This is general styling, be less careful I guess.
-*/
+/* This is general styling, be less careful I guess. */
 html {
 	background-color:#1f1f1f;
 	scroll-behavior: smooth;
@@ -73,7 +64,7 @@ body {
 
 .nav_bar {
 	align-self: center;
-	z-index: 99;
+	z-index: 99; /* ? */
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -380,7 +371,7 @@ footer {
 		font-size: 1.5em;
 	}
 
-	.box_indicator {
+	.box_indicator, #refresh_button {
 		font-size: 0.75em;
 	}
 
@@ -398,10 +389,6 @@ footer {
 
 	#fs_button, #git_button {
 		display: none;
-	}
-
-	#refresh_button {
-		font-size: 0.75em;
 	}
 }
 
@@ -504,75 +491,27 @@ footer {
 } 
 
 /* This should probably be fixed later :skull: */
-.sk1 {
-	animation-name: ske1;
-}
-
-.sk2 {
-	animation-name: ske2;
-}
-
-.sk3 {
-	animation-name: ske3;
-}
-
-.sk4 {
-	animation-name: ske4;
-}
-
-.sk5 {
-	animation-name: ske5;
-}
-
-.sk6 {
-	animation-name: ske6;
-}
-
-.sk7 {
-	animation-name: ske7;
-}
-
-.sk8 {
-	animation-name: ske8;
-}
-
-.sk9 {
-	animation-name: ske9;
-}
-
-.sk10 {
-	animation-name: ske10;
-}
+.sk1 {animation-name: ske1;}
+.sk2 {animation-name: ske2;}
+.sk3 {animation-name: ske3;}
+.sk4 {animation-name: ske4;}
+.sk5 {animation-name: ske5;}
+.sk6 {animation-name: ske6;}
+.sk7 {animation-name: ske7;}
+.sk8 {animation-name: ske8;}
+.sk9 {animation-name: ske9;}
+.sk10 {animation-name: ske10;}
 
 @keyframes artist_fly {
-	0% {
-		left: -100%;
-		opacity: 0;
-	}
-
-	75% {
-		opacity: 0.60;
-	}
-
-	100% {
-		left:  0%;
-		opacity: 1;
-	}
+	0% {left: -100%; opacity: 0;}
+	75% {opacity: 0.60;}
+	100% {left:  0%; opacity: 1;}
 }
+
 @keyframes song_fly {
-	0% {
-		right: -100%;
-		opacity: 0;
-	}
-
-	75% {
-		opacity: 0.60;
-	}
-
-	100% {
-		right:  0%;
-		opacity: 1;
-	}
+	0% {right: -100%; opacity: 0;}
+	75% {opacity: 0.60;}
+	100% {right:  0%;opacity: 1;}
 }
 
 @keyframes fade_in {
@@ -597,13 +536,7 @@ footer {
 	animation-fill-mode: forwards;
 }
 
-#about_container {
-	animation-name: fade_in;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-}
-
-.canvas_fade {
+#about_container, .canvas_fade {
 	animation-name: fade_in;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
