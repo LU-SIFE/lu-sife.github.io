@@ -597,7 +597,7 @@ footer {
 	animation-fill-mode: forwards;
 }
 
-.page_break {
+#about_container {
 	animation-name: fade_in;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
