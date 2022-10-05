@@ -341,8 +341,10 @@ footer {
 
 #load_image {
 	width: 70%;
+	z-index: -1;
 	animation-name: load;
-	animation-duration: 1s;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
 }
 
 #load_text, #load_text_2 {
@@ -431,8 +433,9 @@ footer {
 }
 
 @keyframes load {
-	from {margin-left: -200%;}
-	to {margin-left: 0;}
+	0% {margin-left: -200%;}
+	65% {margin-left: 0; opacity:  1;}
+	100% {opacity:  0;}
 }
 
 @keyframes load_text {
@@ -539,12 +542,34 @@ footer {
 }
 
 @keyframes artist_fly {
-	from {left: -100%;}
-	to {left:  0%;}
+	0% {
+		left: -100%;
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.60;
+	}
+
+	100% {
+		left:  0%;
+		opacity: 1;
+	}
 }
 @keyframes song_fly {
-	from {right: -100%}
-	to {right:  0%;}
+	0% {
+		right: -100%;
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.60;
+	}
+
+	100% {
+		right:  0%;
+		opacity: 1;
+	}
 }
 
 .fly_left {

@@ -342,7 +342,7 @@ function randomize_songs(user_input) {
 		for (let i = 0; i < 10; i++) {
 			music_text += music_array[i][1] + "<br>";
 		}
-		
+
 		document.getElementById("artist_container").innerHTML = artist_text;
 		document.getElementById("song_container").innerHTML = music_text;
 
@@ -449,7 +449,7 @@ var page_load;
 myFunction();
 
 function myFunction() {
-  page_load = setTimeout(showPage, 1500);
+  page_load = setTimeout(showPage, 2000);
 }
 
 function showPage() {
