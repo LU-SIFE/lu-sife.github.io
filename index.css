@@ -233,7 +233,6 @@ section {
 
 #top_section, #about_container, #business_container, #the_playlist, #footer {
 	display: none;
-
 }
 
 #business_container {
@@ -366,13 +365,11 @@ footer {
 	width: 100%;
 }
 
-
 .skill_container {
 	padding: 2%;
 	border-style: solid;
 	width: 45%;
 } 
-
 
 /* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
 @media (orientation:  portrait) {
@@ -493,48 +490,49 @@ footer {
 }
 
 #sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
+	width: 0%;
   animation-duration: 3s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 } 
 
 /* This should probably be fixed later :skull: */
-#sk1 {
+.sk1 {
 	animation-name: ske1;
 }
 
-#sk2 {
+.sk2 {
 	animation-name: ske2;
 }
 
-#sk3 {
+.sk3 {
 	animation-name: ske3;
 }
 
-#sk4 {
+.sk4 {
 	animation-name: ske4;
 }
 
-#sk5 {
+.sk5 {
 	animation-name: ske5;
 }
 
-#sk6 {
+.sk6 {
 	animation-name: ske6;
 }
 
-#sk7 {
+.sk7 {
 	animation-name: ske7;
 }
 
-#sk8 {
+.sk8 {
 	animation-name: ske8;
 }
 
-#sk9 {
+.sk9 {
 	animation-name: ske9;
 }
 
-#sk10 {
+.sk10 {
 	animation-name: ske10;
 }

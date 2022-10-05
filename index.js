@@ -376,6 +376,7 @@ var music_array = [
 	["Keygen Church", "Hareklavit"],
 	["Mother Mother", "Oh Ana"],
 	["Mother Mother", "Polynesia"],
+	["Mother Mother", "Wrecking Ball"],
 	["Ken Ashcorp", "Absolute Territory"],
 	["Ken Ashcorp", "Touch Fluffy Tail"],
 	["Ken Ashcorp", "On The Rocks"],
@@ -509,3 +510,35 @@ animate();
 function praise_the_code() {
 	alert("Woohoo! secret lol");
 }
+
+
+//These functions handle the expansion of the skill bars.
+function expand_bars() {
+	for ( i = 0; i < 10; i++) {
+		bar_els["sk" + (i + 1)].classList.add("sk" + (i + 1));
+	}
+}
+
+function shrink_bars() {
+	for ( i = 0; i < 10; i++) {
+		bar_els["sk" + (i + 1)].classList.remove("sk" + (i + 1));
+	}
+}
+
+const bar_els = new Object;
+for (i = 0; i < 10; i++) {
+	bar_els["sk" + (i + 1)] = document.getElementById("sk" + (i + 1));
+
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    	expand_bars();
+    	return;
+    }
+    shrink_bars();
+  });
+});
+
+observer.observe(document.querySelector('.skill_container'));
