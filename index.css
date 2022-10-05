@@ -221,6 +221,7 @@ section {
 	line-height: 1.2em;
 	font-size: 2.75vw;
 	overflow: hidden;
+	position: relative;
 	display: inline-block;
 }
 
@@ -535,4 +536,22 @@ footer {
 
 .sk10 {
 	animation-name: ske10;
+}
+
+@keyframes artist_fly {
+	from {left: -100%;}
+	to {left:  0%;}
+}
+@keyframes song_fly {
+	from {right: -100%}
+	to {right:  0%;}
+}
+
+.fly_left {
+	animation-name: artist_fly;
+	animation-duration: 0.75s;
+}
+.fly_right {
+	animation-name: song_fly;
+	animation-duration: 0.75s;
 }

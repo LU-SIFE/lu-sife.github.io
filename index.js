@@ -325,22 +325,39 @@ function calc_position() {
 	document.getElementById("very_special").innerHTML = count_array[0][0];
 }
 
-function randomize_songs() {
+var fly_counter = 0;
 
-	artist_text = "";
-	music_text = "";
+function randomize_songs(user_input) {
 
-	shuffle(music_array);
-	for (let i = 0; i < 10; i++) {
-		artist_text += music_array[i][0] + "<br>";
+	if (fly_counter == 0) {
+		artist_text = "";
+		music_text = "";
+
+		shuffle(music_array);
+
+		for (let i = 0; i < 10; i++) {
+			artist_text += music_array[i][0] + "<br>";
+		}
+
+		for (let i = 0; i < 10; i++) {
+			music_text += music_array[i][1] + "<br>";
+		}
+		
+		document.getElementById("artist_container").innerHTML = artist_text;
+		document.getElementById("song_container").innerHTML = music_text;
+
+		if (user_input) {
+			artist_container.classList.add("fly_left");
+			song_container.classList.add("fly_right");
+			fly_counter = 1;
+
+			setTimeout(() => {
+				artist_container.classList.remove("fly_left");
+				song_container.classList.remove("fly_right");
+				fly_counter = 0;
+			}, 750);
+		}
 	}
-
-	for (let i = 0; i < 10; i++) {
-		music_text += music_array[i][1] + "<br>";
-	}
-
-	document.getElementById("artist_container").innerHTML = artist_text;
-	document.getElementById("song_container").innerHTML = music_text;
 }
 
 function shuffle(array) {
