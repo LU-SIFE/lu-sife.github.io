@@ -459,6 +459,7 @@ function showPage() {
 	document.getElementById("business_container").style.display = "flex";
 	document.getElementById("the_playlist").style.display = "inline-block";
 	document.getElementById("footer").style.display = "inline-block";
+	render_canvas.classList.add("canvas_fade");
 	onWindowResize();
 }
 

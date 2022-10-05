@@ -343,13 +343,12 @@ footer {
 	width: 70%;
 	z-index: -1;
 	animation-name: load;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
+	animation-duration: 1.25s;
 }
 
 #load_text, #load_text_2 {
 	animation-name: load_text;
-	animation-duration: 1s;
+	animation-duration: 1.25s;
 
 }
 
@@ -433,9 +432,13 @@ footer {
 }
 
 @keyframes load {
-	0% {margin-left: -200%;}
-	65% {margin-left: 0; opacity:  1;}
-	100% {opacity:  0;}
+	from {margin-left: -200%;}
+	to {margin-left: 0;}
+}
+
+@keyframes load_fade {
+	from {opacity: 1;}
+	to {opacity: 0;}
 }
 
 @keyframes load_text {
@@ -572,6 +575,11 @@ footer {
 	}
 }
 
+@keyframes fade_in {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
 .fly_left {
 	animation-name: artist_fly;
 	animation-duration: 0.75s;
@@ -579,4 +587,24 @@ footer {
 .fly_right {
 	animation-name: song_fly;
 	animation-duration: 0.75s;
+}
+
+#loader {
+	z-index: -1;
+	animation-name: load_fade;
+	animation-duration: 0.75s;
+	animation-delay: 1.25s;
+	animation-fill-mode: forwards;
+}
+
+.page_break {
+	animation-name: fade_in;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.canvas_fade {
+	animation-name: fade_in;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
 }
