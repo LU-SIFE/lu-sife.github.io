@@ -491,7 +491,7 @@ footer {
 
 #sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
 	width: 0%;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 } 
