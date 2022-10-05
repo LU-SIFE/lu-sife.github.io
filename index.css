@@ -95,7 +95,7 @@ body {
 	display:inline-block;
 }
 
-.link_body, .link_body_foot, .page_break {
+.link_body, .link_body_foot, .page_break, .item_span {
 	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
 	border-image-slice: 1;
 }
@@ -302,6 +302,10 @@ footer {
   background: -webkit-linear-gradient(left, #6D00CF, #F25050);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.item_span {
+	border-bottom-style: solid;
 }
 
 #three_div {
