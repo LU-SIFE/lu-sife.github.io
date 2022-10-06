@@ -1,11 +1,11 @@
-particlesJS('particles-js',
+tsParticles.load('particles-js',
 {
   "particles": {
     "number": {
       "value": 185,
       "density": {
         "enable": true,
-        "value_area": 800
+        "area": 800
       }
     },
     "color": {
@@ -29,24 +29,24 @@ particlesJS('particles-js',
     "opacity": {
       "value": 0.5,
       "random": false,
-      "anim": {
+      "animation": {
         "enable": false,
         "speed": 1,
-        "opacity_min": 0.1,
+        "miminumValue": 0.1,
         "sync": false
       }
     },
     "size": {
       "value": 3,
       "random": true,
-      "anim": {
+      "animation": {
         "enable": false,
         "speed": 40,
-        "size_min": 0.1,
+        "miminumValue": 0.1,
         "sync": false
       }
     },
-    "line_linked": {
+    "lineLinked": {
       "enable": true,
       "distance": 150,
       "color": "#6d00cf",
@@ -59,23 +59,25 @@ particlesJS('particles-js',
       "direction": "top-right",
       "random": true,
       "straight": true,
-      "out_mode": "out",
+      "outMode": "out",
       "bounce": false,
       "attract": {
         "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
+        "rotate": {
+          "x": 600,
+          "y": 1200
+        }
       }
     }
   },
   "interactivity": {
-    "detect_on": "canvas",
+    "detectsOn": "canvas",
     "events": {
-      "onhover": {
+      "onHover": {
         "enable": true,
         "mode": "repulse"
       },
-      "onclick": {
+      "onClick": {
         "enable": true,
         "mode": "push"
       },
@@ -84,7 +86,7 @@ particlesJS('particles-js',
     "modes": {
       "grab": {
         "distance": 400,
-        "line_linked": {
+        "lineLinked": {
           "opacity": 1
         }
       },
@@ -100,13 +102,14 @@ particlesJS('particles-js',
         "duration": 0.4
       },
       "push": {
-        "particles_nb": 4
+        "quantity": 4
       },
       "remove": {
-        "particles_nb": 2
+        "quantity": 2
       }
     }
   },
-  "retina_detect": true
+  "detectsRetina": true,
+  "fpsLimit": 60
 }
 );
