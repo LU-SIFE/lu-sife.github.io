@@ -2,10 +2,10 @@ tsParticles.load('particles-js',
 {
   "particles": {
     "number": {
-      "value": 185,
+      "value": 0.1,
       "density": {
         "enable": true,
-        "area": 800
+        "area": 1
       }
     },
     "color": {
@@ -78,7 +78,7 @@ tsParticles.load('particles-js',
         "mode": "repulse"
       },
       "onClick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "resize": true
