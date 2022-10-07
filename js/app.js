@@ -2,7 +2,7 @@ tsParticles.load('particles-js',
 {
   "particles": {
     "number": {
-      "value": 0.1,
+      "value": 0.12,
       "density": {
         "enable": true,
         "area": 1
@@ -50,7 +50,7 @@ tsParticles.load('particles-js',
       "enable": true,
       "distance": 150,
       "color": "#6d00cf",
-      "opacity": 0.4,
+      "opacity": 0.9,
       "width": 1
     },
     "move": {
