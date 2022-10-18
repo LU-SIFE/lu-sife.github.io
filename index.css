@@ -1,4 +1,4 @@
-/* This top section is for link/button hover animations. BE CAREFUL! */
+/* This top section is for link/button hover animations. BE CAREFUL LUCY! */
 a, button {
 	border-style:none;
 	text-decoration: none;
@@ -298,7 +298,7 @@ footer {
 	text-align: left;
 }
 
-#special, #very_special {
+.special, #very_special {
   background: -webkit-linear-gradient(left, #6D00CF, #F25050);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -495,16 +495,16 @@ footer {
 } 
 
 /* This should probably be fixed later :skull: */
-.sk1 {animation-name: ske1;}
-.sk2 {animation-name: ske2;}
-.sk3 {animation-name: ske3;}
-.sk4 {animation-name: ske4;}
-.sk5 {animation-name: ske5;}
-.sk6 {animation-name: ske6;}
-.sk7 {animation-name: ske7;}
-.sk8 {animation-name: ske8;}
-.sk9 {animation-name: ske9;}
-.sk10 {animation-name: ske10;}
+.sk1 {animation-name: ske1; animation-delay: 0.1s;}
+.sk2 {animation-name: ske2; animation-delay: 0.3s;}
+.sk3 {animation-name: ske3; animation-delay: 0.5s;}
+.sk4 {animation-name: ske4; animation-delay: 0.7s;}
+.sk5 {animation-name: ske5; animation-delay: 0.9s;}
+.sk6 {animation-name: ske6; animation-delay: 0.1s;}
+.sk7 {animation-name: ske7; animation-delay: 0.3s;}
+.sk8 {animation-name: ske8; animation-delay: 0.5s;}
+.sk9 {animation-name: ske9; animation-delay: 0.7s;}
+.sk10 {animation-name: ske10; animation-delay: 0.9s;}
 
 @keyframes artist_fly {
 	0% {left: -100%; opacity: 0;}
