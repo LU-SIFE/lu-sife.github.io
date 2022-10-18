@@ -459,6 +459,7 @@ function showPage() {
 	document.getElementById("business_container").style.display = "flex";
 	document.getElementById("the_playlist").style.display = "inline-block";
 	document.getElementById("footer").style.display = "inline-block";
+	document.getElementById("page_break").style.display = "inline-block";
 	render_canvas.classList.add("canvas_fade");
 	onWindowResize();
 }
@@ -498,6 +499,7 @@ function screen_save() {
 	document.getElementById("business_container").style.display = "none";
 	document.getElementById("the_playlist").style.display = "none";
 	document.getElementById("footer").style.display = "none";
+	document.getElementById("page_break").style.display = "none";
 }
 
 if (document.addEventListener) {
