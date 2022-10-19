@@ -1,3 +1,19 @@
+:root {
+	--bg-h: 100%;
+	--col0: #ffb347; /* Primary / Foreground */
+	--col1: #6D00CF; /* Gradient Color 1 */
+	--col2: #F25050; /* Gradient Color 2*/
+	--col3: #1f1f1f; /* Secondary / Background */
+	--col4: #0b0b0b; /* button background */
+	--col5: #0f0f0f; /* Profile Picture Background*/
+	--col6: #101010; /* Footer */
+}
+
+section {
+	position: relative;
+	background-color: rgba(23,23,23,0.45);
+}
+
 /* This top section is for link/button hover animations. BE CAREFUL LUCY! */
 a, button {
 	border-style:none;
@@ -18,9 +34,8 @@ a, button, .link_body, #git_button, #coffee_box, #return_button, #fs_button {
 	background-position: -100%;
 	-webkit-background-clip: text;
 	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #0b0b0b, #0b0b0b) no-repeat right bottom / 0 var(--bg-h);
+	background: linear-gradient(0deg, var(--col4), var(--col4)) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
-	--bg-h: 100%;
 }
 
 .link_body_foot {
@@ -28,9 +43,8 @@ a, button, .link_body, #git_button, #coffee_box, #return_button, #fs_button {
 	background-position: -100%;
 	-webkit-background-clip: text;
 	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, #1f1f1f, #1f1f1f) no-repeat right bottom / 0 var(--bg-h);
+	background: linear-gradient(0deg, var(--col3), var(--col3)) no-repeat right bottom / 0 var(--bg-h);
 	transition: background-size 350ms;
-	--bg-h: 100%;
 }
 
 a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), .link_body_foot:where(:hover, :focus-visible) {
@@ -39,27 +53,28 @@ a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_bod
 }
 
 /* This is general styling, be less careful I guess. */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
 html {
-	background-color:#1f1f1f;
-	scroll-behavior: smooth;
-	text-align:center;
-	color:#ffb347;
+	background-color:var(--col3);
+	color: var(--col0);
 	font-family: Courier New;
+	text-align:center;
 	font-size: 2em;
 	font-weight: bold;
 	line-height: 1.2em;
 	word-spacing: -2px;
+	scroll-behavior: smooth;
 	pointer-events: none;
-	margin: 0;
-	padding: 0;
 	overflow-x: hidden;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	margin: 0;
-	padding: 0;
 }
 
 .nav_bar {
@@ -83,7 +98,7 @@ body {
 
 	font-family: Courier New;
 	font-weight: bold;
-	color: #ffb347;
+	color: var(--col0);
 	font-size:1.75vw;
 	width:fit-content;
 	padding:15px;
@@ -93,14 +108,14 @@ body {
 }
 
 .link_body, .link_body_foot, #page_break, .item_span {
-	border-image-source: linear-gradient(to right, #6D00CF, #F25050);
+	border-image-source: linear-gradient(to right, var(--col1), var(--col2));
 	border-image-slice: 1;
 }
 
 #coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button, #return_button, .skill_container {
   background: 
-    linear-gradient(#1f1f1f, #1f1f1f) padding-box,
-    linear-gradient(to right, #6D00CF, #F25050) border-box;
+    linear-gradient(var(--col3), var(--col3)) padding-box,
+    linear-gradient(to right, var(--col1), var(--col2)) border-box;
   border-radius: 2em;
   border: 4px solid transparent;
 }
@@ -111,16 +126,13 @@ body {
 }
 
 
-.skill_container, .profile_pic2, .profile_pic, #return_button, #refresh_button {
+.skill_container, .profile_pic2, .profile_pic, #return_button, #refresh_button, #coffee_box:hover, #git_button:hover, #refresh_button:hover, #about_button:hover, #skills_button:hover, #playlist_button:hover, #fs_button:hover, #return_button:hover {
 	background: 
-	  linear-gradient(#101010, #101010) padding-box,
-    linear-gradient(to right, #6D00CF, #F25050) border-box;
+	  linear-gradient(var(--col6), var(--col6)) padding-box,
+    linear-gradient(to right, var(--col1), var(--col2)) border-box;
 }
 
 #coffee_box:hover, #git_button:hover, #refresh_button:hover, #about_button:hover, #skills_button:hover, #playlist_button:hover, #fs_button:hover, #return_button:hover {
-	background: 
-	  linear-gradient(#101010, #101010) padding-box,
-    linear-gradient(to right, #6D00CF, #F25050) border-box;
     cursor: pointer;
 }
 
@@ -181,7 +193,7 @@ p {
 .prev_progress_button, .next_progress_button, #puzzle_crawler {
 	display: inline-block;
 	margin-top: 3%;
-	color: #ffb347;
+	color: var(--col0);
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 20px;
@@ -196,13 +208,7 @@ p {
 	line-height: 1.1em;
 }
 
-section {
-	position: relative;
-	background-color: rgba(23,23,23,0.45);
-}
-
 #about_container, #business_container, #the_playlist {
-  position: relative;
   padding: 10px 10px;
   display: inline-block;
   border-radius: 2em;
@@ -214,8 +220,8 @@ section {
   inset: 0;
   border-radius: 2em;
   padding: 4px; /* control the border thickness */
-  background: #1f1f1f; /* Fallback background in case xor isn't compatible */
-  background: linear-gradient(to right, #6D00CF, #F25050);
+  background: var(--col3); /* Fallback background in case xor isn't compatible */
+  background: linear-gradient(to right, var(--col1), var(--col2));
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
@@ -266,7 +272,7 @@ section {
 }
 
 .profile_pic, .profile_pic2 {
-	background-color: #0f0f0f;
+	background-color: var(--col5);
 	max-width: 33%;
 	margin: 3%;
 	padding: 2%;
@@ -283,7 +289,7 @@ section {
 }
 
 .link_body, .link_body_foot {
-	color: #ffb347;
+	color: var(--col0);
 	display: inline;
 	padding-bottom: 0px;
 	padding-top: 0px;
@@ -300,7 +306,7 @@ footer {
 	padding-top: 1%;
 	min-height: 4.5em;
 	height: fit-content;
-	background-color: #101010;
+	background-color: var(--col6);
 	pointer-events: all;
 }
 
@@ -321,15 +327,8 @@ footer {
 	margin-right: 0.5em;
 }
 
-.work_text {
-	position: relative;
-	left: 2%;
-	bottom: 10%;
-	text-align: left;
-}
-
 .special, #very_special {
-  background: -webkit-linear-gradient(left, #6D00CF, #F25050);
+  background: -webkit-linear-gradient(left, var(--col1), var(--col2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -358,7 +357,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-  background: -webkit-linear-gradient(left, #6D00CF, #F25050);
+  background: -webkit-linear-gradient(left, var(--col1), var(--col2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
@@ -378,7 +377,7 @@ footer {
 }
 
 .skill_bar {
-	background: linear-gradient(to right, #6D00CF, #F25050);
+	background: linear-gradient(to right, var(--col1), var(--col2));
 	height: 0.5em;
 	border-radius: 20em;
 	display: inline-block;
@@ -399,6 +398,7 @@ footer {
 } 
 
 /* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
+/* Actually nvm, she sucks at this, wtf why portrait instead of something responsive? */
 @media (orientation:  portrait) {
 
 	html {
@@ -467,55 +467,18 @@ footer {
 	to {margin-right: 0;}
 }
 
-@keyframes ske1 {
-	from {width: 0%;}
-	to {width: 75%;}
-}
-
-@keyframes ske2 {
-	from {width: 0%;}
-	to {width: 55%;}
-}
-
-@keyframes ske3 {
-	from {width: 0%;}
-	to {width: 90%;}
-}
-
-@keyframes ske4 {
-	from {width: 0%;}
-	to {width: 40%;}
-}
-
-@keyframes ske5 {
-	from {width: 0%;}
-	to {width: 50%;}
-}
-
-@keyframes ske6 {
-	from {width: 0%;}
-	to {width: 40%;}
-}
-
-@keyframes ske7 {
-	from {width: 0%;}
-	to {width: 50%;}
-}
-
-@keyframes ske8 {
-	from {width: 0%;}
-	to {width: 65%;}
-}
-
-@keyframes ske9 {
-	from {width: 0%;}
-	to {width: 35%;}
-}
-
-@keyframes ske10 {
-	from {width: 0%;}
-	to {width: 15%;}
-}
+/* Left Box */
+@keyframes ske1 { from {width: 0%;} to {width: 75%;} }
+@keyframes ske2 { from {width: 0%;} to {width: 55%;} }
+@keyframes ske3 { from {width: 0%;} to {width: 90%;} }
+@keyframes ske4 { from {width: 0%;} to {width: 40%;} }
+@keyframes ske5 { from {width: 0%;} to {width: 50%;} }
+/* Right Box */
+@keyframes ske6 { from {width: 0%;} to {width: 40%;} }
+@keyframes ske7 { from {width: 0%;} to {width: 50%;} }
+@keyframes ske8 { from {width: 0%;} to {width: 65%;} }
+@keyframes ske9 { from {width: 0%;} to {width: 35%;} }
+@keyframes ske10{ from {width: 0%;} to {width: 15%;} }
 
 #sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
 	width: 0%;
@@ -534,7 +497,7 @@ footer {
 .sk7 {animation-name: ske7; animation-delay: 0.3s;}
 .sk8 {animation-name: ske8; animation-delay: 0.5s;}
 .sk9 {animation-name: ske9; animation-delay: 0.7s;}
-.sk10 {animation-name: ske10; animation-delay: 0.9s;}
+.sk10{animation-name: ske10;animation-delay: 0.9s;}
 
 @keyframes artist_fly {
 	0% {left: -100%; opacity: 0;}
