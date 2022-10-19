@@ -379,9 +379,9 @@ function shuffle(array) {
 }
 
 //Music array
-var music_array = [
 // ["Artist", "Song"]
 //21 char limit
+var music_array = [
 	["ASIAN KUNG-FU GEN.", "Re:Re:"],
 	["Everything Everything", "Blast Doors"],
 	["Thank You Scientist", "Mr. Invisible"],
@@ -396,6 +396,7 @@ var music_array = [
 	["Challenger Deep", "Immersive"],
 	["Hollywood Burns", "Girls with Guns"],
 	["Arctic Monkeys", "There'd Better Be A Mirrorball"],
+	["Arctic Monkeys", "505"],
 	["Bohemianvoodoo", "Golden Forest"],
 	["A Love Like Pi", "Till I Die"],
 	["Kyotaro&Rikuo", "Attention!"],
@@ -434,6 +435,9 @@ var music_array = [
 	["The Megas", "Programmed to Fight"],
 	["The Megas", "GeminEye"],
 	["KANA-BOON", "Torch of Liberty"],
+	["Sewerslvt", "Cyberia Lyr3"],
+	["Sewerslvt", "Mr. Kill Myself"],
+	["Sewerslvt", "Lexapro Delirium"],
 	["Blink-182", "Heaven"],
 	["Gorillaz", "Empire Ants"],
 	["Polyphia", "G.O.A.T."],
@@ -444,13 +448,14 @@ var music_array = [
 	["Hyleo", "Illumination"],
 	["Hyleo", "Galaxy Cutter"],
 	["Plini", "Atlas"],
+	["Plini", "Cascade"],
 	["USS", "Hydrogenuine"],
 	["B'z", "Into Free -Dangan-"],
 	["Demi the Daredevil", "Not Havin' A Blast"]
 ];
 
 randomize_songs();
-
+document.getElementById("song_bank").innerHTML = "Current Library: " + music_array.length + " Songs";
 
 var page_load;
 
