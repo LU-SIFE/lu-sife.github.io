@@ -451,7 +451,15 @@ var music_array = [
 	["Plini", "Cascade"],
 	["USS", "Hydrogenuine"],
 	["B'z", "Into Free -Dangan-"],
-	["Demi the Daredevil", "Not Havin' A Blast"]
+	["Demi the Daredevil", "Not Havin' A Blast"],
+	["Twinkle Park", "More Rain"],
+	["Toby Fox", "Skies Forever Blue"],
+	["Liana Flores", "Rises the Moon"],
+	["Liana Flores", "Recently,"],
+	["fearofdark", "dreamscaping"],
+	["Ghost", "Square Hammer"],
+	["Gorillaz", "Busted and Blue"],
+	
 ];
 
 randomize_songs();
