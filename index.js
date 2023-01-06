@@ -404,7 +404,8 @@ var music_array = [
 	["Weathers", "Lonely Vampire"],
 	["The Doozers", "Cytoplasm"],
 	["INABAKUMORI", "Lost Umbrella"],
-	["INABAKUMORI", "Sinktank"]
+	["INABAKUMORI", "Sinktank"],
+	["Claude Debussy", "Claire de Lune"]
 ];
 
 randomize_songs();
