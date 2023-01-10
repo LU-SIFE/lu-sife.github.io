@@ -4,7 +4,7 @@ window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('resize', onWindowResize, false);
 
 var data_array = [
-	["(WIP) Untitled Game", "https://lu-sife.github.io/untitled-game", "#6D00CF"],
+	["(WIP) Untitled Game", "https://lu-sife.github.io/untitled-game/", "#6D00CF"],
 	["Puzzle Crawler", "https://lu-sife.github.io/Puzzle-Crawler/", "#C71266"],
 	["(WIP) LEVELED", "https://lu-sife.github.io/LEVELED/", "#F25050"]
 ];
