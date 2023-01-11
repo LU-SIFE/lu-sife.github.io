@@ -471,14 +471,14 @@ footer {
 @keyframes ske1 { from {width: 0%;} to {width: 75%;} }
 @keyframes ske2 { from {width: 0%;} to {width: 55%;} }
 @keyframes ske3 { from {width: 0%;} to {width: 90%;} }
-@keyframes ske4 { from {width: 0%;} to {width: 40%;} }
-@keyframes ske5 { from {width: 0%;} to {width: 50%;} }
+@keyframes ske4 { from {width: 0%;} to {width: 60%;} }
+@keyframes ske5 { from {width: 0%;} to {width: 30%;} }
 /* Right Box */
-@keyframes ske6 { from {width: 0%;} to {width: 40%;} }
-@keyframes ske7 { from {width: 0%;} to {width: 50%;} }
-@keyframes ske8 { from {width: 0%;} to {width: 65%;} }
+@keyframes ske6 { from {width: 0%;} to {width: 70%;} }
+@keyframes ske7 { from {width: 0%;} to {width: 65%;} }
+@keyframes ske8 { from {width: 0%;} to {width: 60%;} }
 @keyframes ske9 { from {width: 0%;} to {width: 35%;} }
-@keyframes ske10{ from {width: 0%;} to {width: 15%;} }
+@keyframes ske10{ from {width: 0%;} to {width: 20%;} }
 
 #sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
 	width: 0%;
