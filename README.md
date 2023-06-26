@@ -1,4 +1,4 @@
-## Lu-Sife's Portfolio/Home Website. Secrets Included.
+my personal website c:
 
 ---
 
