@@ -1,255 +1,61 @@
-<!--	Hey! Thanks for inspecting my website's code! If you wanna dive deeper into my stuff, check out my github! https://github.com/LU-SIFE	
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css">
+	<title>Website</title>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
 
-/   888     888     888 888b    888        d8888              /
-/   888     888     888 8888b   888       d88888              /
-/   888     888     888 88888b  888      d88P888  d888b  d88  /
-/   888     888     888 888Y88b 888     d88P 888 d888888888P  /
-/   888     888     888 888 Y88b888    d88P  888 88P  Y888P   /
-/   888     888     888 888  Y88888   d88P   888              /
-/   888     Y88b. .d88P 888   Y8888  d8888888888              /
-/   88888888 "Y88888P"  888    Y888 d88P     888              /
+</head>
+<body>
 
--->
-<html id="main_page">
-	<head>
-		<link rel="stylesheet" href="index.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-		<title>LU-SIFE</title>
-    	<meta content="LU-SIFE~" property="og:title"/>
-    	<meta content="I'm a Front-End developer who makes websites for people from time to time :D" property="og:description"/>
-    	<meta content="https://lu.sife.gq" property="og:url"/>
-    	<meta content="https://lu.sife.gq/images/ina2_round.png" property="og:image"/>
-    	<meta content="#9D00FF" data-react-helmet="true" name="theme-color"/>
-    	<!-- Only use below tag if I want the content to be large -->
-    	<!-- <meta name="twitter:card" content="summary_large_image"> -->
-	</head>
+	<div id="circle"></div>
+	<div id="circle2"></div>
+	<div class="container">
+		<div class="div1"></div>
+		<div class="div2"></div>
+	</div>
+	<div class="container">
+<!-- LEFT -->
+		<div id="left" onclick="move_page_left(true)">
 
-	<body>
-
-<!-- hidden button which appears when the user scrolls -->
-		<a id="return_button" href="#top_section"><span class="special">⇑</span></a>
-		
-<!-- container for background particles -->
-		<div id="particles-js"></div>
-
-<!-- Container which houses loading page content -->
-		<div id="loader">
-			<img id="load_image" src="images/small.png">
-			<span id="load_text">Loading...</span><br>
-			<span id="load_text_2">Site isn't very mobile friendly yet! thanks for understanding!</span>
+	<div id="hint" class="hint">(Click anywhere to go back)</div>
+			<div class="content_left">About Me</div>
 		</div>
-
-		<section id="top_section">
-
-<!-- navigation -->
-			<nav class="nav_bar">
-<!-- donation -->
-				<a id="coffee_box" href="https://www.buymeacoffee.com/lusife" target="_blank" rel=noopener noreferrer">Buy me a coffee! ☕</a>
-<!-- about -->
-				<a id="about_button" href="#about_container">About</a>
-<!-- skills -->
-				<a id="skills_button" href="#business_container">Skills</a>
-<!-- playlist -->
-				<a id="playlist_button" href="#the_playlist">Playlist</a>
-<!-- screensaver -->
-				<button id="fs_button" onclick="openFullscreen()">Screensaver</button>
-<!-- github -->
-				<a id="git_button" href="https://github.com/LU-SIFE" target="_blank" rel="noopener noreferrer">My Github!</a>
-
-			</nav>
-
-<!-- image behind cubes -->
-			<h1 id="head_image_container"><img src="images/small.png" id="head_image"></h1>
-<!-- cube div -->
-			<div id="three_div"></div>
-
-			<div class='box_indicator'>
-				<button id="prev_button" class="prev_progress_button" onclick="next_selection()">⇐</button>
-
-				<div class="box_spacer">
-
-					<a href="https://lu-sife.github.io/untitled-game/" target="_blank" rel="noopener noreferrer" id="puzzle_crawler"><span id="very_special" class="link_body">(WIP) Untitled Game</span></a>
-
-				</div>
-
-				<button id="next_button" class="next_progress_button " onclick="prev_selection()">⇒</button>
-			</div>
-		</section>
-
-
-	<section id="about_container">
-		
-		<div class='text_container'>
-
-			<img src="images/ina2_round.png" alt="Lu_Sife pfp" class='profile_pic' align='right'>
-
-			<br>
-
-			Heya, I'm <span class="special">Luna</span>...<br><br>
-			<li>
-				> Gender: <span class="special">She</span>/<span class="special">They</span class="special">, <span class="special">:P</span>
-			</li><br>
-
-			<li>
-				> Loves: <span class="special">Music</span>, 
-				<span class="special">Anime</span>, 
-				<span class="special">Zelda</span>, 
-				<span class="special">Terraria</span>, 
-				 <span class="special">Friends :D</span>
-			</li><br>
-			<li>
-				> Hates: <span class="special">Pickles</span>, 
-				<span class="special">SQL</span>, 
-				<span class="special">Weezer</span>, 
-				<span class="special">Country Music</span>
-			</li><br>
-			<li>
-				> Music Taste: <a class="link_body" href="https://open.spotify.com/album/3IaQ0DQMIXMShbMDNepeTK?si=SZrS25zpQxCCeHM4-ttBRw" target="_blank" rel="noopener noreferrer"><span class="special">Rock/Metal</span></a>, 
-
-				<a class="link_body" href="https://open.spotify.com/artist/62GoYifV4njTdvS8lD2yYT?si=0SnwdoAhQUKwGfwS2G9Jjw" target="_blank" rel="noopener noreferrer"><span class="special">Jazz</span></a>, 
-
-				<a class="link_body" href="https://open.spotify.com/artist/49yTs5PHrOjyslAqSF2iCG?si=DcZv66h5QmOXgF11Tvnu2A" target="_blank" rel="noopener noreferrer"><span class="special">EDM</span></a>, 
-
-				<a class="link_body" href="https://open.spotify.com/artist/30F64wQIHvLiFTGaNZ73nU?si=D46PKhJ4T7uA3-d68qsYew" target="_blank" rel="noopener noreferrer"><span class="special">Breakcore</span></a>, 
-
-				<a class="link_body" href="https://open.spotify.com/artist/25b7eSZD64Sm8ReHZ1WDc7?si=oX9ia1dVSOqAyEsT507U_A" target="_blank" rel="noopener noreferrer"><span class="special">K/Jpop</span></a>
-			</li>
+<!-- UP -->
+		<div id="up" onclick="move_page_up()">
+			<div class="content_up">My Skills</div>
 		</div>
-	</section>
-
-	<section id="business_container">
-
-				<div class="text_container">
-					<img src="images/ina3_round.png" alt="Lu_Sife pfp" class='profile_pic2' align="left">
-
-					<br>
-					Alright then, on to business~<br><br>
-
-					I am a <span class="special">Front-End developer/web designer.</span> I use <span class="special">HTML</span>, <span class="special">CSS</span>, and <span class="special">Javascript</span> for my projects.<br><br>My favorite projects are the ones which <span class="special">challenge</span> me, or have a <span class="special">unique</span> aspect to them.<br><br>I like pushing the limits of what I can do as a programmer, the <span class="special">tougher</span> the project, the better.<br><br>I'm also eager to <span class="special">learn</span> new things and expand my knowledge of the <span class="special">digital</span> world.
-				</div>
-
-				<div style="display: flex; justify-content: space-evenly;">
-					<h2 style="margin:0;"><span class="special">Front-End</span></h2>
-					<h2 style="margin:0;"><span class="special">Back-End</span></h2>
-				</div>
-
-			<div class="text_container" style="text-align: left; display: flex; justify-content: space-between;">
-
-				<div class="skill_container">
-
-					<li>
-						HTML&nbsp;<div class="skill_bar" id="sk1"></div>
-					</li>
-
-					<li>
-						CSS&nbsp;<div class="skill_bar" id="sk2"></div>
-					</li>
-
-					<li>
-						JS&nbsp;<div class="skill_bar" id="sk3"></div>
-					</li>
-
-					<li>
-						Flexbox&nbsp;<div class="skill_bar" id="sk4"></div>
-					</li>
-
-					<li>
-						Three.JS&nbsp;<div class="skill_bar" id="sk5"></div>
-					</li>
-
-				</div>
-				<div class="skill_container">
-
-
-					<li>
-						Node&nbsp;<div class="skill_bar" id="sk6"></div>
-					</li>
-
-					<li>
-						PHP&nbsp;<div class="skill_bar" id="sk7"></div>
-					</li>
-
-					<li>
-						Shell&nbsp;<div class="skill_bar" id="sk8"></div>
-					</li>
-
-					<li>
-						Python&nbsp;<div class="skill_bar" id="sk9"></div>
-					</li>
-
-					<li>
-						SQL&nbsp;<div class="skill_bar" id="sk10"></div>
-					</li>
-
-					
-				</div>
-
-			</div>
-	</section>
-
-	<section id="the_playlist">
-		<div class="page_break"></div>
-
-		<h1 style="margin-bottom: 0;"><span class="special">The Playlist:</span></h1>
-		<p style="font-size: 0.6em; margin-top: 0.5%;" id="song_bank">Enable JS!</p>
-
-		<button onclick="randomize_songs(true)" id="refresh_button"><span class="special">Refresh List ↺</span></button>
-
-		<div style="width:100%; display:flex; justify-content: space-around;">
-			<h1 style="display:inline-block;">Artist:</h1><h1 style="display:inline-block;">Song:</h1>
+<!-- RIGHT -->
+		<div id="right" onclick="move_page_right()">
+			<div class="content_right">My Projects</div>
 		</div>
-
-		<div class="text_container" style="display: flex; flex-direction: row; justify-content: space-between; white-space: nowrap; margin-top: 0;">
-			<div style="width: 45%;" id="artist_container">
-<!-- Artist container-->
-			</div>
-
-			<div style="display: inline-block; width: fit-content; font-size: 2.75vw; line-height: 1.2em;" class="special">
-<!-- Spacing  --> ⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>⇒<br>
-			</div>
-
-			<div style="width: 55%; text-align: right;" id="song_container">
-<!-- Song container -->
-			</div>
-
-		</div><br>
-		
-
-	</section>
-
-</body>
-<div id="page_break"></div>
-<footer id="footer">
-	<!-- Github link -->
-	| <a href="https://github.com/LU-SIFE" class="link_body_foot" target="_blank" rel="noopener noreferrer"><span class="special">Github</span></a>&nbsp;|
-	<!-- LinkedIn link -->
-	<a href="https://www.linkedin.com/in/michael-leix/" class="link_body_foot" target="_blank" rel="noopener noreferrer"><span class="special">LinkedIn</span></a>&nbsp;|
-	<!-- Email link -->
-	<a href="mailto:lu@sife.gq" class="link_body_foot"><span class="special">lu@sife.gq</span></a>&nbsp;|
-
-	<!-- Mastadon -->
-	<a rel="me" href="https://tech.lgbt/@Lu_Sife" class="link_body_foot"><span class="special">Mastadon</span></a>&nbsp;|
-
-	<div id="small_text">
-		<div class='praise'>Thanks Inabakumori for the pfp :P</div>
-		<div class="praise"><3</div>
+<!-- DOWN -->
+		<div id="down" onclick="move_page_down()">
+			<div class="content_down">Cool Stuff</div>
+		</div>
 	</div>
 
-</footer>
-</html>
-<script src="particles.js"></script>
-<script src="js/app.js"></script>
-<script src="js/three.js"></script>
-<script src="index.js"></script>
-<!-- Praise the Code() -->
+	<div id="left_text">
+		<h3>Heya!~</h3>
+		<p>
+			I'm <strong>Lu-Sife</strong>, a Freelancing Web Developer.<span id="blink"> _</span>
+		</p>
+		<p>My site is under construction.<br>- Thank you! :D</p>
+	</div>
 
-<!-- 
-	Okay This site is not mobile friendly at all.
-	Here is what needs to be done:
-	
-	Fix font size of Box_Indicator, unsure how to achieve this.
-	Fix footer text spacing on mobile, make email smaller, or copy it to clipboard.
--->
+<!-- FOOTER STUFF -->
+	<div class="contact_arrow">⤺ Contact</div>
+	<div id="pullout" onclick="pullout()" class="pull_fade">
+		<a href="mailto:itslusife@gmail.com"><img src="images/email.png" alt="itslusife@gmail.com"></a>
+		<a href="https://github.com/lu-sife"><img src="images/github.svg" alt="github"></a>
+		<span id="pull_sign">></span></div>
+
+</body>
+
+</html>
+<script src="index.js"></script>

@@ -1,540 +1,290 @@
-:root {
-	--bg-h: 100%;
-	--col0: #ffb347; /* Primary / Foreground */
-	--col1: #6D00CF; /* Gradient Color 1 */
-	--col2: #F25050; /* Gradient Color 2*/
-	--col3: #1f1f1f; /* Secondary / Background */
-	--col4: #0b0b0b; /* button background */
-	--col5: #0f0f0f; /* Profile Picture Background*/
-	--col6: #101010; /* Footer */
+@font-face {
+    font-family: menlo1;
+    src: url(fonts/menlo.ttf);
 }
 
-section {
-	position: relative;
-	background-color: rgba(23,23,23,0.45);
-}
-
-/* This top section is for link/button hover animations. BE CAREFUL LUCY! */
-a, button {
-	border-style:none;
-	text-decoration: none;
-	line-height: 1;
-	display: inline-block;
-	padding: 5px 0;
-	pointer-events: all;
-}
-
-.underline {
-	font-size:2.5em;
-	padding-bottom: 2px;
-}
-
-a, button, .link_body, #git_button, #coffee_box, #return_button, #fs_button {
-	background-size: 200% 100%;
-	background-position: -100%;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, var(--col4), var(--col4)) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-}
-
-.link_body_foot {
-	background-size: 200% 100%;
-	background-position: -100%;
-	-webkit-background-clip: text;
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(0deg, var(--col3), var(--col3)) no-repeat right bottom / 0 var(--bg-h);
-	transition: background-size 350ms;
-}
-
-a:where(:hover, :focus-visible), button:where(:hover, :focus-visible), .link_body:where(:hover, :focus-visible), .link_body_foot:where(:hover, :focus-visible) {
-	background-size: 100% var(--bg-h);
-	background-position-x: left;
-}
-
-/* This is general styling, be less careful I guess. */
 html, body {
 	margin: 0;
 	padding: 0;
-}
-
-html {
-	background-color:var(--col3);
-	color: var(--col0);
-	font-family: Courier New;
-	text-align:center;
-	font-size: 2em;
-	font-weight: bold;
-	line-height: 1.2em;
-	word-spacing: -2px;
-	scroll-behavior: smooth;
-	pointer-events: none;
-	overflow-x: hidden;
+	overflow: hidden;
+	color: white;
+	font-family: 'Caveat', cursive;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
+	min-height: 100vh;
+	background-color: #181818;
+	cursor: url(images/cursor.png) 4 4, auto;
 }
 
-.nav_bar {
-	align-self: center;
-	z-index: 99; /* ? */
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	padding: 0;
-	white-space: nowrap;
-	pointer-events: all;
-	justify-content: left;
-	width: 100%;
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
-	animation-name: nav_fly;
-	animation-duration: 2s;
-}
-
-#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button {
-
-	font-family: Courier New;
-	font-weight: bold;
-	color: var(--col0);
-	font-size:1.75vw;
-	width:fit-content;
-	padding:15px;
-	height: fit-content;
-	border: 2px solid;
-	display:inline-block;
-}
-
-.link_body, .link_body_foot, #page_break, .item_span {
-	border-image-source: linear-gradient(to right, var(--col1), var(--col2));
-	border-image-slice: 1;
-}
-
-#coffee_box, #git_button, #refresh_button, #about_button, #skills_button, #playlist_button, #fs_button, #return_button, .skill_container {
-  background: 
-    linear-gradient(var(--col3), var(--col3)) padding-box,
-    linear-gradient(to right, var(--col1), var(--col2)) border-box;
-  border-radius: 2em;
-  border: 4px solid transparent;
-}
-
-.profile_pic, .profile_pic2, .skill_container {
-  border: 4px solid transparent;
-  border-radius: 1em;
-}
-
-
-.skill_container, .profile_pic2, .profile_pic, #return_button, #refresh_button, #coffee_box:hover, #git_button:hover, #refresh_button:hover, #about_button:hover, #skills_button:hover, #playlist_button:hover, #fs_button:hover, #return_button:hover {
-	background: 
-	  linear-gradient(var(--col6), var(--col6)) padding-box,
-    linear-gradient(to right, var(--col1), var(--col2)) border-box;
-}
-
-#coffee_box:hover, #git_button:hover, #refresh_button:hover, #about_button:hover, #skills_button:hover, #playlist_button:hover, #fs_button:hover, #return_button:hover {
-    cursor: pointer;
-}
-
-nav a, nav button {
-	margin-right: 0.25em;
-	margin-left: 0.25em;
-}
-
-#git_button {
-	margin-left: auto;
-}
-
-#return_button {
+#circle, #circle2, .circle {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	border-style: solid;
+	border-width: 2px;
 	z-index: 100;
-	opacity: 0;
-	position: fixed;
-	width: 1rem;
-	height: 1rem;
-	padding: 0.5rem;
-	top: 0.75em;
-	right: 0.75em;
-	font-size: 1.25em;
-	border-style: solid;
-}
-
-
-#refresh_button {
-	padding-bottom: 10px;
-	padding-top: 10px;
-	pointer-events: all;
-}
-
-#head_image_container {
-	position: relative;
-	top: -2.25em;
-	z-index: -1;
-	animation-name: image_fly;
-	animation-duration: 2s;
-}
-
-#head_image {
-	height: 6em;
-	
-}
-
-p {
-	font-size:2.4em;
-}
-
-.box_indicator {
-	position: relative;
-	margin-top: auto;
-	margin-bottom: 1em;
-	animation-name: box_fly;
-	animation-duration: 2s;
-}
-
-.prev_progress_button, .next_progress_button, #puzzle_crawler {
-	display: inline-block;
-	margin-top: 3%;
-	color: var(--col0);
-	text-decoration: none;
-	padding: 8px 16px;
-	border-radius: 20px;
-	font-size: 165%;
-	pointer-events: all;
-}
-
-#puzzle_crawler {
-	padding-left: 0px;
-	padding-right: 0px;
-	margin: auto;
-	line-height: 1.1em;
-}
-
-#about_container, #business_container, #the_playlist {
-  padding: 10px 10px;
-  display: inline-block;
-  border-radius: 2em;
-}
-
-#about_container::before, #business_container::before, #the_playlist::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 2em;
-  padding: 4px; /* control the border thickness */
-  background: var(--col3); /* Fallback background in case xor isn't compatible */
-  background: linear-gradient(to right, var(--col1), var(--col2));
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-}
-
-#about_container, #business_container, #the_playlist {
-	margin-left: 2.5%;
-	margin-right: 2.5%;
-}
-
-#business_container, #the_playlist {
-	margin-top:  2.5%;
-}
-
-#the_playlist {
-	margin-bottom: 2.5%;
-	overflow-x: hidden;
-}
-
-#artist_container, #song_container {
-	line-height: 1.2em;
-	font-size: 2.75vw;
-	overflow: hidden;
-	position: relative;
-	display: inline-block;
-}
-
-#top_section {
-	flex-direction: column;
+	left: -50px;
+	top: -50px;
+	pointer-events: none;
+	opacity: 0.5;
+	animation-name: rotate;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 	background-color: transparent;
-	width: 100%;
-	height: 95vh;
 }
 
-#top_section, #about_container, #business_container, #the_playlist, #footer {
-	display: none;
+
+#circle2 {
+	animation-duration: 3s;
+	width: 1em;
+	height: 1em;
 }
 
-#business_container {
-	flex-direction: column;
+@keyframes rotate {
+	from {transform: translate(-50%,-50%) rotate(0deg);}
+	to {transform: translate(-50%,-50%) rotate(365deg);}
 }
 
-#page_break {
-	border-top-style: solid;
-	display: none;
+@keyframes rotate2 {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(365deg);}
 }
 
-.profile_pic, .profile_pic2 {
-	background-color: var(--col5);
-	max-width: 33%;
-	margin: 3%;
-	padding: 2%;
-	border-style: solid;
-	align-self: flex-start;
-}
-.text_container {
-	margin: 3%;
-	text-align: left;
-}
-
-.text_container li {
-	list-style: none;
-}
-
-.link_body, .link_body_foot {
-	color: var(--col0);
-	display: inline;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	border-bottom-style: solid;
-	pointer-events: all;
-}
-.box_spacer {
-	display: inline-flex;
-	width: 40%;
-}
-
-footer {
-	position: relative;
-	padding-top: 1%;
-	min-height: 4.5em;
-	height: fit-content;
-	background-color: var(--col6);
-	pointer-events: all;
-}
-
-#small_text {
+.container {
 	position: absolute;
-	bottom: 0;
-	height: fit-content;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	white-space: nowrap;
-}
-
-.praise {
-	display: inline-block;
-	font-size: 0.6em;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-}
-
-.special, #very_special {
-  background: -webkit-linear-gradient(left, var(--col1), var(--col2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.item_span {
-	border-bottom-style: solid;
-}
-
-#three_div {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: 8%;
-}
-
-#particles-js {
-	position: fixed;
-	height: 100vh;
 	width: 100vw;
+	height: 100vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0, 0.9, 0.6, 1.0);
+}
+
+.move_up {animation-name: move_up;}
+.move_down {animation-name: move_down;}
+.move_left {animation-name: move_left;}
+.move_right {animation-name: move_right;}
+
+.move_up_back {animation-name: move_up_back;}
+.move_down_back {animation-name: move_down_back;}
+.move_left_back {animation-name: move_left_back;}
+.move_right_back {animation-name: move_right_back;}
+
+
+@keyframes move_up {from {bottom: 0} to {bottom: -50vh;}}
+@keyframes move_down {from {top: 0} to {top: -50vh;}}
+@keyframes move_left {from {right: 0} to {right: -50vw;}}
+@keyframes move_right {from {left: 0} to {left: -50vw;}}
+
+@keyframes move_up_back {from {bottom: -50vh} to {bottom: 0;}}
+@keyframes move_down_back {from {top: -50vh} to {top: 0;}}
+@keyframes move_left_back {from {right: -50vw} to {right: 0;}}
+@keyframes move_right_back {from {left: -50vw} to {left: 0;}}
+
+.div1, .div2 {
+	position: absolute;
+	border-color: white;
+	border-style: solid;
+	border-width: 0.5px;
+	width: 10em;
+	height: 0;
+	animation-timing-function: cubic-bezier(1, 0.4, 0.4, 1.0);
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	z-index: 1;
+}
+
+.div1 {
+	animation-name: shrink1;
+	rotate: 45deg;
+}
+
+.div2 {
+	animation-name: shrink2;
+	rotate: -45deg;
+}
+
+@keyframes shrink1 {
+	0% {width: 75em;}
+	70% {width: 3em; rotate: 45deg;}
+	100% {width: 10em; rotate: 135deg;}
+}
+@keyframes shrink2 {
+	0% {width: 75em;}
+	70% {width: 3em; rotate: -45deg;}
+	100% {width: 10em; rotate: 45deg;}
+}
+
+#up, #down, #left, #right {
+	position: absolute;
+	width: 200vh;
+	height: 200vh;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+	animation-name: hover2;
+	animation-duration: 0.20s;
 	pointer-events: all;
 }
 
-#loader {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-  background: -webkit-linear-gradient(left, var(--col1), var(--col2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  overflow: hidden;
+#up:hover, #down:hover, #left:hover, #right:hover {
+	animation-name: hover1;
 }
 
-#load_image {
-	width: 70%;
-	z-index: -1;
-	animation-name: load;
-	animation-duration: 1.25s;
+@keyframes hover1 {
+	from {background-color: #181818}
+	to {background-color: #0f0f0f;}
+}
+@keyframes hover2 {
+	from {background-color: #0f0f0f}
+	to {background-color: #181818}
 }
 
-#load_text, #load_text_2 {
-	animation-name: load_text;
-	animation-duration: 1.25s;
+#up {transform: translate(50%,50%); rotate: -135deg;}
+#left {transform: translate(50%,50%); rotate: -225deg;}
+#right {transform: translate(50%,50%); rotate: -45deg;}
+#down {transform: translate(50%,50%); rotate: -315deg}
 
-}
 
-.skill_bar {
-	background: linear-gradient(to right, var(--col1), var(--col2));
-	height: 0.5em;
-	border-radius: 20em;
-	display: inline-block;
-}
-
-.skill_container li {
+.content_left, .content_up, .content_right, .content_down {
+	font-size: 30px;
+	position: absolute;
+	width: fit-content;
+	margin: 30px;
+	opacity: 0;
+	animation-name: fade-in;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+	animation-timing-function: ease-out;
 	text-align: center;
-	display: inline-flex;
-	justify-content: space-between;
+}
+
+@keyframes fade-in {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
+.content_right {rotate: 45deg; transform: translate(0,75%);}
+.content_up {rotate: 135deg; transform: translate(12.5%,0);}
+.content_left {rotate: 225deg; transform: translate(0,-50%);}
+.content_down {rotate: 315deg; transform: translate(-25%,0);}
+
+#left_text h3 {
+	margin-bottom: 0;
+}
+#left_text p {
+	margin-top: 10px;
+}
+
+#left_text {
+	position: absolute;
+	left: -35vw;
+	top: 17.5%;
+	margin: 0;
+	animation-fill-mode: forwards;
+	animation-duration: 1.5s;
+	font-size: 30px;
+	width: fit-content;
+	text-align: left;
+	pointer-events: none;
+	animation-timing-function: cubic-bezier(0, 0.9, 0.6, 1.0);
+}
+
+.contact_arrow, #pullout {
+	opacity: 0;
+	animation-fill-mode: forwards;
+	position: absolute;
+	bottom: 60px;
+	left: 50px;
+	z-index: 1000;
+	font-size: 25px;
+}
+
+.contact_arrow {
+	animation-name: fade-in;
+	animation-delay: 6s;
+	animation-duration: 0.75s;
+}
+
+#pullout {
+	bottom: 10px;
+	left: -18em;
+	width: 20em;
+	height: 2em;
+	border-top-right-radius: 5em;
+	border-bottom-right-radius: 5em;
+	background-color: #010101;
+	display: flex;
+	justify-content: center;
 	align-items: center;
-	width: 100%;
+	animation-duration: 0.75s;
+	pointer-events: none;
 }
 
-.skill_container {
-	padding: 2%;
-	border-style: solid;
-	width: 45%;
-} 
-
-/* :0 What?! Omg mobile responsiveness?!?!?! Lucy never implements this, no way omg */
-/* Actually nvm, she sucks at this, wtf why portrait instead of something responsive? */
-@media (orientation:  portrait) {
-
-	html {
-		font-size: 1.5em;
-	}
-
-	.box_indicator, #refresh_button {
-		font-size: 0.75em;
-	}
-
-	.prev_progress_button, .next_progress_button {
-		font-size: 3em;
-	}
-
-	#head_image_container {
-		top: 0;
-	}
-
-	#loader {
-		width: 100vw;
-	}
-
-	#fs_button, #git_button {
-		display: none;
-	}
+.pull_fade {
+	animation-delay: 6s;
+	animation-name: fade-in;
 }
 
-/* Omg she is going to do CSS animation too? Lucy would never :O */
-@keyframes return {
-	from {top: -2em;}
-	to {top: 0.75em;}
+.pull_out {animation-name: pull_out;}
+.pull_in {animation-name: pull_in;}
+
+@keyframes pull_out {from {left: -18em;} to {left: 0em;}}
+@keyframes pull_in {from {left: 0em;} to {left: -18em;}}
+
+#pull_sign {
+	margin-left: auto;
+	margin-right: 1em;
 }
 
-@keyframes box_fly {
-	from {left: -100%}
-	to {left: 0;}
+#pullout a {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 0;
+	text-decoration: none;
+	color: white;
+	height: 1.5em;
 }
 
-@keyframes nav_fly {
-	from {top: -100%}
-	to {top: 0;}
+a img {
+	height: 1.5em;
 }
 
-@keyframes image_fly {
-	from {right: -100%}
-	to {right: 0%;}
+#hint {
+	pointer-events: none;
+	rotate: 225deg;
+	font-size: 20px;
+	z-index: 100;
+	position: absolute;
+	transform: translate(-75%, -400%);
+	opacity: 0;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
 }
 
-@keyframes fly_back {
-	from {top: 0.75em;}
-	to {top: -2em;}
+.hint {
+	animation-delay: 6s;
+	animation-name: fade-in;
 }
 
-@keyframes load {
-	from {margin-left: -200%;}
-	to {margin-left: 0;}
+.hint2 {
+	animation-name: fade-out;
 }
 
-@keyframes load_fade {
+@keyframes fade-out {
 	from {opacity: 1;}
 	to {opacity: 0;}
 }
 
-@keyframes load_text {
-	from {margin-right: -200%;}
-	to {margin-right: 0;}
-}
+.move_l_text {animation-name: move_l_text;}
+.move_l_text_back {animation-name: move_l_text_back;}
 
-/* Left Box */
-@keyframes ske1 { from {width: 0%;} to {width: 75%;} }
-@keyframes ske2 { from {width: 0%;} to {width: 55%;} }
-@keyframes ske3 { from {width: 0%;} to {width: 90%;} }
-@keyframes ske4 { from {width: 0%;} to {width: 60%;} }
-@keyframes ske5 { from {width: 0%;} to {width: 30%;} }
-/* Right Box */
-@keyframes ske6 { from {width: 0%;} to {width: 70%;} }
-@keyframes ske7 { from {width: 0%;} to {width: 65%;} }
-@keyframes ske8 { from {width: 0%;} to {width: 60%;} }
-@keyframes ske9 { from {width: 0%;} to {width: 35%;} }
-@keyframes ske10{ from {width: 0%;} to {width: 20%;} }
+@keyframes move_l_text {from {left: -35vw} to {left: 15vw;}}
 
-#sk1, #sk2, #sk3, #sk4, #sk5, #sk6, #sk7, #sk8, #sk9, #sk10 {
-	width: 0%;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-} 
 
-/* This should probably be fixed later :skull: */
-.sk1 {animation-name: ske1; animation-delay: 0.1s;}
-.sk2 {animation-name: ske2; animation-delay: 0.3s;}
-.sk3 {animation-name: ske3; animation-delay: 0.5s;}
-.sk4 {animation-name: ske4; animation-delay: 0.7s;}
-.sk5 {animation-name: ske5; animation-delay: 0.9s;}
-.sk6 {animation-name: ske6; animation-delay: 0.1s;}
-.sk7 {animation-name: ske7; animation-delay: 0.3s;}
-.sk8 {animation-name: ske8; animation-delay: 0.5s;}
-.sk9 {animation-name: ske9; animation-delay: 0.7s;}
-.sk10{animation-name: ske10;animation-delay: 0.9s;}
-
-@keyframes artist_fly {
-	0% {left: -100%; opacity: 0;}
-	75% {opacity: 0.60;}
-	100% {left:  0%; opacity: 1;}
-}
-
-@keyframes song_fly {
-	0% {right: -100%; opacity: 0;}
-	75% {opacity: 0.60;}
-	100% {right:  0%;opacity: 1;}
-}
-
-@keyframes fade_in {
-	from {opacity: 0;}
-	to {opacity: 1;}
-}
-
-.fly_left {
-	animation-name: artist_fly;
-	animation-duration: 0.75s;
-}
-.fly_right {
-	animation-name: song_fly;
-	animation-duration: 0.75s;
-}
-
-#loader {
-	z-index: -1;
-	animation-name: load_fade;
-	animation-duration: 0.75s;
-	animation-delay: 1.25s;
-	animation-fill-mode: forwards;
-}
-
-#about_container, .canvas_fade {
-	animation-name: fade_in;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-}
+@keyframes move_l_text_back {from {left: 15vw} to {left: -35vw;}}
