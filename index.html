@@ -8,16 +8,22 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+
+
+
 
 </head>
-<body>
+<body id="body"><!-- sorry -->
+
 
 	<div id="circle"></div>
 	<div id="circle2"></div>
 	<div class="container">
-		<div class="div1"></div>
-		<div class="div2"></div>
+		<div id="div1" class="div1 div1_anim"></div>
+		<div id="div2" class="div2 div2_anim"></div>
 	</div>
 	<div class="container">
 <!-- LEFT -->
@@ -35,17 +41,52 @@
 			<div class="content_right">My Projects</div>
 		</div>
 <!-- DOWN -->
-		<div id="down" onclick="move_page_down()">
+		<div id="down" class="swap" onclick="move_page_down()">
 			<div class="content_down">Cool Stuff</div>
 		</div>
 	</div>
 
 	<div id="left_text">
-		<h3>Heya!~</h3>
+		<h3 class="ml16">Heya!~</h3>
 		<p>
-			I'm <strong>Lu-Sife</strong>, a Freelancing Web Developer.<span id="blink"> _</span>
+			I'm <strong>Lu-Sife</strong>, I design & develop <span id="text_swap">Websites.</span><span id="blink"> _</span>
 		</p>
 		<p>My site is under construction.<br>- Thank you! :D</p>
+	</div>
+
+	<button id="back_down" onclick="move_page_down()">^</button>
+
+
+	<div id="bottom_text"><!-- please please fix this -->
+		<div class="gutter"><br><br><span class="v1">001</span><br>002<br>003<br><span class="v1">004</span><br><span class="v2">005</span><br>006<br>007<br>008<br><span class="v3">009</span><br>010<br>011<br>012<br>013<br>014<br><span class="v3">015</span><br>016<br>017<br><span class="v1">018</span><br>019<br>020<br>021<br><span class="v1">022</span><br>023<br>024<br>025<br>026<br>027<br>028<br>029<br>030<br>031<br>032<br>033<br>034<br>035<br>036<br>037<br>038<br>039<br>040<br>041<br>042<br>043<br>044<br>045<br>046<br>047<br>048<br>049<br>050<br>051<br>052<br>053<br>054<br>055<br>056<br>057<br>058<br>059<br>060<br>061<br>062<br>063<br>064<br>065<br>066<br>067<br>068<br>069<br>070<br>071<br>072<br>073<br>074<br>075<br>076<br>077<br>078<br>079<br>080<br>081<br>082<br>083<br>084<br>085<br>086<br>087<br>088<br>089<br>090<br>091<br>092<br>093<br>094<br>095<br>096<br>097<br>098<br>099<br>100<br>101<br>102<br>103<br>104<br>105<br>106<br>107<br>108<br>109<br>110<br>111<br>112<br>113<br>114<br>115<br>116<br>117<br>118<br>119<br>120<br>121<br>122<br>123<br>124<br>125<br>126<br>127<br>128<br>129<br>130<br>131<br>132<br>133<br>134<br>135<br>136<br>137<br>138<br>139<br>140<br>141<br>142<br>143<br>144<br>145<br>146<br>147<br>148<br>149<br>150<br>151<br>152<br>153<br>154<br>155<br>156<br>157<br>158<br>159<br>160<br>161<br>162<br>163<br>164<br>165<br>166<br>167<br>168<br>169<br>170<br>171<br>172<br>173<br>174<br>175<br>176<br>177<br>178<br>179<br>180<br>181<br>182<br>183<br>184<br>185<br>186<br>187<br>188<br>189<br>190<br>191<br>192<br>193<br>194<br>195<br>196<br>197<br>198<br>199<br>200<br>201<br>202<br>203<br>204<br>205<br>206<br>207<br>208<br>209<br>210<br>211<br>212<br>213<br>214<br>215<br>216<br>217<br>218<br>219<br>220<br>221<br>222<br>223<br>224<br>225<br>226<br>227<br>228<br>229<br>230<br>231<br>232<br>233<br>234<br>235<br>236<br>237<br>238<br>239<br>240<br>241<br>242<br>243<br>244<br>245<br>246<br>247<br>248<br>249<br>250<br>251<br>252<br>253<br>254<br>255<br>256<br>257<br>258<br>259<br>260<br>261<br>262<br>263<br>264<br>265<br>266<br>267<br>268<br>269<br>270<br>271<br>272<br>273<br>274<br>275<br>276<br>277<br>278<br>279<br>280<br>281<br>282<br>283<br>284<br>285<br>286<br>287<br>288<br>289<br>290<br>291<br>292<br>293<br>294<br>295<br>296<br>297<br>298<br>299<br>300<br>
+
+		</div>
+		<div class="inner_text">
+			<span><br><br>
+
+<span class="v1">Table of Contents /></span><br><br>
+<span class="v0">// Links:</span><br>
+<span class="v0">// </span><span class="v1"><a href="javascript: scroll('music')">Music</a></span></span><br>
+<span class="v0">// </span><span class="v2"><a href="javascript: scroll('linux')">Linux Stuff</a></span> <span class="v0">(link testing)</span>
+<br>
+
+<span class="v0">// Programming</span><br>
+<span class="v0">// Games</span><br><br>
+
+function <span class="v3">About</span>() {<br>
+<div class="indent">This page is a place for me to talk about stuff I'm passionate about, but since I'm still working on this website, it's empty. Check Back later maybe?</div>
+}<br><br>
+
+function <span class="v3">Bug_Reports</span>() {<br>
+	<div class="indent">If you see anything wrong with the website (incorrect proportions, clipping text, etc.) please leave an issue on this site's <a href="https://github.com/lu-sife/lu-sife.github.io">github repo</a>!</div>
+}<br><br><br><section id="music"></section><span class="v1">Music /></span><br><br>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section id="linux"></section>just testing links lol
+			</span>
+		</div>
 	</div>
 
 <!-- FOOTER STUFF -->
@@ -54,8 +95,7 @@
 		<a href="mailto:itslusife@gmail.com"><img src="images/email.png" alt="itslusife@gmail.com"></a>
 		<a href="https://github.com/lu-sife"><img src="images/github.svg" alt="github"></a>
 		<span id="pull_sign">></span></div>
-
 </body>
-
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="index.js"></script>

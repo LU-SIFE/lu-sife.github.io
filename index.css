@@ -3,7 +3,9 @@
     src: url(fonts/menlo.ttf);
 }
 
+
 html, body {
+	scroll-behavior: smooth;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -17,7 +19,7 @@ body {
 	cursor: url(images/cursor.png) 4 4, auto;
 }
 
-#circle, #circle2, .circle {
+#circle, #circle2 {
 	position: absolute;
 	width: 2em;
 	height: 2em;
@@ -33,6 +35,15 @@ body {
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	background-color: transparent;
+}
+
+.ml16 {
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
 }
 
 
@@ -75,15 +86,30 @@ body {
 .move_right_back {animation-name: move_right_back;}
 
 
-@keyframes move_up {from {bottom: 0} to {bottom: -50vh;}}
-@keyframes move_down {from {top: 0} to {top: -50vh;}}
+@keyframes move_up {from {bottom: 0} to {bottom: -100vh;}}
+@keyframes move_down {from {top: 0} to {top: -100vh;}}
 @keyframes move_left {from {right: 0} to {right: -50vw;}}
 @keyframes move_right {from {left: 0} to {left: -50vw;}}
 
-@keyframes move_up_back {from {bottom: -50vh} to {bottom: 0;}}
-@keyframes move_down_back {from {top: -50vh} to {top: 0;}}
+@keyframes move_up_back {from {bottom: -100vh} to {bottom: 0;}}
+@keyframes move_down_back {from {top: -100vh} to {top: 0;}}
 @keyframes move_left_back {from {right: -50vw} to {right: 0;}}
 @keyframes move_right_back {from {left: -50vw} to {left: 0;}}
+
+
+.move_l_text {animation-name: move_l_text;}
+.move_b_text {animation-name: move_b_text;}
+
+.move_l_text_back {animation-name: move_l_text_back;}
+.move_b_text_back {animation-name: move_b_text_back;}
+
+
+@keyframes move_l_text {from {left: -45vw} to {left: 5vw;}}
+@keyframes move_b_text {from {top: 100vh;} to {top: 2vh;}}
+
+@keyframes move_l_text_back {from {left: 5vw} to {left: -45vw;}}
+@keyframes move_b_text_back {from {top: 2vh;} to {top: 100vh;}}
+
 
 .div1, .div2 {
 	position: absolute;
@@ -95,17 +121,42 @@ body {
 	animation-timing-function: cubic-bezier(1, 0.4, 0.4, 1.0);
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
-	z-index: 1;
+	z-index: 100;
 }
 
-.div1 {
-	animation-name: shrink1;
-	rotate: 45deg;
+.div1 {rotate: 45deg;}
+.div2 {rotate: -45deg;}
+
+.div1_anim {animation-name: shrink1; animation-duration: 2s;}
+.div2_anim {animation-name: shrink2; animation-duration: 2s;}
+
+.spin_idle1 {
+	animation-name: spin_idle1;
+	animation-delay: 4s;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 }
 
-.div2 {
-	animation-name: shrink2;
-	rotate: -45deg;
+.spin_idle2 {
+	animation-name: spin_idle2;
+	animation-delay: 4s;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes spin_idle1 {
+	0% {rotate: 135deg; width: 10em;}
+	10% {width: 2em;}
+	20% {rotate: 225deg; width: 10em;}
+	100% {rotate: 225deg; width: 10em;}
+
+}
+@keyframes spin_idle2 {
+	0% {rotate: 45deg; width: 10em;}
+	10% {width: 2em;}
+	20% {rotate: 135deg; width: 10em;}
+	100% {rotate: 135deg; width: 10em;}
+
 }
 
 @keyframes shrink1 {
@@ -125,14 +176,24 @@ body {
 	height: 200vh;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in;
-	animation-name: hover2;
 	animation-duration: 0.20s;
 	pointer-events: all;
+	transform: translate(50%,50%);
 }
 
-#up:hover, #down:hover, #left:hover, #right:hover {
-	animation-name: hover1;
+#left, #up, #right {
+	animation-name: hover2;
+	z-index: 6;
 }
+
+#up {rotate: -135deg;}
+#left {rotate: -225deg;}
+#right {rotate: -45deg;}
+#down {rotate: -315deg}
+
+#up:hover, .swap:hover, #left:hover, #right:hover {animation-name: hover1;}
+
+.swap {animation-name: hover2;}
 
 @keyframes hover1 {
 	from {background-color: #181818}
@@ -143,14 +204,8 @@ body {
 	to {background-color: #181818}
 }
 
-#up {transform: translate(50%,50%); rotate: -135deg;}
-#left {transform: translate(50%,50%); rotate: -225deg;}
-#right {transform: translate(50%,50%); rotate: -45deg;}
-#down {transform: translate(50%,50%); rotate: -315deg}
-
-
 .content_left, .content_up, .content_right, .content_down {
-	font-size: 30px;
+	font-size: 2.5vw;
 	position: absolute;
 	width: fit-content;
 	margin: 30px;
@@ -163,10 +218,8 @@ body {
 	text-align: center;
 }
 
-@keyframes fade-in {
-	from {opacity: 0}
-	to {opacity: 1}
-}
+@keyframes fade-in {from {opacity: 0} to {opacity: 1}}
+@keyframes fade-out {from {opacity: 1;} to {opacity: 0;}}
 
 .content_right {rotate: 45deg; transform: translate(0,75%);}
 .content_up {rotate: 135deg; transform: translate(12.5%,0);}
@@ -181,13 +234,14 @@ body {
 }
 
 #left_text {
+	z-index: 10;
 	position: absolute;
-	left: -35vw;
+	left: -45vw;
 	top: 17.5%;
 	margin: 0;
 	animation-fill-mode: forwards;
 	animation-duration: 1.5s;
-	font-size: 30px;
+	font-size: 2.25vw;
 	width: fit-content;
 	text-align: left;
 	pointer-events: none;
@@ -198,10 +252,10 @@ body {
 	opacity: 0;
 	animation-fill-mode: forwards;
 	position: absolute;
-	bottom: 60px;
+	bottom: 8vh;
 	left: 50px;
 	z-index: 1000;
-	font-size: 25px;
+	font-size: 1.75vw;
 }
 
 .contact_arrow {
@@ -257,7 +311,7 @@ a img {
 #hint {
 	pointer-events: none;
 	rotate: 225deg;
-	font-size: 20px;
+	font-size: 1.75vw;
 	z-index: 100;
 	position: absolute;
 	transform: translate(-75%, -400%);
@@ -276,15 +330,138 @@ a img {
 	animation-name: fade-out;
 }
 
-@keyframes fade-out {
-	from {opacity: 1;}
-	to {opacity: 0;}
+#bottom_text {
+	position: absolute;
+	width: 50vw;
+	height: 96vh;
+	top: 100vh;
+	left: 25vw;
+	animation-duration: 1.5s;
+	z-index: 5;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0, 0.9, 0.6, 1.0);
+	background-color: transparent;
+	overflow-y: scroll;
+	font-family: Roboto Mono;
+	background-color: #0f0f0f;
+	display: flex;
+	font-size: 1.5vw;
 }
 
-.move_l_text {animation-name: move_l_text;}
-.move_l_text_back {animation-name: move_l_text_back;}
+.inner_text {
+	margin-left: 10px;
+}
 
-@keyframes move_l_text {from {left: -35vw} to {left: 15vw;}}
+.gutter {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: right;
+	width: fit-content;
+	height: fit-content;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
 
 
-@keyframes move_l_text_back {from {left: 15vw} to {left: -35vw;}}
+.inner_text a {
+	color: inherit;
+	font-weight: bold;
+}
+
+.indent a {
+	color: #9d00ff;
+	font-weight: bold;
+}
+
+.linux {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+.indent {
+	margin-left: 2em;
+}
+
+.v1, .v2, .v3 {
+	font-weight: bold;
+}
+
+.v0 {opacity: 0.5;}
+.v1 {color: #9D00FF;}
+.v2 {color: #00FF15; opacity: 1}
+.v3 {color: #FF5F1F;}
+
+
+#back_down {
+	position: absolute;
+	display: none;
+	top: 100vh;
+	right: 2vh;
+	box-shadow: none;
+	background-color: #0a0a0a;
+	border-style: 1px solid;
+	border-radius: 5em;
+	width: 6vh;
+	height: 6vh;
+	z-index: 10000;
+	color: white;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0, 0.9, 0.6, 1.0);
+	text-decoration: none;
+	font-size: 2.5vh;
+}
+
+@media (orientation: portrait) {
+	.content_left, .content_up, .content_right, .content_down {
+		font-size: 2.5vh;
+	}
+
+	#left_text {
+		font-size: 2.5vh;
+	}
+	
+	.contact_arrow, #pullout {
+		font-size: 2.5vh;
+	}
+
+	#hint {
+		font-size: 1.75vh;
+	}
+
+	#bottom_text {
+		font-size: 1.75vh;
+		width: 90vw;
+		left: 0;
+		padding-right: 10vw;
+	}
+
+	#left_text {
+		left: -80vw;
+	}
+
+	#back_down {
+		display: initial;
+	}
+
+	@keyframes move_up {from {bottom: 0} to {bottom: -100vh;}}
+	@keyframes move_down {from {top: 0} to {top: -100vh;}}
+	@keyframes move_left {from {right: 0} to {right: -100vw;}}
+	@keyframes move_right {from {left: 0} to {left: -50vw;}}
+
+	@keyframes move_up_back {from {bottom: -100vh} to {bottom: 0;}}
+	@keyframes move_down_back {from {top: -100vh} to {top: 0;}}
+	@keyframes move_left_back {from {right: -100vw} to {right: 0;}}
+	@keyframes move_right_back {from {left: -50vw} to {left: 0;}}
+
+	@keyframes move_l_text {from {left: -80vw} to {left: 20vw;}}
+	@keyframes move_b_text {from {top: 100vh;} to {top: 2vh;}}
+
+	@keyframes move_l_text_back {from {left: 20vw} to {left: -80vw;}}
+	@keyframes move_b_text_back {from {top: 2vh;} to {top: 100vh;}}
+
+
+	/*@keyframes move_b_button {from {bottom: -94vh;} to {bottom: 4vh;}}
+	@keyframes move_b_button_back {from {bottom: 4vh;} to {bottom: -94vh;}}*/
+
+}
