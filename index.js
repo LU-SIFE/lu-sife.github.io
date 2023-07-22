@@ -113,3 +113,56 @@ window.onscroll = () => {
   }
   divAnimation.seek((scrollPercent() / 30 - 0.5) * divAnimation.duration);
 };
+
+var toggle_counter = false;
+
+function toggle() {
+  if (toggle_counter === true) {
+    anime.timeline().add({
+      targets: "#toggle_fill",
+      width: ["2em", "0em"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    anime.timeline().add({
+      targets: "#toggle_back",
+      color: ["#9D00FF", "#333333"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    anime.timeline().add({
+      targets: "#toggle_front",
+      color: ["#333333", "#9D00FF"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    toggle_counter = false;
+
+  } else {
+    anime.timeline().add({
+      targets: "#toggle_fill",
+      width: ["0em", "2em"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    anime.timeline().add({
+      targets: "#toggle_front",
+      color: ["#9D00FF", "#333333"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    anime.timeline().add({
+      targets: "#toggle_back",
+      color: ["#333333", "#9D00FF"],
+      easing: "easeOutExpo",
+      duration: 500
+    });
+
+    toggle_counter = true;
+  }
+}
