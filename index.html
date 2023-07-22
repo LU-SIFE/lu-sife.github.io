@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -9,12 +10,15 @@
 	<link rel="stylesheet" href="index.css">
 	<title>Localhost</title>
 </head>
+
 <body>
+
 	<div id="cursor"></div>
 
 <!-- MAIN PAGE -->
 	<section class="landing">
 
+<!-- Nav Bar -->
 		<nav class="nav">
 			<div id="time"></div>
 			<a onclick="pullpage('#page1')" onmouseover="ch(true)" onmouseout="ch(false)" id="abt">About/></a>
@@ -28,7 +32,9 @@
 			<span class="text2">[2] - Development</span><br>
 			<span class="text2">[3] - Deployment</span>
 		</div>
+
 		<span class="scroll">V Scroll Down</span>
+
 		<span class="mail">Contact<br>
 			<a href="mailto:itslusife@gmail.com" onmouseover="ch(true)" onmouseout="ch(false)">itslusife@gmail.com</a>
 		</span>
@@ -40,8 +46,11 @@
 	<section>
 
 		<div class="box_test">
+
 			<span id="test1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
 			<div class="right_container">
+
 				<div class="toggle_text">
 					<span id="toggle_front">Front-End</span>
 					<div class="arrows"></div>
@@ -53,7 +62,15 @@
 					<div id="toggle_inner"></div>
 				</div>
 
-				<div class="img_container" align="right"><!--<img src="images/img1.svg" alt=""> --></div>
+				<div class="bar_container">
+
+	<div class="bar_con3"><span>HTML/CSS</span><div class="bar_con2"><div id="bar1"></div></div></div>
+	<div class="bar_con3"><span>JS</span><div class="bar_con2"><div id="bar2"></div></div></div>
+	<div class="bar_con3"><span>text</span><div class="bar_con2"><div id="bar3"></div></div></div>
+	<div class="bar_con3"><span>text</span><div class="bar_con2"><div id="bar4"></div></div></div>
+	<div class="bar_con3"><span>text</span><div class="bar_con2"><div id="bar5"></div></div></div>
+
+				</div>
 			</div>
 	</section>
 
@@ -61,15 +78,19 @@
 	<section>
 	</section>
 
+
+
 <!-- SECONDARY CONTENT -->
 <!-- FIRST PAGE -->
 	<div id="page1">
-		<div class="page_text"><h1>About/></h1></div></div>
+		<div class="page_text"><h1>About/></h1></div>
 	</div>
+
 <!-- SECOND PAGE -->
 	<div id="page2">
 		<div class="page_text"><h1>Projects/></h1></div>
 	</div>
+
 <!-- THIRD PAGE -->
 	<div id="page3">
 		<div class="page_text"><h1>Contact/></h1></div>
@@ -77,6 +98,9 @@
 
 </body>
 </html>
+
+
+<!-- Javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="index.js"></script>
 <script src="animations.js"></script>

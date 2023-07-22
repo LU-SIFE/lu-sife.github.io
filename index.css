@@ -196,16 +196,11 @@ nav a:hover:after { transform: scaleX(1);}
 	border-bottom: 3px solid;
 }
 
-.img_container {
-	width: 100%;
-	height: 15em;
-	display: inline-flex;
-}
-
 .right_container {
 	margin-top: 1em;
 	margin-right: 3em;
 	width: 80%;
+	height: 100%;
 	display: inline-flex;
 	flex-direction: column;
 	text-align: center;
@@ -258,6 +253,7 @@ nav a:hover:after { transform: scaleX(1);}
 	padding: 0;
 	display: flex;
 	overflow: hidden;
+	margin-top: 1em;
 }
 
 #toggle_inner {
@@ -300,3 +296,77 @@ nav a:hover:after { transform: scaleX(1);}
 #time, .mail a {
 	text-shadow: #9D00FF 1px 1px 2px;
 }
+
+#bar1, #bar2, #bar3, #bar4, #bar5 {
+	display: inline-block;
+	border-radius: 1em;
+	background-color: #DFDFDF;
+	height: 0.5em;
+	width: 100%;
+	margin-left: 5px;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.bar_container {
+	margin-left: 1em;
+	display: inline-flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: space-evenly;
+	height: 13em;
+	margin-top: 2em;
+}
+
+.bar_container span {
+	display: inline-flex;
+	height: 1em;
+	line-height: 1em;
+	width: fit-content;
+}
+
+.bar_con2 {
+	width: 100%;
+	display: inline-flex;
+	height: 1em;
+	line-height: 1em;
+	align-items: center;
+	justify-content: flex-end
+}
+
+.bar_con3 {
+	width: 100%;
+	display: flex;
+}
+
+.bar_shrink {animation-name: bar_shrink;}
+@keyframes bar_shrink {from{width: 100%;} to {width: 0%}}
+
+
+.bar1_grow_back {animation-name: bar1_grow_back;}
+.bar2_grow_back {animation-name: bar2_grow_back;}
+.bar3_grow_back {animation-name: bar3_grow_back;}
+.bar4_grow_back {animation-name: bar4_grow_back;}
+.bar5_grow_back {animation-name: bar5_grow_back;}
+
+
+@keyframes bar1_grow_back {from{width:0}to{width: 60%}}
+@keyframes bar2_grow_back {from{width:0}to{width: 70%}}
+@keyframes bar3_grow_back {from{width:0}to{width: 80%}}
+@keyframes bar4_grow_back {from{width:0}to{width: 90%}}
+@keyframes bar5_grow_back {from{width:0}to{width: 100%}}
+
+
+
+.bar1_grow_front {animation-name: bar1_grow_front;}
+.bar2_grow_front {animation-name: bar2_grow_front;}
+.bar3_grow_front {animation-name: bar3_grow_front;}
+.bar4_grow_front {animation-name: bar4_grow_front;}
+.bar5_grow_front {animation-name: bar5_grow_front;}
+
+
+@keyframes bar1_grow_front {from{width:0}to{width: 100%}}
+@keyframes bar2_grow_front {from{width:0}to{width: 90%}}
+@keyframes bar3_grow_front {from{width:0}to{width: 80%}}
+@keyframes bar4_grow_front {from{width:0}to{width: 70%}}
+@keyframes bar5_grow_front {from{width:0}to{width: 60%}}

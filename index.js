@@ -1,8 +1,14 @@
+// moves cursor to correct position
 document.onmousemove = function() {
   document.getElementById('cursor').style.left = event.clientX + 'px';
   document.getElementById('cursor').style.top = event.clientY + 'px';
 };
 
+//enables and disables scrolling in body
+function disableScroll() {document.body.classList.add("stop_scrolling");}
+function enableScroll() {document.body.classList.remove("stop_scrolling");}
+
+//changes cursor state onhover
 function ch(state) {
   if (state === true) {
     document.getElementById("cursor").classList.remove("cursor_shrink");
@@ -13,6 +19,7 @@ function ch(state) {
   }
 }
 
+//refreshes the time
 function refreshTime() {
   var dateString = new Date().toLocaleString("en-US", {
     timeZone: "America/Denver", 
@@ -20,77 +27,8 @@ function refreshTime() {
   });
 
   var formattedString = dateString.replace(", ", " - ");
-
   document.getElementById("time").innerHTML = formattedString + " MDT";
 }
-
-refreshTime();
-setInterval(refreshTime, 1000);
-
-
-var page_state = "none";
-
-
-function pullpage(page_num) {
-
-  if (page_num != page_state && page_state != "none") {
-    anime.timeline().add({
-      targets: page_state,
-      bottom: ["0vh","-80vh"],
-      easing: "easeOutExpo",
-      duration: 1000,
-    });
-
-    anime.timeline().add({
-      targets: page_num,
-      bottom: ["-80vh","0vh"],
-      easing: "easeOutExpo",
-      delay: 750,
-      duration: 1000,
-    });
-    page_state = page_num;
-    return;
-  }
-
-  if (page_state === "none") {
-    anime.timeline().add({
-      targets: page_num,
-      bottom: ["-80vh","0vh"],
-      easing: "easeOutExpo",
-      duration: 1000,
-    });
-    page_state = page_num;
-    disableScroll();
-    return;
-  } else {
-    anime.timeline().add({
-      targets: page_num,
-      bottom: ["0vh","-80vh"],
-      easing: "easeOutExpo",
-      duration: 1000,
-    });
-    page_state = "none";
-    enableScroll();
-    return;
-  }
-}
-
-
-function disableScroll() {document.body.classList.add("stop_scrolling");}
-function enableScroll() {document.body.classList.remove("stop_scrolling");}
-
-
-// Wrap every letter in a span
-var textWrapper = document.getElementById("test1");
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='test2'>$&</span>");
-const divAnimation = anime({
-  targets: '.test2',
-  color: ["#333333", "#dfdfdf"],
-  duration: 20,
-  delay: (el, i) => 100 * i + 1000,
-  autoplay: false,
-});
-
 
 const scrollPercent = () => {
   const bodyST = document.body.scrollTop;
@@ -100,69 +38,67 @@ const scrollPercent = () => {
   return (docST + bodyST) / (docSH - docCH) * 100
 }
 
-var scroll_counter = false;
+function bar_change(state) {
+  if (state === true) {
+    document.getElementById("bar1").classList.remove("bar1_grow_front");
+    document.getElementById("bar2").classList.remove("bar2_grow_front");
+    document.getElementById("bar3").classList.remove("bar3_grow_front");
+    document.getElementById("bar4").classList.remove("bar4_grow_front");
+    document.getElementById("bar5").classList.remove("bar5_grow_front");
+    document.getElementById("bar1").classList.add("bar_shrink");
+    document.getElementById("bar2").classList.add("bar_shrink");
+    document.getElementById("bar3").classList.add("bar_shrink");
+    document.getElementById("bar4").classList.add("bar_shrink");
+    document.getElementById("bar5").classList.add("bar_shrink");
+    setTimeout(function() {
+    document.getElementById("bar1").classList.remove("bar_shrink");
+    document.getElementById("bar2").classList.remove("bar_shrink");
+    document.getElementById("bar3").classList.remove("bar_shrink");
+    document.getElementById("bar4").classList.remove("bar_shrink");
+    document.getElementById("bar5").classList.remove("bar_shrink");
 
-window.onscroll = () => {
-  if (scroll_counter == false) {
-    anime.timeline().add({
-      targets: ".scroll",
-      translateX: [0,200],
-      duration: 1500,
-    });
-    scroll_counter = true;
-  }
-  divAnimation.seek((scrollPercent() / 30 - 0.5) * divAnimation.duration);
-};
+    document.getElementById("bar1").classList.add("bar1_grow_back");
+    document.getElementById("bar2").classList.add("bar2_grow_back");
+    document.getElementById("bar3").classList.add("bar3_grow_back");
+    document.getElementById("bar4").classList.add("bar4_grow_back");
+    document.getElementById("bar5").classList.add("bar5_grow_back");
 
-var toggle_counter = false;
-
-function toggle() {
-  if (toggle_counter === true) {
-    anime.timeline().add({
-      targets: "#toggle_fill",
-      width: ["2em", "0em"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
-
-    anime.timeline().add({
-      targets: "#toggle_back",
-      color: ["#9D00FF", "#333333"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
-
-    anime.timeline().add({
-      targets: "#toggle_front",
-      color: ["#333333", "#9D00FF"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
-
-    toggle_counter = false;
-
+    }, 1000);
   } else {
-    anime.timeline().add({
-      targets: "#toggle_fill",
-      width: ["0em", "2em"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
+    document.getElementById("bar1").classList.remove("bar1_grow_back");
+    document.getElementById("bar2").classList.remove("bar2_grow_back");
+    document.getElementById("bar3").classList.remove("bar3_grow_back");
+    document.getElementById("bar4").classList.remove("bar4_grow_back");
+    document.getElementById("bar5").classList.remove("bar5_grow_back");
+    document.getElementById("bar1").classList.add("bar_shrink");
+    document.getElementById("bar2").classList.add("bar_shrink");
+    document.getElementById("bar3").classList.add("bar_shrink");
+    document.getElementById("bar4").classList.add("bar_shrink");
+    document.getElementById("bar5").classList.add("bar_shrink");
+    setTimeout(function() {
+    document.getElementById("bar1").classList.remove("bar_shrink");
+    document.getElementById("bar2").classList.remove("bar_shrink");
+    document.getElementById("bar3").classList.remove("bar_shrink");
+    document.getElementById("bar4").classList.remove("bar_shrink");
+    document.getElementById("bar5").classList.remove("bar_shrink");
 
-    anime.timeline().add({
-      targets: "#toggle_front",
-      color: ["#9D00FF", "#333333"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
+    document.getElementById("bar1").classList.add("bar1_grow_front");
+    document.getElementById("bar2").classList.add("bar2_grow_front");
+    document.getElementById("bar3").classList.add("bar3_grow_front");
+    document.getElementById("bar4").classList.add("bar4_grow_front");
+    document.getElementById("bar5").classList.add("bar5_grow_front");
 
-    anime.timeline().add({
-      targets: "#toggle_back",
-      color: ["#333333", "#9D00FF"],
-      easing: "easeOutExpo",
-      duration: 500
-    });
-
-    toggle_counter = true;
+    }, 1000);
   }
+}
+
+
+var scroll_counter = false;
+var toggle_counter = false;
+var page_state = "none";
+
+
+window.onload = function() {
+  refreshTime();
+  setInterval(refreshTime, 1000);
 }
