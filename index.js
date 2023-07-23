@@ -39,66 +39,63 @@ const scrollPercent = () => {
 }
 
 function bar_change(state) {
-  if (state === true) {
-    document.getElementById("bar1").classList.remove("bar1_grow_front");
-    document.getElementById("bar2").classList.remove("bar2_grow_front");
-    document.getElementById("bar3").classList.remove("bar3_grow_front");
-    document.getElementById("bar4").classList.remove("bar4_grow_front");
-    document.getElementById("bar5").classList.remove("bar5_grow_front");
-    document.getElementById("bar1").classList.add("bar_shrink");
-    document.getElementById("bar2").classList.add("bar_shrink");
-    document.getElementById("bar3").classList.add("bar_shrink");
-    document.getElementById("bar4").classList.add("bar_shrink");
-    document.getElementById("bar5").classList.add("bar_shrink");
-    setTimeout(function() {
-    document.getElementById("bar1").classList.remove("bar_shrink");
-    document.getElementById("bar2").classList.remove("bar_shrink");
-    document.getElementById("bar3").classList.remove("bar_shrink");
-    document.getElementById("bar4").classList.remove("bar_shrink");
-    document.getElementById("bar5").classList.remove("bar_shrink");
+  if (bar_counter === true) {return;}
+  bar_counter = true;
+  anime.timeline().add({
+    targets: "#bar1, #bar2, #bar3, #bar4, #bar5",
+    width: "0%",
+    duration: 1000,
+    easing: "easeOutExpo"
+  });
 
-    document.getElementById("bar1").classList.add("bar1_grow_back");
-    document.getElementById("bar2").classList.add("bar2_grow_back");
-    document.getElementById("bar3").classList.add("bar3_grow_back");
-    document.getElementById("bar4").classList.add("bar4_grow_back");
-    document.getElementById("bar5").classList.add("bar5_grow_back");
+  setTimeout(function() {
+    if (state === true) {
+      grow_back();
+      document.getElementById("bar_text1").innerHTML = "Text";
+      document.getElementById("bar_text2").innerHTML = "Text";
+      document.getElementById("bar_text3").innerHTML = "Text";
+      document.getElementById("bar_text4").innerHTML = "Text";
+      document.getElementById("bar_text5").innerHTML = "Text";
+    } else {
+      grow_front();
+      document.getElementById("bar_text1").innerHTML = "HTML/CSS";
+      document.getElementById("bar_text2").innerHTML = "JS";
+      document.getElementById("bar_text3").innerHTML = "Text";
+      document.getElementById("bar_text4").innerHTML = "Text";
+      document.getElementById("bar_text5").innerHTML = "Text";
+    }
+    setTimeout(function() {bar_counter = false;}, 1000);
 
-    }, 1000);
-  } else {
-    document.getElementById("bar1").classList.remove("bar1_grow_back");
-    document.getElementById("bar2").classList.remove("bar2_grow_back");
-    document.getElementById("bar3").classList.remove("bar3_grow_back");
-    document.getElementById("bar4").classList.remove("bar4_grow_back");
-    document.getElementById("bar5").classList.remove("bar5_grow_back");
-    document.getElementById("bar1").classList.add("bar_shrink");
-    document.getElementById("bar2").classList.add("bar_shrink");
-    document.getElementById("bar3").classList.add("bar_shrink");
-    document.getElementById("bar4").classList.add("bar_shrink");
-    document.getElementById("bar5").classList.add("bar_shrink");
-    setTimeout(function() {
-    document.getElementById("bar1").classList.remove("bar_shrink");
-    document.getElementById("bar2").classList.remove("bar_shrink");
-    document.getElementById("bar3").classList.remove("bar_shrink");
-    document.getElementById("bar4").classList.remove("bar_shrink");
-    document.getElementById("bar5").classList.remove("bar_shrink");
+  }, 1000);
+}
 
-    document.getElementById("bar1").classList.add("bar1_grow_front");
-    document.getElementById("bar2").classList.add("bar2_grow_front");
-    document.getElementById("bar3").classList.add("bar3_grow_front");
-    document.getElementById("bar4").classList.add("bar4_grow_front");
-    document.getElementById("bar5").classList.add("bar5_grow_front");
+function idle_text() {
+  anime.timeline().add({
+  targets: '.ml16 .letter',
+  translateY: ["0em", "-1em", "0em"], 
+  easing: "easeOutElastic(0,0.8)",
+  duration: 1000,
+  delay: (el, i) => 40 * i
+});
 
-    }, 1000);
-  }
+  anime.timeline().add({
+  targets: '.text2',
+  rotate: ["0deg", "3deg", "-3deg", "0deg"],
+  easing: "easeOutElastic(0,0.8)",
+  duration: 500,
+  delay: (el, i) => 250 * i + 1000
+});
 }
 
 
+var bar_counter = false;
 var scroll_counter = false;
 var toggle_counter = false;
 var page_state = "none";
 
-
 window.onload = function() {
   refreshTime();
   setInterval(refreshTime, 1000);
+  bar_change(false);
+  setInterval(idle_text, 8000);
 }

@@ -11,7 +11,7 @@ anime.timeline().add({
   delay: (el, i) => 40 * i + 1250
 });
 
-var textWrapper2 = document.getElementById("test1");
+var textWrapper2 = document.getElementById("test1_change");
 textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='test2'>$&</span>");
 const divAnimation = anime({
   targets: '.test2',
@@ -21,13 +21,12 @@ const divAnimation = anime({
   autoplay: false,
 });
 
-
 anime.timeline().add({
   targets: '.text2',
   translateX: ["-100%", "0%"],
   easing: "easeOutElastic(0,1)",
   duration: 500,
-  delay: 2000
+  delay: (el, i) => 250 * i + 2000
 });
 
 anime.timeline().add({
@@ -98,6 +97,8 @@ function pullpage(page_num) {
 
 
 function toggle() {
+  if (bar_counter === true) {return;}
+
   if (toggle_counter === true) {
     anime.timeline().add({
       targets: "#toggle_fill",
@@ -160,5 +161,32 @@ window.onscroll = () => {
     });
     scroll_counter = true;
   }
-  divAnimation.seek((scrollPercent() / 30 - 0.5) * divAnimation.duration);
+  divAnimation.seek((scrollPercent() / 30 - 0.8) * divAnimation.duration);
 };
+
+
+//weird stuff idk
+
+var width_array = [["100%", "90%", "80%", "70%", "60%"],["100%", "90%", "80%", "70%", "60%"]];
+
+function grow_back() {
+  for (i = 0; i <= 5; i++) {
+    anime.timeline().add({
+      targets: "#bar" + (i + 1),
+      width: width_array[0][i],
+      easing: "easeOutExpo",
+      duration: 1000
+    });
+  }
+}
+
+function grow_front() {
+  for (i = 0; i <= 5; i++) {
+    anime.timeline().add({
+      targets: "#bar" + (i + 1),
+      width: width_array[1][i],
+      easing: "easeOutExpo",
+      duration: 1000
+    });
+  }
+}
