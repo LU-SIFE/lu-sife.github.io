@@ -14,7 +14,7 @@ html, body {
 section {
 	min-height: 100vh;
 	position: relative;
-	margin-top: 15vh;
+	margin-top: 10vh;
 }
 
 .landing {
@@ -197,6 +197,12 @@ nav a:hover:after { transform: scaleX(1);}
 
 h1 {
 	font-size: 2.75vw;
+	font-weight: normal;
+}
+
+u {
+	font-weight: bold;
+	color: #9D00FF;
 }
 
 .right_container {
@@ -276,6 +282,7 @@ h1 {
 }
 
 .toggle_text {
+	margin-top: 2em;
 	display: flex;
 	justify-content: space-around;
 }

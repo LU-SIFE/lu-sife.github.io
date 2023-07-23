@@ -80,7 +80,7 @@ function idle_text() {
 
   anime.timeline().add({
   targets: '.text2',
-  rotate: ["0deg", "3deg", "-3deg", "0deg"],
+  rotate: ["0deg", "1deg", "-1deg", "0deg"],
   easing: "easeOutElastic(0,0.8)",
   duration: 500,
   delay: (el, i) => 250 * i + 1000
@@ -97,5 +97,5 @@ window.onload = function() {
   refreshTime();
   setInterval(refreshTime, 1000);
   bar_change(false);
-  setInterval(idle_text, 8000);
+  setInterval(idle_text, 9000);
 }

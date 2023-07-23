@@ -38,8 +38,16 @@ anime.timeline().add({
 });
 
 anime.timeline().add({
-  targets: '.scroll, .mail',
-  bottom: [-100,0],
+  targets: '.mail',
+  left: [-250,0],
+  easing: "easeOutElastic(0,1)",
+  duration: 500,
+  delay: 2500
+});
+
+anime.timeline().add({
+  targets: '.scroll',
+  right: [-250,0],
   easing: "easeOutElastic(0,1)",
   duration: 500,
   delay: 2500
@@ -163,6 +171,32 @@ window.onscroll = () => {
   }
   divAnimation.seek((scrollPercent() / 30 - 0.8) * divAnimation.duration);
 };
+
+
+for (var i = 0; i < document.getElementsByClassName("letter").length; i++) {
+  document.getElementsByClassName("letter")[i].addEventListener("mouseover", (event) => {
+    if (event.target.animestate === true) {return;}
+    event.target.animestate = true;
+    setTimeout(function() {event.target.animestate = false;},700);
+    setTimeout(function() {fly_in(event);},700);
+    anime.timeline().add({
+      targets: event.target,
+      translateY: ["0em", "-1.2em"],
+      easing: "easeOutElastic(0,1)",
+      duration: 700
+    });
+  });
+}
+
+function fly_in(event) {
+    anime.timeline().add({
+      targets: event.target,
+      translateY: ["-1.2em", "0em"],
+      easing: "easeOutElastic(0,1)",
+      duration: 700
+    });
+
+}
 
 
 //weird stuff idk
