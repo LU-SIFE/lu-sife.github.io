@@ -60,7 +60,7 @@ function bar_change(state) {
       grow_front();
       document.getElementById("bar_text1").innerHTML = "HTML/CSS";
       document.getElementById("bar_text2").innerHTML = "JS";
-      document.getElementById("bar_text3").innerHTML = "Text";
+      document.getElementById("bar_text3").innerHTML = "ANIME.JS";
       document.getElementById("bar_text4").innerHTML = "Text";
       document.getElementById("bar_text5").innerHTML = "Text";
     }
