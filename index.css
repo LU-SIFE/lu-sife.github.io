@@ -244,7 +244,6 @@ u {
 	text-align: center;
 }
 
-@media (pointer:coarse) {#cursor {display: none;}}
 @media only screen and (orientation: portrait) {
 	#time {
 		display: none;
