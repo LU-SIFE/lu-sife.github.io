@@ -12,7 +12,6 @@ html, body {
 }
 
 section {
-	min-height: 100vh;
 	position: relative;
 	margin-top: 10vh;
 }
@@ -207,10 +206,39 @@ u {
 
 .sect2 {
 	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.sect2 h1 {
+	font-size: 5vw;
+	margin-right: 1.5em;
+	margin-left: auto;
+	display: flex;
 	flex-direction: column;
 }
 
-.sect2_text, .sect2_email {
+.sect2 h1 span {
+	font-size: 2.25vw;
+	margin-right: 0;
+	margin-left: auto;
+	margin-top: 0.5em;
+}
+
+.comp_library {
+	border: 1px solid;
+	min-height: 60vh;
+	margin: 0em 3em 0em 3em;
+}
+
+.sect3 {
+	display: flex;
+	flex-direction: column;
+	min-height: 80vh;
+}
+
+.sect3_text, .sect3_email, .sect3_arrow {
 	font-family: 'Roboto Mono', monospace;
 	font-size: 5vw;
 	display: inline-flex;
@@ -218,7 +246,7 @@ u {
 	padding-bottom: 1em;
 }
 
-.sect2_email {
+.sect3_email {
 	color: #9d00ff;
 	margin-right: 1.5em;
 	align-self: flex-end;
@@ -226,22 +254,56 @@ u {
 	height: 1em;
 	line-height: 1em;
 	padding: 0.5em;
+	display: inline-block;
+	text-decoration: none;
+	cursor: none;
+	white-space: nowrap;
 }
 
-.sect2_email:hover {
+.sect3_email:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #9D00FF;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.sect3_email:hover {
 	background-color: #000000;
+	color: #9D00FF;
 	cursor: none;
+}
+
+.sect3_email:hover:after { transform: scaleX(1);}
+
+.sect3_arrow {
+	border-left: 3px solid;
+	border-bottom: 3px solid;
+	width: 100%;
+	height: 50%;
+	margin-left: 3em;
+}
+
+.sect3_container {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 
 .right_container {
-	margin-top: 1em;
+	margin-top: auto;
+	margin-bottom: auto;
 	margin-right: 3em;
 	width: 80%;
 	height: 100%;
 	display: inline-flex;
 	flex-direction: column;
 	text-align: center;
+}
+
+#time, .mail a {
+	text-shadow: #9D00FF 1px 1px 2px;
 }
 
 @media only screen and (orientation: portrait) {
@@ -282,106 +344,28 @@ u {
 	}
 }
 
-#toggle {
-	width: 3em;
-	height: 1em;
-	border: 2px solid #DFDFDF;
-	margin: auto;
-	padding: 0;
+ul.cloud {
+	list-style: none;
+	padding-left: 0;
 	display: flex;
-	overflow: hidden;
-	margin-top: 1em;
-}
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	line-height: 2.5rem;
+  }
 
-#toggle_inner {
-	width: 1em;
-	height: 1em;
-	background-color: #DFDFDF;
-	display: inline-flex;
-	pointer-events: none;
-}
-
-#toggle_fill {
-	width: 0em;
-	height: 1em;
-	display: inline-flex;
-	background-color: #9D00FF;
-	pointer-events: none;
-}
-
-.toggle_text {
-	margin-top: 2em;
-	display: flex;
-	justify-content: space-around;
-}
-
-#toggle_front {
-	width: 100%;
-	color: #9d00ff;
-}
-
-#toggle_back {
-	width: 100%;
-	color: #333333;
-}
-
-.arrows {
-	border: 3px solid #DFDFDF;
-	border-radius: 1em;
-	height: 2em;
-}
-
-#time, .mail a {
-	text-shadow: #9D00FF 1px 1px 2px;
-}
-
-#bar1, #bar2, #bar3, #bar4, #bar5 {
-	display: inline-block;
-	border-radius: 1em 0em 0em 1em;
-	background-color: #DFDFDF;
-	height: 0.5em;
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
-	width: 100%;
-	margin-left: auto;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-}
-
-.bar_container {
-	margin-left: 1em;
-	display: inline-flex;
+  ul.cloud a {
+	color: #9D00FF;
+	display: block;
+	padding: 0.3em;
+	text-decoration: none;
 	position: relative;
-	justify-content: space-between;
-	height: 17em;
-	margin-top: 1.5em;
-	font-size: 1.75vw;
-}
+	border-radius: 0.25em;
+	--size: 4;
+	font-size: calc(var(--size) * 0.2em + 0.5em);
+  opacity: calc((15 - (9 - var(--size))) / 20); 
+  }
 
-.bar_text {
-	display: flex;
-	width: fit-content;
-	flex-direction: column;
-	justify-content: space-evenly;
-	height: 100%;
-}
-
-.bar_text span, .bars div {
-	line-height: 1em;
-}
-
-.bar_text span {
-	padding-right: 10px;
-	margin-right: 10px;
-	text-align: left;
-}
-
-.bars {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: right;
-	height: 100%;
-	border-right: 1px solid #dfdfdf;
-}
+  ul.cloud a:hover {
+	background-color: black;
+  }

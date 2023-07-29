@@ -30,7 +30,7 @@ anime.timeline().add({
 });
 
 anime.timeline().add({
-  targets: '.nav',
+  targets: 'nav',
   top: ["-100%","0%"],
   easing: "easeOutElastic(0,1)",
   duration: 500,

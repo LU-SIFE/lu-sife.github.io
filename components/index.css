@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0px 5px 5px;
+    height: 4em;
+}
+
+nav button {
+    background-color: #0f0f0f;
+    border: none;
+    width: 5em;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+}
+
+nav div {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #5a5a5a;
+    margin-left: 5px;
+    padding: 5px;
+}
+
+nav div button {
+    background-color: #5a5a5a;
+}

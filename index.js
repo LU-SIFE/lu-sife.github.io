@@ -98,4 +98,7 @@ window.onload = function() {
   setInterval(refreshTime, 1000);
   bar_change(false);
   setInterval(idle_text, 9000);
+  document.querySelectorAll('ul.cloud a').forEach((i) => {
+    i.style.setProperty('--size', i.dataset.weight);
+    });
 }
