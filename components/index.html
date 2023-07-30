@@ -3,23 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="index.css">
     <title>Components</title>
 </head>
 <body>
 
     <nav>
-        <button class="home">HOME</button>
-        <div>
-            <button>a</button>
-            <button>b</button>
-            <button>c</button>
+        <button id="home" onclick="home_expand()"><span>HOME</span><span id="arrow"><</span></button>
+        <div id="nav_div">
+            <button>Item1</button>
+            <button>Item2</button>
+            <button>Item3</button>
         </div>
     </nav>
-
-
 </body>
 </html>
+<script src="index.js"></script>
