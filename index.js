@@ -38,37 +38,6 @@ const scrollPercent = () => {
   return (docST + bodyST) / (docSH - docCH) * 100
 }
 
-function bar_change(state) {
-  if (bar_counter === true) {return;}
-  bar_counter = true;
-  anime.timeline().add({
-    targets: "#bar1, #bar2, #bar3, #bar4, #bar5",
-    width: "0%",
-    duration: 1000,
-    easing: "easeOutExpo"
-  });
-
-  setTimeout(function() {
-    if (state === true) {
-      grow_back();
-      document.getElementById("bar_text1").innerHTML = "Text";
-      document.getElementById("bar_text2").innerHTML = "Text";
-      document.getElementById("bar_text3").innerHTML = "Text";
-      document.getElementById("bar_text4").innerHTML = "Text";
-      document.getElementById("bar_text5").innerHTML = "Text";
-    } else {
-      grow_front();
-      document.getElementById("bar_text1").innerHTML = "HTML/CSS";
-      document.getElementById("bar_text2").innerHTML = "JS";
-      document.getElementById("bar_text3").innerHTML = "ANIME.JS";
-      document.getElementById("bar_text4").innerHTML = "Text";
-      document.getElementById("bar_text5").innerHTML = "Text";
-    }
-    setTimeout(function() {bar_counter = false;}, 1000);
-
-  }, 1000);
-}
-
 function idle_text() {
   anime.timeline().add({
   targets: '.ml16 .letter',
@@ -96,7 +65,6 @@ var page_state = "none";
 window.onload = function() {
   refreshTime();
   setInterval(refreshTime, 1000);
-  bar_change(false);
   setInterval(idle_text, 9000);
   document.querySelectorAll('ul.cloud a').forEach((i) => {
     i.style.setProperty('--size', i.dataset.weight);

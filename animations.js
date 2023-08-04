@@ -169,7 +169,8 @@ window.onscroll = () => {
     });
     scroll_counter = true;
   }
-  divAnimation.seek((scrollPercent() / 30 - 0.8) * divAnimation.duration);
+  divAnimation.seek((scrollPercent() / 40 - 0.8) * divAnimation.duration);
+  //document.querySelector('.scroll_circle').style.top = scrollPercent() / 5 - 0.5 + "em";
 };
 
 
