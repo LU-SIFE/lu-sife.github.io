@@ -53,6 +53,22 @@ anime.timeline().add({
   delay: 2500
 });
 
+anime.timeline().add({
+  targets: ".color_bar",
+  easing: "easeOutElastic(0,1)",
+  width: "11%",
+  delay: 1000,
+  duration: 750
+});
+
+anime.timeline().add({
+  targets: '#scroll_nav',
+  left: ["-2em","1em"],
+  easing: "easeOutElastic(0,1)",
+  duration: 500,
+  delay: 3000
+});
+
 
 //                    //
 // ------------------ //
@@ -88,7 +104,6 @@ function pullpage(page_num) {
       duration: 1000,
     });
     page_state = page_num;
-    disableScroll();
     return;
   } else {
     anime.timeline().add({
@@ -97,12 +112,10 @@ function pullpage(page_num) {
       easing: "easeOutExpo",
       duration: 1000,
     });
-    page_state = "none";
-    enableScroll();
+    page_state = "none"; 
     return;
   }
 }
-
 
 function toggle() {
   if (bar_counter === true) {return;}
@@ -170,7 +183,7 @@ window.onscroll = () => {
     scroll_counter = true;
   }
   divAnimation.seek((scrollPercent() / 40 - 0.8) * divAnimation.duration);
-  //document.querySelector('.scroll_circle').style.top = scrollPercent() / 5 - 0.5 + "em";
+  document.querySelector('.scroll_circle').style.top = scrollPercent() / 5 - 0.5 + "em";
 };
 
 
@@ -190,38 +203,10 @@ for (var i = 0; i < document.getElementsByClassName("letter").length; i++) {
 }
 
 function fly_in(event) {
-    anime.timeline().add({
-      targets: event.target,
-      translateY: ["-1.2em", "0em"],
-      easing: "easeOutElastic(0,1)",
-      duration: 700
-    });
-
-}
-
-
-//weird stuff idk
-
-var width_array = [["100%", "90%", "80%", "70%", "60%"],["100%", "90%", "80%", "70%", "60%"]];
-
-function grow_back() {
-  for (i = 0; i <= 5; i++) {
-    anime.timeline().add({
-      targets: "#bar" + (i + 1),
-      width: width_array[0][i],
-      easing: "easeOutExpo",
-      duration: 1000
-    });
-  }
-}
-
-function grow_front() {
-  for (i = 0; i <= 5; i++) {
-    anime.timeline().add({
-      targets: "#bar" + (i + 1),
-      width: width_array[1][i],
-      easing: "easeOutExpo",
-      duration: 1000
-    });
-  }
+  anime.timeline().add({
+    targets: event.target,
+    translateY: ["-1.2em", "0em"],
+    easing: "easeOutElastic(0,1)",
+    duration: 700
+  });
 }

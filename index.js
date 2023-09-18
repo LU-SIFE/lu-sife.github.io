@@ -4,9 +4,6 @@ document.onmousemove = function() {
   document.getElementById('cursor').style.top = event.clientY + 'px';
 };
 
-//enables and disables scrolling in body
-function disableScroll() {document.body.classList.add("stop_scrolling");}
-function enableScroll() {document.body.classList.remove("stop_scrolling");}
 
 //changes cursor state onhover
 function ch(state) {
@@ -18,6 +15,11 @@ function ch(state) {
     document.getElementById("cursor").classList.add("cursor_shrink");
   }
 }
+
+
+var elems = document.getElementsByClassName("letter");
+
+
 
 //refreshes the time
 function refreshTime() {
@@ -56,7 +58,6 @@ function idle_text() {
 });
 }
 
-
 var bar_counter = false;
 var scroll_counter = false;
 var toggle_counter = false;
@@ -65,7 +66,7 @@ var page_state = "none";
 window.onload = function() {
   refreshTime();
   setInterval(refreshTime, 1000);
-  setInterval(idle_text, 9000);
+  setInterval(idle_text, 10000);
   document.querySelectorAll('ul.cloud a').forEach((i) => {
     i.style.setProperty('--size', i.dataset.weight);
     });
