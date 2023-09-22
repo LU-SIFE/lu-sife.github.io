@@ -4,8 +4,11 @@
 	--col2: #0F0F0F;
 	--col3: #DFDFDF;
 	--col4: #7D00FF;
+	--col5: #FF006E;
+	--col6: #5BCEFA;
+	--col7: #F5A9B8;
+	--col8: #FFFFFF;
 }
-
 
 html {
 	color: var(--col3);
