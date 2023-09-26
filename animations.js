@@ -11,16 +11,6 @@ anime.timeline().add({
   delay: (el, i) => 40 * i + 1250
 });
 
-var textWrapper2 = document.getElementById("test1_change");
-textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='test2'>$&</span>");
-const divAnimation = anime({
-  targets: '.test2',
-  color: ["#333333", "#dfdfdf"],
-  duration: 20,
-  delay: (el, i) => 100 * i + 1000,
-  autoplay: false,
-});
-
 anime.timeline().add({
   targets: '.text2',
   translateX: ["-100%", "0%"],
@@ -182,7 +172,6 @@ window.onscroll = () => {
     });
     scroll_counter = true;
   }
-  divAnimation.seek((scrollPercent() / 40 - 0.8) * divAnimation.duration);
   document.querySelector('.scroll_circle').style.top = scrollPercent() / 5 - 0.5 + "em";
 };
 

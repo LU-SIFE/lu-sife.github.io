@@ -29,7 +29,7 @@ function refreshTime() {
   });
 
   var formattedString = dateString.replace(", ", " - ");
-  document.getElementById("time").innerHTML = formattedString + " MDT";
+  document.getElementById("time").innerHTML = formattedString + " MDT <3";
 }
 
 const scrollPercent = () => {

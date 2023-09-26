@@ -15,7 +15,26 @@ html {
 	background-color: var(--col2);
 	font-family: 'Josefin Sans', sans-serif;
 	cursor: none;
-}
+	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(50,50,50,0.5), rgba(0,0,0,0.5) 0.00085px);
+	animation: back 10s linear infinite;
+	animation-direction: alternate;
+  }
+
+  #opacity_filter {
+	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(50,50,50,0.3), rgba(0,0,0,0.3) 0.00085px);
+	animation: back 10s linear infinite;
+	animation-direction: alternate;
+
+  }
+  
+  @keyframes back {
+	  from {
+	  background-size: 50% 50%;
+	}
+	to {
+	  background-size: 25% 25%;
+	}
+  }
 
 html, body {
 	padding: 0;
@@ -270,12 +289,6 @@ u {
 	margin-top: 0.5em;
 }
 
-.comp_library {
-	border: 1px solid;
-	min-height: 60vh;
-	margin: 0em 3em 0em 3em;
-}
-
 .sect3 {
 	display: flex;
 	flex-direction: column;
@@ -379,6 +392,14 @@ u {
 	.sect1 {
 		font-size: 2vh;
 	}
+
+	h1 {
+		font-size: 2.75vh;
+	}
+
+	#test1_change {
+		font-size: 2vh; 
+	}
 }
 
 @media only screen and (max-width: 450px) {
@@ -433,4 +454,19 @@ ul.cloud a {
 
   ul.cloud a:hover {
 	background-color: black;
+  }
+
+  #opacity_filter {
+	position: fixed;
+	width: 100vw;
+	height: 45vh;
+	bottom: 0;
+	background-color: rgba(15,15,15,0.5);
+	pointer-events: none;
+	z-index: 0;
+  }
+
+  #test1_change {
+	z-index: -1;
+	position: relative;
   }
