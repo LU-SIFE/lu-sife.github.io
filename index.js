@@ -45,7 +45,7 @@ const scrollPercent = () => {
 function idle_text() {
   anime.timeline().add({
   targets: '.ml16 .letter',
-  translateY: ["0em", "-1.1em", "0em"], 
+  translateY: ["0em", "-1.2em", "0em"], 
   easing: "easeOutElastic(0,0.8)",
   duration: 1000,
   delay: (el, i) => 40 * i
@@ -67,6 +67,7 @@ function parallax() {
   document.querySelector('.scroll').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
   document.querySelector('.sect1').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
   document.querySelector('.sect3').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.querySelector('.text_container').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
 }
 
 var mouse = new Object();

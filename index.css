@@ -24,7 +24,6 @@ html {
 	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.3), rgba(0,0,0,0.32) 0.00085px);
 	animation: back 10s linear infinite;
 	background-size: 50% 50%;
-	pointer-events: none;
 
   }
 
@@ -59,6 +58,10 @@ html, body {
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+body {
+	overflow-y: hidden;
 }
 
 section {
@@ -482,7 +485,6 @@ ul.cloud a {
 	height: 45vh;
 	bottom: 0;
 	background-color: rgba(15,15,15,0.5);
-	pointer-events: none;
 	z-index: 0;
   }
 

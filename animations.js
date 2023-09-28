@@ -5,7 +5,7 @@ textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='let
 
 anime.timeline().add({
   targets: '.ml16 .letter',
-  translateY: ["-1.21em","0em"], 
+  translateY: ["-1.2em","0em"], 
   easing: "easeOutElastic(0,1)",
   duration: 500,
   delay: (el, i) => 40 * i + 1250
