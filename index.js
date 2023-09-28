@@ -45,7 +45,7 @@ const scrollPercent = () => {
 function idle_text() {
   anime.timeline().add({
   targets: '.ml16 .letter',
-  translateY: ["0em", "-1em", "0em"], 
+  translateY: ["0em", "-1.1em", "0em"], 
   easing: "easeOutElastic(0,0.8)",
   duration: 1000,
   delay: (el, i) => 40 * i
@@ -61,21 +61,12 @@ function idle_text() {
 }
 
 function parallax() {
-  document.getElementById('scroll_nav').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  document.getElementById('nav').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  document.getElementById('hero').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  document.querySelector('.mail').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  document.querySelector('.scroll').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-
-  var text2 = document.querySelectorAll('.text2');
-  for (i = 0; i < text2.length; i++) {
-    text2[i].style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  }
-
-  var color_bar = document.querySelectorAll('.color_bar');
-  for (i = 0; i < color_bar.length; i++) {
-    color_bar[i].style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
-  }
+  document.getElementById('scroll_nav').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.getElementById('nav').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.querySelector('.mail').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.querySelector('.scroll').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.querySelector('.sect1').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.querySelector('.sect3').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
 }
 
 var mouse = new Object();

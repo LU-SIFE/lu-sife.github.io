@@ -17,14 +17,25 @@ html {
 	cursor: none;
 	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.5), rgba(0,0,0,0.5) 0.00085px);
 	animation: back 10s linear infinite;
-	animation-direction: alternate;
+	background-size: 50% 50%;
   }
 
   #opacity_filter {
 	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.3), rgba(0,0,0,0.32) 0.00085px);
 	animation: back 10s linear infinite;
-	animation-direction: alternate;
+	background-size: 50% 50%;
+	pointer-events: none;
 
+  }
+
+  @-moz-document url-prefix() { 
+	html {
+		background-image: none;
+	}
+
+	#opacity_filter {
+		display: none;
+	}
   }
   
   @keyframes back {
