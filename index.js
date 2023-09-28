@@ -1,9 +1,11 @@
 // moves cursor to correct position
 document.onmousemove = function() {
+  mouse.x = event.clientX - window.innerWidth / 2;
+  mouse.y = event.clientY - window.innerHeight / 2;
   document.getElementById('cursor').style.left = event.clientX + 'px';
   document.getElementById('cursor').style.top = event.clientY + 'px';
+  parallax();
 };
-
 
 //changes cursor state onhover
 function ch(state) {
@@ -58,6 +60,25 @@ function idle_text() {
 });
 }
 
+function parallax() {
+  document.getElementById('scroll_nav').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  document.getElementById('nav').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  document.getElementById('hero').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  document.querySelector('.mail').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  document.querySelector('.scroll').style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+
+  var text2 = document.querySelectorAll('.text2');
+  for (i = 0; i < text2.length; i++) {
+    text2[i].style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  }
+
+  var color_bar = document.querySelectorAll('.color_bar');
+  for (i = 0; i < color_bar.length; i++) {
+    color_bar[i].style.translate = (mouse.x/100) + "px " + (mouse.y/20) + "px";
+  }
+}
+
+var mouse = new Object();
 var bar_counter = false;
 var scroll_counter = false;
 var toggle_counter = false;

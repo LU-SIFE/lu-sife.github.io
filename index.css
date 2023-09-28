@@ -7,7 +7,7 @@
 	--col5: #FF006E;
 	--col6: #5BCEFA;
 	--col7: #F5A9B8;
-	--col8: #FFFFFF;
+	--col8: #DFDFDF; 
 }
 
 html {
@@ -15,20 +15,20 @@ html {
 	background-color: var(--col2);
 	font-family: 'Josefin Sans', sans-serif;
 	cursor: none;
-	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(35,35,35,0.5), rgba(0,0,0,0.5) 0.00085px);
+	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.5), rgba(0,0,0,0.5) 0.00085px);
 	animation: back 10s linear infinite;
 	animation-direction: alternate;
   }
 
   #opacity_filter {
-	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(35,35,35,0.3), rgba(0,0,0,0.3) 0.00085px);
+	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.3), rgba(0,0,0,0.32) 0.00085px);
 	animation: back 10s linear infinite;
 	animation-direction: alternate;
 
   }
   
   @keyframes back {
-	  from {
+	from {
 	  background-size: 50% 50%;
 	}
 	to {
@@ -36,10 +36,18 @@ html {
 	}
   }
 
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 section {
@@ -165,6 +173,7 @@ nav {
 	top: 1em;
 	left: 1em;
 	right: 1em;
+	overflow: visible;
 }
 
 nav a {
@@ -371,7 +380,7 @@ u {
 .c2 {background-color: #FF006E;}
 .c3 {background-color: #5BCEFA;}
 .c4 {background-color: #F5A9B8;}
-.c5 {background-color: #FFFFFF;}
+.c5 {background-color: #DFDFDF;}
 
 
 @media only screen and (orientation: portrait) {
