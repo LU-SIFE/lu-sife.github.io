@@ -20,20 +20,9 @@ html {
 	background-size: 50% 50%;
   }
 
-  #opacity_filter {
-	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.3), rgba(0,0,0,0.32) 0.00085px);
-	animation: back 10s linear infinite;
-	background-size: 50% 50%;
-
-  }
-
   @-moz-document url-prefix() { 
 	html {
 		background-image: none;
-	}
-
-	#opacity_filter {
-		display: none;
 	}
   }
   
@@ -477,18 +466,4 @@ ul.cloud a {
 
   ul.cloud a:hover {
 	background-color: black;
-  }
-
-  #opacity_filter {
-	position: fixed;
-	width: 100vw;
-	height: 45vh;
-	bottom: 0;
-	background-color: rgba(15,15,15,0.5);
-	z-index: 0;
-  }
-
-  #test1_change {
-	position: relative;
-	z-index: -1;
   }
