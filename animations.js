@@ -29,7 +29,7 @@ anime.timeline().add({
 
 anime.timeline().add({
   targets: '.mail',
-  left: [-250,0],
+  left: [-260,0],
   easing: "easeOutElastic(0,1)",
   duration: 500,
   delay: 2500
@@ -173,7 +173,17 @@ window.onscroll = () => {
     scroll_counter = true;
   }
   document.querySelector('.scroll_circle').style.top = scrollPercent() / 5 - 0.5 + "em";
+  divAnimation.seek(scrollPercent());
 };
+
+const divAnimation = anime({
+  targets: '.text_container',
+  translateY: [0, "100vh"],
+  duration: 100,
+  autoplay: false,
+  loop: true,
+  easing: "linear"
+});
 
 
 for (var i = 0; i < document.getElementsByClassName("letter").length; i++) {

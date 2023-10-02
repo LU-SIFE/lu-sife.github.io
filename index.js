@@ -61,13 +61,13 @@ function idle_text() {
 }
 
 function parallax() {
-  document.getElementById('scroll_nav').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.getElementById('nav').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.querySelector('.mail').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.querySelector('.scroll').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.querySelector('.sect1').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.querySelector('.sect3').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
-  document.querySelector('.text_container').style.translate = (mouse.x/200) + "px " + (mouse.y/65) + "px";
+  document.getElementById('scroll_nav').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.getElementById('nav').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('.mail').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('.scroll').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('.sect1').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('.sect3').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('.text_container').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
 }
 
 var mouse = new Object();

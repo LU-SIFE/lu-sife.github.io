@@ -7,7 +7,7 @@
 	--col5: #FF006E;
 	--col6: #5BCEFA;
 	--col7: #F5A9B8;
-	--col8: #DFDFDF; 
+	--col8: #DFDFDF;
 }
 
 html {
@@ -489,6 +489,6 @@ ul.cloud a {
   }
 
   #test1_change {
-	z-index: -1;
 	position: relative;
+	z-index: -1;
   }
