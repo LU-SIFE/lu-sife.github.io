@@ -12,6 +12,24 @@ anime.timeline().add({
 });
 
 anime.timeline().add({
+  targets: '.crosses',
+  opacity: [0,1],
+  easing: "easeOutElastic(0,1)",
+  duration: 520,
+  delay: 2500
+});
+
+setInterval(function() {
+  anime.timeline().add({
+    targets: '.crosses',
+    translate: ["10px -10px", "-10px 10px", "10px -10px", "0px 0px"],
+    easing: "easeInOutCubic",
+    duration: 2000,
+    delay: (el, i) => 50 * i,
+  });
+}, 6000);
+
+anime.timeline().add({
   targets: '.text2',
   translateX: ["-100%", "0%"],
   easing: "easeOutElastic(0,1)",
@@ -200,6 +218,22 @@ for (var i = 0; i < document.getElementsByClassName("letter").length; i++) {
     });
   });
 }
+
+for (var i = 0; i < document.getElementsByClassName("crosses").length; i++) {
+  document.getElementsByClassName("crosses")[i].addEventListener("mouseover", (event) => {
+    if (event.target.animestate === true) {return;}
+    event.target.animestate = true;
+    setTimeout(function() {event.target.animestate = false;},700);
+    setTimeout(function() {fly_in(event);},700);
+    anime.timeline().add({
+      targets: event.target,
+      translate: ["0px 0px", "10px -10px", "0px 0px"],
+      easing: "easeInOutCubic",
+      duration: 1000,
+    });
+  });
+}
+
 
 function fly_in(event) {
   anime.timeline().add({
