@@ -219,22 +219,6 @@ for (var i = 0; i < document.getElementsByClassName("letter").length; i++) {
   });
 }
 
-for (var i = 0; i < document.getElementsByClassName("crosses").length; i++) {
-  document.getElementsByClassName("crosses")[i].addEventListener("mouseover", (event) => {
-    if (event.target.animestate === true) {return;}
-    event.target.animestate = true;
-    setTimeout(function() {event.target.animestate = false;},700);
-    setTimeout(function() {fly_in(event);},700);
-    anime.timeline().add({
-      targets: event.target,
-      translate: ["0px 0px", "10px -10px", "0px 0px"],
-      easing: "easeInOutCubic",
-      duration: 1000,
-    });
-  });
-}
-
-
 function fly_in(event) {
   anime.timeline().add({
     targets: event.target,
