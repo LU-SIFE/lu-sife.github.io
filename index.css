@@ -15,24 +15,6 @@ html {
 	background-color: var(--col2);
 	font-family: 'Josefin Sans', sans-serif;
 	cursor: none;
-	background-image: repeating-radial-gradient(circle at 17% 32%, rgba(40,40,40,0.5), rgba(0,0,0,0.5) 0.00085px);
-	animation: back 10s linear infinite;
-	background-size: 50% 50%;
-  }
-
-  @-moz-document url-prefix() { 
-	html {
-		background-image: none;
-	}
-  }
-  
-  @keyframes back {
-	from {
-	  background-size: 50% 50%;
-	}
-	to {
-	  background-size: 25% 25%;
-	}
   }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
@@ -481,7 +463,7 @@ ul.cloud a {
 	position: absolute;
 	border-radius: 1em;
 	height: 0.25em;
-	width: 100px;
+	width: 5.5vw;
 	background-color: var(--col1);
 	overflow: visible;
 	rotate: -65deg;
@@ -491,10 +473,10 @@ ul.cloud a {
 
   .crosses div {
 	border-radius: 1em;
-	height: 35px;
+	height: 1.75vw;
 	width: 0.25em;
 	background-color: var(--col1);
-	transform: translate(17.5px, -50%);
+	transform: translate(1vw, -50%);
   }
 
   .wrap2 {
