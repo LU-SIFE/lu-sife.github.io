@@ -15,7 +15,7 @@ html {
 	background-color: var(--col2);
 	font-family: 'Josefin Sans', sans-serif;
 	cursor: none;
-  }
+}
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 0;
@@ -86,6 +86,36 @@ section {
 	display: inline-block;
 }
 
+#time_container {
+	display: inline-flex;
+	justify-content: left;
+	align-items: center;
+	overflow: hidden;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	right: 1em;
+	overflow: visible;
+}
+
+#time_container div {
+	display: inline-block;
+	padding: 10px;
+	margin: 0;
+	text-decoration: none;
+	color: var(--col3);
+	font-family: 'Roboto Mono', monospace;
+	cursor: none;
+}
+
+#time_container div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px var(--col1);
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
 .text1 {
 	text-shadow: var(--col4) 12px 10px;
 	font-size: 10vw;
@@ -103,31 +133,6 @@ section {
 	color: var(--col1);
 	padding-left: 40px;
 }
-#cursor {
-	border: 1px rgba(223,223,223,1) solid;
-	border-radius: 2.5em;
-	height: 2.5em;
-	width: 2.5em;
-	position: fixed;
-	top: -100px;
-	left: -100px;
-	z-index: 100;
-	transform: translate(-50%,-50%);
-	pointer-events: none;
-	animation-duration: 0.2s;
-}
-
-.cursor_expand { animation-name: expand1; animation-fill-mode: forwards; }
-.cursor_shrink { animation-name: shrink1; animation-fill-mode: forwards; }
-
-@keyframes shrink1 {
-	from {background-color: rgba(223, 223, 223, 0.3); width: 4em; height: 4em; border: 1px rgba(223,223,223,1) solid;}
-	to {background-color: rgba(223,223,223,0); width: 2.5em; height: 2.5em; border: 1px rgba(223,223,223,1) solid;}
-}
-@keyframes expand1 {
-	from {background-color: rgba(223,223,223,0); width: 2.5em; height: 2.5em; border: none;}
-	to {background-color: rgba(223, 223, 223, 0.3); width: 4em; height: 4em; border: none;}
-}
 
 .ml16{
   overflow: hidden;
@@ -144,26 +149,20 @@ section {
 	display: inline-block;
 }
 
-#abt {
-	margin-left: auto;
-}
-
 nav {
 	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	text-align: right;
+	position: fixed;
+	right: 1.5em;
 	overflow: hidden;
-	position: absolute;
-	top: 1em;
-	left: 1em;
-	right: 1em;
-	overflow: visible;
+	border-right: 3px solid var(--col1);
+	padding-right: 10px;
 }
 
 nav a {
 	display: inline-block;
 	padding: 10px;
-	margin: 0;
 	text-decoration: none;
 	color: var(--col3);
 	font-size: 2vw;
@@ -340,7 +339,6 @@ u {
 	justify-content: space-between;
 }
 
-
 .right_container {
 	width: 40%;
 	height: fit-content;
@@ -360,20 +358,21 @@ u {
   display: inline-block;
 }
 
+.wrap2 {
+	width: auto;
+	overflow: hidden;
+}
+
 .c1 {background-color: #9D00ff; margin-left: 40px;}
 .c2 {background-color: #FF006E;}
 .c3 {background-color: #5BCEFA;}
 .c4 {background-color: #F5A9B8;}
-.c5 {background-color: #DFDFDF;}
+.c5 {background-color: #FFFFFF;}
 
 
 @media only screen and (orientation: portrait) {
 
-	.color_bar {
-		display: none;
-	}
-
-	#time {
+	.color_bar, #time {
 		display: none;
 	}
 
@@ -382,30 +381,18 @@ u {
 		font-size: 2vh;
 	}
 
-	.sect1 {
+	.sect1, #test1_change {
 		font-size: 2vh;
 	}
 
 	h1 {
 		font-size: 2.75vh;
 	}
-
-	#test1_change {
-		font-size: 2vh; 
-	}
-
-	.crosses {
-		display: none;
-	}
 }
 
 @media only screen and (max-width: 450px) {
 
-	#scroll_nav {
-		display: none;
-	}
-	
-	.mail {
+	#scroll_nav, .mail {
 		display: none;
 	}
 
@@ -426,72 +413,3 @@ u {
 		width: auto;
 	}
 }
-
-@media only screen and (max-width: 650px) {
-	.crosses {
-		display: none;
-	}
-}
-
-ul.cloud {
-	list-style: none;
-	padding-left: 0;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	line-height: 2.5rem;
-  }
-
-ul.cloud a {
-	color: var(--col1);
-	display: block;
-	padding: 0.3em;
-	text-decoration: none;
-	position: relative;
-	border-radius: 0.25em;
-	--size: 4;
-	font-size: calc(var(--size) * 0.2em + 0.5em);
-  opacity: calc((15 - (9 - var(--size))) / 20); 
-  }
-
-  ul.cloud a:hover {
-	background-color: black;
-  }
-
-  .crosses {
-	position: absolute;
-	border-radius: 1em;
-	height: 0.25em;
-	width: 5.5vw;
-	background-color: var(--col1);
-	overflow: visible;
-	rotate: -65deg;
-	right: -4em;
-	top: -1em;
-  }
-
-  .crosses div {
-	border-radius: 1em;
-	height: 1.75vw;
-	width: 0.25em;
-	background-color: var(--col1);
-	transform: translate(1vw, -50%);
-  }
-
-  .wrap2 {
-	width: auto;
-	overflow: hidden;
-  }
-
-  .crosses2 {
-	rotate: -45deg;
-	top: 1.5em;
-	right: -8em;
-  }
-
-  .crosses3 {
-	rotate: -15deg;
-	top: 6em;
-	right: -10em;
-  }

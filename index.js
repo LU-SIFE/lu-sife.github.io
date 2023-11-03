@@ -1,5 +1,5 @@
 // moves cursor to correct position
-document.onmousemove = function() {
+document.onmousemove = function(event) {
   mouse.x = event.clientX - window.innerWidth / 2;
   mouse.y = event.clientY - window.innerHeight / 2;
   document.getElementById('cursor').style.left = event.clientX + 'px';
@@ -18,10 +18,7 @@ function ch(state) {
   }
 }
 
-
 var elems = document.getElementsByClassName("letter");
-
-
 
 //refreshes the time
 function refreshTime() {
@@ -68,6 +65,7 @@ function parallax() {
   document.querySelector('.sect1').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.querySelector('.sect3').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.querySelector('.text_container').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
+  document.querySelector('#time_container').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
 }
 
 var mouse = new Object();
@@ -79,7 +77,7 @@ var page_state = "none";
 window.onload = function() {
   refreshTime();
   setInterval(refreshTime, 1000);
-  setInterval(idle_text, 10000);
+  setInterval(idle_text, 15000);
   document.querySelectorAll('ul.cloud a').forEach((i) => {
     i.style.setProperty('--size', i.dataset.weight);
     });

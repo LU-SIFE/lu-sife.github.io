@@ -38,10 +38,18 @@ anime.timeline().add({
 });
 
 anime.timeline().add({
-  targets: 'nav',
+  targets: '#time_container',
   top: ["-100%","0%"],
   easing: "easeOutElastic(0,1)",
   duration: 500,
+  delay: 2000
+});
+
+anime.timeline().add({
+  targets: '.nav_items',
+  translateX: ["150%","0%"],
+  easing: "easeOutExpo",
+  duration: 750,
   delay: 2000
 });
 
