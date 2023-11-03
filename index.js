@@ -4,7 +4,6 @@ document.onmousemove = function(event) {
   mouse.y = event.clientY - window.innerHeight / 2;
   document.getElementById('cursor').style.left = event.clientX + 'px';
   document.getElementById('cursor').style.top = event.clientY + 'px';
-  parallax();
 };
 
 //changes cursor state onhover
@@ -60,7 +59,6 @@ function idle_text() {
 function parallax() {
   document.getElementById('scroll_nav').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.getElementById('nav').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
-  document.querySelector('.mail').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.querySelector('.scroll').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.querySelector('.sect1').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
   document.querySelector('.sect3').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";

@@ -67,6 +67,7 @@ section {
 	border: 1px solid var(--col1);
 	width: 0;
 	height: 20em;
+	z-index: -100;
 }
 
 .scroll_circle {
@@ -85,7 +86,6 @@ section {
 	font-size: 1.5vw;
 	display: inline-block;
 }
-
 #time_container {
 	display: inline-flex;
 	justify-content: left;
@@ -196,7 +196,8 @@ nav a:hover:after { transform: scaleX(1);}
 
 .mail {
 	left: 0;
-	margin-left: 3.5em;
+	margin-bottom: 1.25em;
+	margin-left: 5em;
 }
 
 .mail a {
