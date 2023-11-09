@@ -79,4 +79,14 @@ window.onload = function() {
   document.querySelectorAll('ul.cloud a').forEach((i) => {
     i.style.setProperty('--size', i.dataset.weight);
     });
+    float1();
+}
+
+function float1() {
+  
+  for (var i = 0; i < document.getElementsByClassName("star").length; i++) {
+    document.getElementsByClassName("star")[i].style.animationDelay = Math.random() * 5 + "s";
+    document.getElementsByClassName("star")[i].style.top = Math.random() * -100 + "%";
+    document.getElementsByClassName("star")[i].style.right = Math.random() * 10 + "%";
+  }
 }
