@@ -66,16 +66,6 @@ function parallax() {
   document.querySelector('#time_container').style.translate = -(mouse.x/200) + "px " + -(mouse.y/65) + "px";
 }
 
-function show_donate() {
-  if (donate === false) {
-    document.getElementById('bmc-iframe').style.display = "flex";
-    donate = true;
-  } else {
-    document.getElementById('bmc-iframe').style.display = "none";
-    donate = false;
-  }
-}
-
 var donate = false;
 var mouse = new Object();
 var bar_counter = false;

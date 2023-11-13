@@ -152,34 +152,9 @@ section {
 #bmac {
 	margin-left: auto;
 	font-family: 'Roboto Mono', monospace;
-}
-
-#iframe_con {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 999;
-	pointer-events: none;
-}
-
-#bmc-iframe {
-	position: absolute;
-	width: 20vw;
-	height: 60vh;
-	border: none;
-	border-radius: 1em;
-	overflow-y: scroll;
-	display: none;
-	pointer-events: all;
-}
-
-iframe html {
-	padding: 0;
-	margin: 0;
-	background-color: #000000;
+	text-decoration: none;
+	color: var(--col3);
+	cursor: none;
 }
 
 nav {
