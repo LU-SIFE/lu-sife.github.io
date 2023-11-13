@@ -14,25 +14,9 @@
 </head>
 
 <body>
-	<script data-name="BMC-Widget" data-cfasync="false" src="bmac.js" data-id="lucylia" data-description="Support me on Buy me a coffee!" data-message="" data-color="#9D00FF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
-	<div class="stars">
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
+	<div id="iframe_con">
+		<iframe id="bmc-iframe" src="bmc.html" frameborder="0"></iframe>
 	</div>
-
 
 	<div id="cursor"></div>
 
@@ -46,7 +30,10 @@
 	<section class="landing">
 
 		
-		<div id="time_container"><div id="time"></div></div>
+		<div id="time_container">
+			<div id="time"></div>
+			<span id="bmac" onmouseover="ch(true)" onmouseout="ch(false)" onclick="show_donate()">⤳ Buy Me a Coffee!</span>
+		</div>
 <!-- Nav Bar -->
 		<nav id="nav">
 			<a class="nav_items" onclick="pullpage('#page1')" onmouseover="ch(true)" onmouseout="ch(false)" id="abt">About/></a>
@@ -128,22 +115,6 @@
 			<a class="sect3_email" onmouseover="ch(true)" onmouseout="ch(false)" href="mailto:itslusife@gmail.com"><i>Let's Talk!~</i></a>
 		</div>
 	</section>
-
-<!-- SECONDARY CONTENT -->
-<!-- FIRST PAGE -->
-	<div id="page1">
-		<div class="page_text"><h1>About/></h1></div>
-	</div>
-
-<!-- SECOND PAGE -->
-	<div id="page2">
-		<div class="page_text"><h1>Projects/></h1></div>
-	</div>
-
-<!-- THIRD PAGE -->
-	<div id="page3">
-		<div class="page_text"><h1>Contact/></h1></div>
-	</div>
 
 </body>
 </html>

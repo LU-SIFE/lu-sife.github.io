@@ -55,7 +55,7 @@ anime.timeline().add({
 
 anime.timeline().add({
   targets: '.mail',
-  right: [-280,0],
+  left: ["-15em","3em"],
   easing: "easeOutElastic(0,1)",
   duration: 600,
   delay: 2500

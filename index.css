@@ -149,6 +149,39 @@ section {
 	display: inline-block;
 }
 
+#bmac {
+	margin-left: auto;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#iframe_con {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	pointer-events: none;
+}
+
+#bmc-iframe {
+	position: absolute;
+	width: 20vw;
+	height: 60vh;
+	border: none;
+	border-radius: 1em;
+	overflow-y: scroll;
+	display: none;
+	pointer-events: all;
+}
+
+iframe html {
+	padding: 0;
+	margin: 0;
+	background-color: #000000;
+}
+
 nav {
 	display: inline-flex;
 	flex-direction: column;
@@ -201,11 +234,9 @@ nav a:hover:after { transform: scaleX(0.75);}
 }
 
 .mail {
-	text-align: right;
-	top: 0;
-	right: 0;
-	margin-top: 1.25em;
-	margin-right: 1.25em;
+	text-align: left;
+	bottom: 0;
+	left: 2em;
 }
 
 .mail a {
@@ -215,16 +246,6 @@ nav a:hover:after { transform: scaleX(0.75);}
 .mail a:hover {
 	cursor: none;
 	color: var(--col1);
-}
-
-#page1, #page2, #page3 {
-	background-color: #0A0A0A;
-	position: fixed;
-	width: 100vw;
-	height: 80vh;
-	bottom: -80vh;
-	font-family: 'Roboto Mono', monospace;
-	z-index: 31;
 }
 
 .page_text {
@@ -245,8 +266,8 @@ nav a:hover:after { transform: scaleX(0.75);}
 .sect1 {
 	font-family: 'Roboto Mono', monospace;
 	font-size: 2.25vw;
-	width: 100%;
 	padding-bottom: 20px;
+	margin-right: 10%;
 	display: inline-flex;
 }
 
@@ -357,7 +378,7 @@ u {
 	float: right;
 }
 
-#time, .mail a {
+#time, .mail a, #bmac {
 	text-shadow: var(--col1) 1px 1px 2px;
 }
 
@@ -397,6 +418,22 @@ u {
 	h1 {
 		font-size: 2.75vh;
 	}
+
+	nav {
+		display: none;
+	}
+
+	#time_container {
+		display: none;
+	}
+
+	#cursor {
+		display: none;
+	}
+
+	.sect1 {
+		margin-right: 0;
+	}
 }
 
 @media only screen and (max-width: 450px) {
@@ -420,38 +457,5 @@ u {
 		margin-right: 1em;
 		margin-top: 3em;
 		width: auto;
-	}
-}
-
-.stars {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: transparent;
-	z-index: -99999;
-}
-
-.star {
-	position: absolute;
-	right: -100px;
-	width: 100px;
-	height: 4px;
-	rotate: -45deg;
-	background: linear-gradient(to right, #ff006e, #9d00ff);
-	animation-name: fall;
-	animation-duration: 7s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	border-left: 5px solid #ff006e;
-	border-radius: 1em;
-
-}
-
-@keyframes fall {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(-200vw);
 	}
 }
