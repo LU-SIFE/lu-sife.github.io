@@ -1,121 +1,27 @@
- <!DOCTYPE html>
-<html>
-	
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Mono:wght@400;700&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
 	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="extras.css">
-	<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
-	<title>LUCY/LIA</title>
 </head>
-
 <body>
-	<div id="cursor"></div>
+	<!-- Blobs -->
+	<!-- Bottom Left -->
+	<img src="blob1.svg" class="blob b1">
+	<img src="blob1.svg" class="blob b1 blob_shadow1">
+	<img src="blob1.svg" class="blob b1 blob_shadow2">
 
-	<div id="scroll_nav">
-		<div class="scroll_bar"></div>
-		<div class="scroll_circle"></div>
-	</div>
 
+	<!-- Top Right -->
+	<img src="blob2.svg" class="blob b2">
+	<img src="blob2.svg" class="blob b2 blob_shadow1">
+	<img src="blob2.svg" class="blob b2 blob_shadow2">
 
-<!-- MAIN PAGE -->
-	<section class="landing">
-
-		
-		<div id="time_container">
-			<div id="time"></div>
-			<a id="bmac" onmouseover="ch(true)" onmouseout="ch(false)" href="https://buymeacoffee.com/lucylia" target="_blank">⤳ Buy Me a Coffee!</a>
-		</div>
-<!-- Nav Bar -->
-		<nav id="nav">
-			<a class="nav_items" onclick="pullpage('#page1')" onmouseover="ch(true)" onmouseout="ch(false)" id="abt">About/></a>
-			<a class="nav_items" onclick="pullpage('#page2')" onmouseover="ch(true)" onmouseout="ch(false)">Projects/></a>
-			<a class="nav_items" onclick="pullpage('#page3')" onmouseover="ch(true)" onmouseout="ch(false)">Contact/></a>
-		</nav>
-
-		
-
-		<div class="text_container">
-
-			<div class="wrap1"><span class=" text1 ml16">LUCY/LIA</span></div><br>
-
-			<div class="color_bar c1" title="#9D00FF"></div><div class="color_bar c2" title="#FF006E"></div><div class="color_bar c3" title="#5BCEFA"></div><div class="color_bar c4" title="#F5A9B8"></div><div class="color_bar c5" title="#FFFFFF"></div><br><br>
-
-			<div class="wrap2">
-				<span class="text2">[ Lucy Lia Leix ]</span><br>
-				<span class="text2">[ She/Her ]</span><br>
-				<span class="text2" style="padding-bottom: 20px;">[ 🏳️‍🌈/🏳️‍⚧️ ]</span>
-
-			</div>
-		</div>
-
-		<span class="scroll">V Scroll Down</span>
-
-		<span class="mail">
-			<a href="mailto:itslusife@gmail.com" onmouseover="ch(true)" onmouseout="ch(false)">itslusife@gmail.com</a>
-		</span>
-
-	</section>
-
-<!-- MAIN CONTENT -->
-<!-- FIRST PAGE -->
-
-	<section class="sect1">
-
-			<span id="test1">
-				<h1 id="quote">"<i>Learn the rules like a <u>Professional</u>, so you can break them like an <u>Artist</u>.</i>"</h1>
-				<div class="right_container">
-					<ul class="cloud">
-						<!-- maybe replace with a photo? or pfp? -->
-						<li><a data-weight="7" >HTML</a></li>
-						<li><a data-weight="5" >ANIME.JS</a></li>
-						<li><a data-weight="8" >CSS</a></li>
-						<li><a data-weight="3" >NODE</a></li>
-						<li><a data-weight="9" >JS</a></li>
-						<li><a data-weight="4" >PHP</a></li>
-						<li><a data-weight="5" >BASH</a></li>
-						<li><a data-weight="5" >SQL</a></li>
-						<li><a data-weight="6" >FLEXBOX</a></li>
-						<li><a data-weight="1" >AWS</a></li>
-						<li><a data-weight="7" >ANIMATION</a></li>
-						<li><a data-weight="2" >C++</a></li>
-						<li><a data-weight="8" >GIT</a></li>
-						<li><a data-weight="2" >PYTHON</a></li>
-					</ul>
-				</div>
-				
-				<span id="test1_change">Heya, I'm <i><u>Lucy!~</u></i> I make <i><u>Websites</u></i>, like this one. I like tons of stuff, I'm a huge <i><u>Music</u></i> fan, and love just about every genre, and I'm always open to reccomendations. I'm also a <i><u>Furry</u></i>, but don't let that scare you too much, I'm harmless, mostly. I'm really <i><u>Friendly</u></i> and love making new friends wherever I can. I like playing <i><u>Games</u></i> and watching <i><u>Anime</u></i> with my friends, and I put the people I care about first. I'm always looking to learn new things, and I try to find those who can teach me. I have a unique design philosphy in that When I create something, it's a <i><u>Reflection</u></i> of who I'm making it for, and my goal is to reflect the light of people as best I can. My creations are just the product of learning about others. I'm also full of <i><u>Surprises</u></i>, I often suprise myself with the work I do, but I think that's a good thing. I'm looking forward to seeing what you have to offer me!</span>
-			
-
-			</span>  
-			
-	</section>
-	
-
-<!-- SCEOND PAGE -->
-<!--
-	<section class="sect2">
-
-	</section>
--->
-<!-- THIRD PAGE -->
-	<section class="sect3">
-		<div class="sect3_text">Have a Project?</div>
-		
-		<div class="sect3_container">
-			<div class="sect3_arrow"></div>
-			<a class="sect3_email" onmouseover="ch(true)" onmouseout="ch(false)" href="mailto:itslusife@gmail.com"><i>Let's Talk!~</i></a>
-		</div>
-	</section>
 
 </body>
 </html>
 
-<!-- Javascript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 <script src="index.js"></script>
-<script src="animations.js"></script>
