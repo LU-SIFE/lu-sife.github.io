@@ -1,10 +1,14 @@
 html {
-	margin: 0;
-	padding: 0;
-	min-height: 100vh;
 	/* hide scrollbar */
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+	font-family: "Ubuntu", sans-serif;
+	letter-spacing: 1px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -14,18 +18,20 @@ html {
 
 body {
 	background-color: #1f1f1f;
-	height:200vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .blob {
 	position: fixed;
 	width: 30vw;
+	z-index: -1;
 }
 
 .b1 { left: -13vw; bottom: -13vw; rotate: -15deg; }
 .b2 { top: -12vw; right: -14vw; rotate: -45deg; }
-
 .blob_shadow1 { opacity: 0.2; scale: 1.25; }
-
 .blob_shadow2 { opacity: 0.2; scale: 1.5; }
-
