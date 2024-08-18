@@ -1,4 +1,5 @@
 my personal website c:
+todo: add everything
 
 ---
 
