@@ -45,3 +45,9 @@ function color_mode() {
 		});
 	}
 }
+
+
+document.onmousemove = function(event) {
+  document.getElementById('cursor').style.left = event.clientX + 'px';
+  document.getElementById('cursor').style.top = event.clientY + 'px';
+};

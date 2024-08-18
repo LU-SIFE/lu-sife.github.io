@@ -7,8 +7,9 @@ html {
 html, body {
 	margin:0;
 	padding:0;
-	font-family: "Ubuntu", sans-serif;
+	font-family: "Fira Code", monospace;
 	letter-spacing: 1px;
+	cursor: none;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -16,22 +17,73 @@ html, body {
   display: none;
 }
 
-body {
+body, section {
 	background-color: #1f1f1f;
 	min-height: 100vh;
+	width: 100vw;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
+section {
+	background-color: transparent
+}
+
 .blob {
-	position: fixed;
+	position: absolute;
 	width: 30vw;
 	z-index: -1;
+	pointer-events: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .b1 { left: -13vw; bottom: -13vw; rotate: -15deg; }
-.b2 { top: -12vw; right: -14vw; rotate: -45deg; }
+.b2 { top: -12vw; right: -20vw; rotate: -70deg; }
 .blob_shadow1 { opacity: 0.2; scale: 1.25; }
 .blob_shadow2 { opacity: 0.2; scale: 1.5; }
+
+
+.header_text {
+	width: 50%;
+	color: #FFD7B9;
+}
+
+.header_text h1, .header_text h2 {
+	font-family: "Fira Code", monospace;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.header_text h1 {font-size: 4em;}
+
+#cursor {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2em;
+	height:2em;
+	border: 2px solid #FFD7B9;
+	transform: translate(-50%,-50%);
+	border-radius: 2em;
+	z-index: 1000;
+	left: -100px;
+	top: -100px;
+	pointer-events: none;
+}
+
+#cursor div {
+	width: 0;
+	height:0;
+	border: 2px solid #FFD7B9;
+	border-radius:1em;
+}
