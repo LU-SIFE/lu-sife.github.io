@@ -69,6 +69,7 @@ function dark_mode() {
 
 	document.getElementById('light_mode').src = 'imgs/light.svg';
 	document.getElementById('mode_text').textContent = 'Light Mode';
+	document.querySelector('.card_bottom').style.backgroundColor = 'var(--c4)';
 	mode = 'dark';
 	localStorage.setItem('lm', 'dark');
 }
@@ -85,9 +86,25 @@ function light_mode() {
 
 	document.getElementById('light_mode').src = 'imgs/dark.svg';
 	document.getElementById('mode_text').textContent = 'Dark Mode';
+	document.querySelector('.card_bottom').style.backgroundColor = 'var(--c3)';
 	mode = 'light';
 	localStorage.setItem('lm', 'light');
 }
+
+let toggle = true;
+document.getElementById('close_btn').addEventListener('click', function() {
+	if (toggle === true) {
+		document.querySelector('.card').style.height = '2em';
+		document.querySelector('.card_bottom').style.display = 'none';
+		document.querySelector('.card_top').style.borderBottom = 'none';
+		toggle = false;
+	} else {
+		document.querySelector('.card').style.height = '10.5em';
+		document.querySelector('.card_bottom').style.display = 'flex';
+		document.querySelector('.card_top').style.borderBottom = '2px solid var(--c2)';
+		toggle = true;
+	}
+});
 
 //let mh = document.querySelectorAll('.mh');
 //

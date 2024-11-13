@@ -258,14 +258,16 @@ h1 {
 	padding: 0.75em;
 	background-color: transparent;
 	border: none;
-	height: 100%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
+	flex-grow: 1;
 	color: var(--c1);
+	background-color: var(--c3);
 	resize: none;
 	line-height: 1.5em;
 	font-family: 'Fira Code', monospace;
+	overflow: hidden;
 }
 
 .card_bottom:active {
@@ -298,12 +300,9 @@ h1 {
 }
 
 @media (max-width:1300px) {
-	.main_content .left {
-		display: none;
-	}
-	.main_content .right {
-		width: 100%;
-	}
+	.main_content .left {display: none;}
+	.main_content .right {width: 100%;}
+	#sc_text {display: none;}
 }
 
 /* Disable Cursor on Mobile */
