@@ -34,12 +34,19 @@ document.querySelector('.right').addEventListener('scroll', (event) => {
 window.onload = function () {
 	anime({
 		targets: 'body',
-		scale: [0.9, 1],
-		translateY: ['8em', '0'],
+		scale: [0.8, 1],
+		opacity: [0, 1],
+		translateY: ['30em', '0'],
 		borderRadius: ['50em', '0em'],
-		duration: 800,
+		duration: 900,
 		easing: 'easeOutQuad'
 	});
+
+	if (localStorage.getItem('lm') === 'light') {
+		light_mode();
+	} else {
+		dark_mode();
+	}
 }
 
 document.getElementById('light_mode').addEventListener('click', function () {
@@ -63,6 +70,7 @@ function dark_mode() {
 	document.getElementById('light_mode').src = 'imgs/light.svg';
 	document.getElementById('mode_text').textContent = 'Light Mode';
 	mode = 'dark';
+	localStorage.setItem('lm', 'dark');
 }
 
 function light_mode() {
@@ -78,4 +86,27 @@ function light_mode() {
 	document.getElementById('light_mode').src = 'imgs/dark.svg';
 	document.getElementById('mode_text').textContent = 'Dark Mode';
 	mode = 'light';
+	localStorage.setItem('lm', 'light');
 }
+
+//let mh = document.querySelectorAll('.mh');
+//
+//for (i = 0; i < mh.length; i++) {
+//	mh[i].addEventListener('mouseenter', function() {
+//		anime({
+//			targets: '#cursor',
+//			scale: 1.25,
+//			duration: 450
+//		});
+//	});
+//}
+//
+//for (i = 0; i < mh.length; i++) {
+//	mh[i].addEventListener('mouseleave', function() {
+//		anime({
+//			targets: '#cursor',
+//			scale: 1,
+//			duration: 450
+//		});
+//	})
+//}
