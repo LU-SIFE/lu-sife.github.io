@@ -80,12 +80,11 @@ function populate_new_task(index) {
 	task.click();
 }
 window.onload = function() {
-	if (typeof localStorage.getItem('tasks') != "undefined") {
+	if (localStorage.getItem("tasks") !== null) {
 		data = JSON.parse(localStorage.getItem('tasks'));
 		for (i = 0; i < data.length; i++) {
 			tasks[i] = {title: data[i].title, priority: data[i].priority, due: new Date(data[i].due), subtitle: data[i].subtitle};
 		}
-		document
 	}
 	
 	if (localStorage.getItem('lm') === 'light') {
