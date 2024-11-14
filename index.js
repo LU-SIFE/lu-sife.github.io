@@ -42,9 +42,18 @@ window.onload = function () {
 		easing: 'easeOutQuad'
 	});
 
+	anime({
+		targets: ['.t1', '.t2', '.t3'],
+		paddingTop: ['0.75em', '0'],
+		paddingBottom: ['0.75em', '0'],
+		duration: 900,
+		delay: 300,
+		easing: 'easeInOutExpo'
+	});
+
 	if (localStorage.getItem('lm') === 'light') {
 		light_mode();
-	} else {
+	} else if (localStorage.getItem('lm') === 'dark') {
 		dark_mode();
 	}
 }
