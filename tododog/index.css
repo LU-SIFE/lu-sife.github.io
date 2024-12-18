@@ -216,6 +216,7 @@ form {
 	position: absolute;
 	right: 3em;
 	top: 1em;
+	font-weight: bold;
 }
 
 .tb {
@@ -253,7 +254,22 @@ form {
 
 .task_card:hover {
 	background-color: var(--c3);
+	rotate: -2deg;
+	scale: 1.1;
 }
+
+.prior0 {color: #ffb2e6;}
+.prior1 {color: #f6a2ed;}
+.prior2 {color: #ec92f3;}
+.prior3 {color: #e382f9;}
+.prior4 {color: #d972ff;}
+.prior5 {color: #c468ff;}
+.prior6 {color: #ba63ff;}
+.prior7 {color: #af5dff;}
+.prior8 {color: #9a52ff;}
+.prior9 {color: #8447ff;}
+.prior10 {color: #5217c9;}
+
 
 #priority {
 	border: 2px solid var(--c2);
