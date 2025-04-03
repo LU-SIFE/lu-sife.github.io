@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="keyframes.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="cursor" class="a-c"><div id="cursor_center"></div></div>
+	<div id="cursor2" class="a-c"></div>
+	<div id="line"></div>
+
+	<div class="notification">Copied to Clipboard!</div>
+
+	<div class="border_full f-c">
+		<div class="top_bar">
+			<span class="logo">[ 𝑥 ]</span>
+			<span id="mode_text">Dark Mode</span>
+			<img src="imgs/dark.svg" id="light_mode" class="mh">
+			&nbsp;
+			<span class="fullscreen mh" onclick="fullscreen()">⛶</span>
+			
+		</div>
+
+		<div class="main_content">
+
+			<div class="pulley"><div id="scroll_bar_fill"></div></div>
+			<span id="sc_text">SCROLL ></span>
+
+
+			<div class="left f-c">
+				<h1 class="nw">LU SIFE.DEV<span class="blinker nw">_</span></h1>
+				<span class="subtitle nw">
+					> UX & UI Design
+				</span>
+
+				<div class="colors f-c">
+					<span onclick='copy(0)' class="c1 mh">#453f3a</span>
+					<span onclick='copy(1)' class="c2 mh">#8a807b</span>
+					<span onclick='copy(2)' class="c3 mh">#bdb9b2</span>
+					<span onclick='copy(3)' class="c4 mh">#f5f4f0</span>
+				</div>
+
+				<div class="projects f-c">
+					<h1>Portfolio:</h1>
+					<span class="p1 p_link mh">> Project 1</span>
+					<span class="p2 p_link mh">> Project 2</span>
+					<span class="p3 p_link mh">> Project 3</span>
+				</div>
+			</div>
+
+			<div class="close_ghost">
+				<button id="left_close" class="mh" onclick="open_left()">
+					<img src="imgs/caret-dark.svg" class='mh' id="caret">
+				</button>
+			</div>
+
+			<div class="right">
+				<div id="scroll_container" class="f-c">
+					
+					<h1 class="big">
+						<span>EXCELLENCE IN</span>&nbsp;
+
+						<div class="f-c terms">
+							<span class="mh t1">UNIQUE</span>
+							<span class="mh t2">MODERN</span>
+							<span class="mh t3">SIMPLE</span>
+						</div>&nbsp;
+						
+						<span>DESIGN</span>
+					</h1>
+
+					<!--<h1 class="shackles">UNSHACKLE<br>THE ART OF<br><span>POSSIBILTY</span></h1>-->
+
+					<!-- <div class="card">
+						<div class="card_top f-c"><span>Code - index.js</span><span id="close_btn">- ◻ x</span></div>
+						<textarea spellcheck="false" type="text" class="card_bottom">const about = {&#013;    profession: Web Designer,&#013;    skills: [UX Design, JS, CSS, HTML],&#013;    tools: [VSCode, Figma],&#013;    motto: "Design Beyond Boundaries."&#013;};</textarea>
+					</div> -->
+				
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<script src="index.js"></script>

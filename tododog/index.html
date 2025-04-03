@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="cursor" class="a-c"><div></div></div>
+
+  <div class="border_full">
+    <div class="top_bar">
+			<img src="imgs/dark.svg" id="light_mode" class="mh">
+			&nbsp;<span id="mode_text">Dark Mode</span></div>
+    <div class="main_content">
+      <div class="left">
+
+      </div>
+
+      <div class="right">
+        <form>
+          <div class="form_group">
+            <label for="title">Task Title:</label>
+            <input type="text" id="title">
+          </div>
+
+          <div class="form_group">
+            <label for="due_date">Due Date:&nbsp;&nbsp;</label>
+            <input type="date" id="due_date">
+          </div>
+
+          <div class="form_group">
+            <label for="priority">Priority:&nbsp;&nbsp;</label>
+            <div id="priority"><div id="priority_slider"></div></div>
+          </div>
+          <button type="submit" id="submit">Create Task!</button>
+        </form>
+
+        <div class="info">
+          <h1 id="title_header">New Task</h1>
+          <textarea spellcheck="none" id="subtitle" placeholder="Type Here..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="congrats">
+    <h1>Good Job! :D</h1>
+    <button class="congrats_close">Close</button>
+  </div>
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<script src="index.js"></script>
+<script src="download_json.js"></script>
