@@ -20,7 +20,7 @@ setInterval(function() {
 }, 800);
 
 function line_calc() {
-	const element1 = document.getElementById('cursor_center');
+	const element1 = document.getElementById('cursor');
 	const element2 = document.getElementById('cursor2');
 	const line = document.getElementById('line');
 	
