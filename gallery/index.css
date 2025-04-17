@@ -53,6 +53,10 @@ body {
     border: 2px solid var(--c2);
 }
 
+#game {
+    background-color: #453f3a;
+}
+
 .item:hover {
     transition: scale, 80ms;
     scale: 1.03;
