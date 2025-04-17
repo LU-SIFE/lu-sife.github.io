@@ -48,27 +48,8 @@ function line_calc() {
 }
 
 function copy(text) {
-	switch (text) {
-		case 0:
-			navigator.clipboard.writeText(document.querySelector('.c1').textContent);
-			notif('Copied to clipboard!');
-			break;
-		case 1:
-			navigator.clipboard.writeText(document.querySelector('.c2').textContent);
-			notif('Copied to clipboard!');
-			break;
-		case 2:
-			navigator.clipboard.writeText(document.querySelector('.c3').textContent);
-			notif('Copied to clipboard!');
-			break;
-		case 3:
-			navigator.clipboard.writeText(document.querySelector('.c4').textContent);
-			notif('Copied to clipboard!');
-			break;
-	
-		default:
-			break;
-	}
+	navigator.clipboard.writeText(document.querySelector('.c' + (text+1)).textContent);
+	notif('Copied to clipboard!');
 }
 
 let notif_timeout
@@ -96,12 +77,10 @@ function notif(text) {
 
 document.addEventListener('mouseover', function(event) {
     if (event.target.classList.contains('mh')) {
-        console.log('Element has class "mh"');
 		document.getElementById('cursor2').style.transform = 'translate(-50%, -50%) scale(1.5)';
 		document.getElementById('cursor2').style.backgroundColor = 'var(--c2)';
 		document.getElementById('cursor2').style.opacity = '0.25';
     } else {
-        console.log('Element does not have class "mh"');
 		document.getElementById('cursor2').style.transform = 'translate(-50%, -50%)';
 		document.getElementById('cursor2').style.backgroundColor = 'transparent';
 		document.getElementById('cursor2').style.opacity = '1';
@@ -169,10 +148,10 @@ window.onload = function () {
 
 	anime({
 		targets: ['.t1', '.t2', '.t3'],
-		paddingTop: ['0.75em', '0'],
-		paddingBottom: ['0.75em', '0'],
+		paddingTop: ['0.5em', '0'],
+		paddingBottom: ['0.5em', '0'],
 		duration: 800,
-		delay: 300,
+		delay: 500,
 		easing: 'easeInOutExpo'
 	});
 
@@ -204,7 +183,8 @@ function dark_mode() {
 
 	document.getElementById('light_mode').src = 'imgs/light.svg';
 	document.getElementById('left_close').src = 'imgs/caret-light.svg';
-	document.getElementById('mode_text').textContent = 'Light Mode';
+	document.getElementById('git').src = 'imgs/github-mark-white.svg';
+	document.getElementById('topography').src = 'imgs/projects/topography-dark.png';
 	//document.querySelector('.card_bottom').style.backgroundColor = 'var(--c4)';
 	mode = 'dark';
 	localStorage.setItem('lm', 'dark');
@@ -222,6 +202,8 @@ function light_mode() {
 
 	document.getElementById('light_mode').src = 'imgs/dark.svg';
 	document.getElementById('left_close').src = 'imgs/caret-dark.svg';
+	document.getElementById('git').src = 'imgs/github-mark.svg';
+	document.getElementById('topography').src = 'imgs/projects/topography-light.png';
 	document.getElementById('mode_text').textContent = 'Dark Mode';
 	//document.querySelector('.card_bottom').style.backgroundColor = 'var(--c3)';
 	mode = 'light';
@@ -235,6 +217,13 @@ function open_left() {
 		anime({
 			targets: '.left',
 			width: '0',
+			duration: 500,
+			easing: 'easeInOutExpo'
+		});
+
+		anime({
+			targets: '.right',
+			width: '100%',
 			duration: 500,
 			easing: 'easeInOutExpo'
 		});
@@ -252,10 +241,17 @@ function open_left() {
 
 		anime({
 			targets: '.left',
-			width: 100/3+'%',
+			width: '30%',
 			duration:500,
 			easing: 'easeInOutExpo'
 		});
+
+		anime({
+			targets: '.right',
+			width: '70%',
+			duration: 500,
+			easing: 'easeInOutExpo'
+		})
 
 		anime({
 			targets: '#caret',
@@ -267,42 +263,3 @@ function open_left() {
 		left_open = false;
 	}
 }
-
-
-
-//let toggle = true;
-//document.getElementById('close_btn').addEventListener('click', function() {
-//	if (toggle === true) {
-//		document.querySelector('.card').style.height = '2em';
-//		document.querySelector('.card_bottom').style.display = 'none';
-//		document.querySelector('.card_top').style.borderBottom = 'none';
-//		toggle = false;
-//	} else {
-//		document.querySelector('.card').style.height = '10.5em';
-//		document.querySelector('.card_bottom').style.display = 'flex';
-//		document.querySelector('.card_top').style.borderBottom = '2px solid var(--c2)';
-//		toggle = true;
-//	}
-//});
-
-//let mh = document.querySelectorAll('.mh');
-//
-//for (i = 0; i < mh.length; i++) {
-//	mh[i].addEventListener('mouseenter', function() {
-//		anime({
-//			targets: '#cursor',
-//			scale: 1.25,
-//			duration: 450
-//		});
-//	});
-//}
-//
-//for (i = 0; i < mh.length; i++) {
-//	mh[i].addEventListener('mouseleave', function() {
-//		anime({
-//			targets: '#cursor',
-//			scale: 1,
-//			duration: 450
-//		});
-//	})
-//}

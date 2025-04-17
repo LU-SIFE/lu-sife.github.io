@@ -1,0 +1,73 @@
+:root {
+	--c1: hsl(25, 9%, 25%);
+	--c2: hsl(21, 6%, 51%);
+	--c3: hsl(38, 8%, 72%);
+	--c4: hsl(50, 21%, 95%);
+}
+
+@font-face {
+    font-family: "LM Roman";
+    src: url("fonts/lmroman8-regular.otf") format("opentype");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+	font-family: "Fira Code", monospace;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+a {
+    color:  var(--c4);
+	font-family: "Fira Code", monospace;
+    position: absolute;
+    left: 2rem;
+    text-decoration: none;
+}
+
+h1 {
+	font-family: "Fira Code", monospace;
+    font-weight: 500;
+}
+
+hr {
+    width: 85%;
+}
+
+body {
+    background-color: var(--c1);
+    color: var(--c4);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.item {
+    width: 50%;
+    border-radius: 1rem;
+    border: 2px solid var(--c2);
+}
+
+.item:hover {
+    transition: scale, 80ms;
+    scale: 1.03;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+.row .item:first-child {
+    margin-right: 0.5rem;
+}
+
+.row .item:last-child {
+    margin-left: 0.5rem;
+}

@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio</title>
+	<link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
 	<link rel="stylesheet" href="keyframes.css">
 	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
@@ -34,10 +36,8 @@
 
 
 			<div class="left f-c">
-				<h1 class="nw">LU SIFE.DEV<span class="blinker nw">_</span></h1>
-				<span class="subtitle nw">
-					> UX & UI Design
-				</span>
+				<h1 class="nw">Michael Leix<span class="blinker nw">_</span></h1>
+				<span class="subtitle nw">> UX & UI Design</span>
 
 				<div class="colors f-c">
 					<span onclick='copy(0)' class="c1 mh">#453f3a</span>
@@ -48,10 +48,17 @@
 
 				<div class="projects f-c">
 					<h1>Portfolio:</h1>
-					<span class="p1 p_link mh">> Fractal Generator</span>
-					<span class="p2 p_link mh">> Cream Notes</span>
-					<span class="p3 p_link mh">> ZMK Keyboard</span>
+					<a href="#projects" class="p1 p_link mh">> Projects</a>
+					<a href="#" class="p2 p_link mh">> Blog (wip!)</a>
+					<a href="https://github.com/LU-SIFE?tab=repositories" class="p3 p_link mh">> Other Projects</a>
 				</div>
+				
+				<div class="contacts">
+					<a href="https://github.com/LU-SIFE" target="_blank">
+						<img id='git' src="imgs/github-mark-white.svg" class="mh">
+					</a>
+				</div>
+
 			</div>
 
 			<div class="close_ghost">
@@ -61,9 +68,9 @@
 			</div>
 
 			<div class="right">
-				<div id="scroll_container" class="f-c">
+				
 					
-					<h1 class="big">
+					<h1 class="h-b big">
 						<span>EXCELLENCE IN</span>&nbsp;
 
 						<div class="f-c terms">
@@ -73,10 +80,48 @@
 						</div>&nbsp;
 						
 						<span>DESIGN</span>
-					</h1>				
-				</div>
-			</div>
+					</h1>
 
+					<img src="imgs/star.svg" class="star s1">
+					<img src="imgs/star.svg" class="star s2">
+					<img src="imgs/star.svg" class="star s3">
+					<img src="imgs/star.svg" class="star s4">
+					<img src="imgs/star.svg" class="star s5">
+					<img src="imgs/star.svg" class="star s6">
+
+					<h1 class="h-b about">Who am I?</h1>
+					<div class="f-r">
+						<div class="icons">
+							<i class="devicon-javascript-plain"></i>
+							<i class="devicon-typescript-plain"></i><br>
+							<i class="devicon-sass-original"></i>	
+							<i class="devicon-php-plain"></i><br>
+							<i class="devicon-angularjs-plain"></i>
+							<i class="devicon-electron-original"></i><br>
+							<i class="devicon-nodejs-plain"></i>
+							<i class="devicon-git-plain"></i>
+						</div>
+						<p class="about-text">I'm a <u>Front-End</u> <u>Web</u> <u>Developer</u> focused on creating elegant interfaces that ooze with <u>personality</u>. I specialize in <u>JavaScript</u> and love designing sleek, responsive layouts. Whether it's a personal project or professional piece, I use <u>precision</u> and <u>creativity</u> to fuel my projects!</p>
+					</div>
+					
+					<h1 id="projects" class="h-b h-u project-header">Projects:</h1>
+
+					<div class="f-r show-row">
+
+						<a class="card" href="https://lu-sife.github.io/cream">
+							<img class="showcase mh" src="imgs/projects/cream.png">
+							<div><h1>Note Engine</h1></div>
+						</a>
+
+						<a class="card" href="gallery/index.html">
+							<img id='topography' class="showcase mh" style="opacity: 0.8;" src="imgs/projects/topography-light.png">
+							<div><h1>Generative Art</h1></div>
+						</a>
+					</div>
+
+					<p id="more_projects">I have tons more projects on my <a class='mh' href="https://github.com/lu-sife">github</a>!</p>
+				<!--end of right container-->
+			</div>
 		</div>
 	</div>
 

@@ -48,6 +48,11 @@ body {
 	flex-direction: column;
 }
 
+.f-r {
+	display: flex;
+	flex-direction: row;
+}
+
 .a-c {
 	justify-content: center;
 	align-items: center;
@@ -110,6 +115,7 @@ h1 {
 	border: 2px solid var(--c3);
 	border-radius: 1em;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 .top_bar {
@@ -155,24 +161,23 @@ h1 {
 
 .main_content {
 	height: 100%;
+	max-height: 100%;
 	display: flex;
-	overflow: scroll;
+	overflow: hidden;
 }
 
 .main_content .left {
-	width: calc(100% / 3);
+	width: 30%;
 	border-right: 2px solid var(--c3);
 	overflow: hidden;
 	position: relative;
 }
 
 .main_content .right {
-	width: calc(200% / 3);
+	width: 70%;
 	overflow: scroll;
-}
-
-#scroll_container {
-	height: 200%;
+	height: calc(100vh - 5rem - 5px);
+	scroll-behavior: smooth;
 }
 
 .pulley {
@@ -286,14 +291,20 @@ h1 {
 	margin-left: 1em;
 	font-size: 1.25em;
 	border-radius: 2em;
+	color: var(--c1);
+	text-decoration: none;
 }
 
-
+.h-b {
+	font-size: 3em;
+}
 
 .big {
-	font-size: 3em;
 	width: fit-content;
 	display: flex;
+	height: 6em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .big span {
@@ -312,48 +323,16 @@ h1 {
 .big div span:nth-child(2) {background-color: var(--c2); color: var(--c3);}
 .big div span:nth-child(3) {background-color: var(--c3); color: var(--c2);}
 
-.card {
-	position: absolute;
-	border: 2px solid var(--c2);
-	width: 23.25em;
-	height: 10.5em;
-	top: 8em;
-	left: 2em;
-	border-radius: 1em;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-}
-
-.card_top {
-	height: 2em;
+.about {
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
 	border-bottom: 2px solid var(--c2);
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: row;
-	padding-right: 0.75em;
-	padding-left: 0.75em;
-}
-
-#close_btn {user-select: none;}
-
-.card_bottom {
-	font-family: 'Fira Code', monospace;
-	line-height: 1.5em;
-	padding: 0.75em;
-	flex-grow: 1;
-	background-color: var(--c3);
-	color: var(--c1);
-	overflow: hidden;
-	border: none;
-	resize: none;
-	cursor: none;
-	outline: none;
 }
 
 .notification {
 	position: fixed;
-	bottom: 2em;
+	top: 2em;
 	left: -100%;
 	border: 2px solid var(--c2);
 	border-radius: 1em;
@@ -376,6 +355,7 @@ h1 {
 	.main_content .left {display: none;}
 	.main_content .right {width: 100%;}
 	#sc_text {display: none;}
+	#left_close {display: none;}
 }
 
 /* Disable Cursor on Mobile */
@@ -383,4 +363,160 @@ h1 {
 	#cursor {
 		display: none;
 	}
+}
+
+.contacts {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+}
+
+.contacts a {
+	display: flex;
+	height: 3rem;
+}
+
+u {
+	border-bottom: 1px solid var(--c1);
+	text-decoration: none;
+}
+
+.icons {
+	font-size: 2rem;
+	margin-left: 7.5%;
+	min-width: fit-content;
+	padding-right: 1.125rem;
+	margin-top: 1rem;
+	border-right: 2px solid var(--c3);
+}
+
+.icons i {
+	color: var(--c2);
+}
+
+.about-text {
+	margin: 1rem;
+	margin-right: 7.5%;
+	font-size: 1.25rem;
+	line-height: 1.75em;
+}
+
+.project-header {
+	margin-top: 1.5em;
+	padding-bottom: 0.5em;
+	text-align: center;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.star {
+	aspect-ratio: 1/1;
+	height: 40px;
+	position: absolute;
+	animation-name: star-animation;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.s1 {
+	left: 30%;
+	top: 120px;
+	rotate: -15deg;
+}
+
+.s2 {
+	left: 15%;
+	top: 240px;
+	rotate: 20deg;
+	animation-delay: 250ms;
+}
+
+.s3 {
+	right: 20%;
+	top: 130px;
+	rotate: 10deg;
+	animation-delay: 500ms;
+}
+
+.s4 {
+	right: 10%;
+	top: 250px;
+	rotate: -15deg;
+	animation-delay: 750ms;
+}
+
+.s5 {
+	left: 40%;
+	top: 270px;
+	rotate: -10deg;
+	animation-delay: 1000ms;
+}
+
+.s6 {
+	right: 25%;
+	top: 300px;
+	rotate: -10deg;
+	animation-delay: 1000ms;
+}
+
+.h-u {
+	border-bottom: 2px solid var(--c2);
+}
+
+.show-row {
+	width: 85%;
+	margin-top: 1.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 1.5rem;
+}
+
+.card {
+	position: relative;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid var(--c3);
+	border-radius: 1rem;
+	overflow: hidden;
+	aspect-ratio: 16/10;
+	text-decoration: none;
+	color: var(--c1);
+}
+
+.card div {
+	background-color: var(--c4);
+	border-top: 2px solid var(--c3);
+	margin-top: auto;
+	z-index: 2;
+	text-align: center;
+}
+
+.card div h1 {
+	margin: 1rem;
+	margin-top: 0.5rem;
+}
+
+.showcase {
+	font-size: 0;
+	width: 100%;
+	position: absolute;
+}
+
+.card:hover {
+	scale: 1.04;
+}
+
+#more_projects {
+	width: 85%;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#more_projects a {
+	color: var(--c1);
+	text-decoration: underline;
 }
